@@ -1,3 +1,5 @@
+local vim = vim
+
 local lsp = { 'tsserver', 'html', 'cssls', 'sumneko_lua', 'bashls', 'pyright', 'jdtls', 'clangd'}
 local lsp_installer_servers = require'nvim-lsp-installer.servers'
 
@@ -95,6 +97,12 @@ end
 
 setup_servers()
 
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+      -- Disable signs
+      signs = false,
+    }
+  )
 -- Design
 vim.cmd 'sign define LspDiagnosticsSignError text='
 vim.cmd 'sign define LspDiagnosticsSignWarning text='

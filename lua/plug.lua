@@ -1,3 +1,5 @@
+local vim = vim
+
 -- Bootstrap packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 
@@ -14,6 +16,7 @@ return require('packer').startup(function(use)
 	use '907th/vim-auto-save'
 	use 'easymotion/vim-easymotion'
 	use 'lukas-reineke/indent-blankline.nvim'
+	use 'ThePrimeagen/harpoon'
 
 -- Treesitter
 	use {
@@ -54,13 +57,22 @@ return require('packer').startup(function(use)
 	use {
 		'kyazdani42/nvim-tree.lua',
 		requires = 'kyazdani42/nvim-web-devicons',
-		config = function() require'nvim-tree'.setup {} 
+		config = function() require'nvim-tree'.setup {}
 	end
 	}
 
-	use {
-		'ThePrimeagen/harpoon',
-	}
+-- Project
+use {
+	"ahmedkhalf/project.nvim",
+	config = function()
+	require("project_nvim").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+	require('telescope').load_extension('projects')
+  end
+}
 
 -- Telescope
 	use {
