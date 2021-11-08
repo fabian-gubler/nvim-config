@@ -1,3 +1,4 @@
+local vim = vim
 local o = vim.opt
 local g = vim.g
 local home = os.getenv( "HOME" )
@@ -35,3 +36,8 @@ o.expandtab = false
 cmd 'autocmd VimEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o'
 cmd 'autocmd CmdlineEnter /,? :set hlsearch'
 cmd 'autocmd CmdlineLeave /,? :set nohlsearch'
+
+-- Emmet
+-- cmd 'let g:user_emmet_install_global = 0'
+-- cmd 'autocmd FileType html,css EmmetInstall'
+cmd "let g:user_emmet_leader_key='<C-e>'"

@@ -17,6 +17,9 @@ return require('packer').startup(function(use)
 	use 'easymotion/vim-easymotion'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'ThePrimeagen/harpoon'
+	use 'mattn/emmet-vim'
+	use 'rafamadriz/friendly-snippets'
+	use 'saadparwaiz1/cmp_luasnip'
 
 -- Treesitter
 	use {
@@ -32,12 +35,24 @@ return require('packer').startup(function(use)
 		requires = {'williamboman/nvim-lsp-installer'}
 	}
 
+	-- use {
+	-- 	'hrsh7th/nvim-cmp',
+	-- 	config = function ()
+	-- 		require('core.nvim-cmp')
+	-- 	end,
+	-- 	requires = {{'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'}, {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-nvim-lua'}}
+	-- }
+	--
+	-- use {
+	-- 	'L3MON4D3/LuaSnip',
+	-- 	requires = {{'rafamadriz/friendly-snippets', 'saadparwaiz1/cmp_luasnip'}}
+	-- }
 	use {
 		'hrsh7th/nvim-cmp',
 		config = function ()
 			require('core.nvim-cmp')
 		end,
-		requires = {{'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'}, {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-nvim-lua'}}
+		requires = {{'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'}, {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-nvim-lua'}, {'hrsh7th/cmp-vsnip'}, {'kdheepak/cmp-latex-symbols'}}
 	}
 
 	use {
@@ -45,13 +60,19 @@ return require('packer').startup(function(use)
 		requires = {{'rafamadriz/friendly-snippets'}}
 	}
 
+-- Firenvim
+	use {
+		'glacambre/firenvim',
+		run = function() vim.fn['firenvim#install'](0) end
+	}
+
 -- Whichkey
-    use {
+	use {
 		'folke/which-key.nvim',
 		event = 'BufWinEnter',
 		config = function() require('core.which-key')
 	end
-    }
+	}
 
 -- File Navigation
 	use {
@@ -99,8 +120,7 @@ use {
 		'karb94/neoscroll.nvim',
 		config = function()
 		require('neoscroll').setup({
-			mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
-            '<C-y>'},
+			mappings = {'<C-u>', '<C-d>'},
 		})
     end
 }
@@ -129,6 +149,7 @@ use {
         require('toggleterm').setup{
             open_mapping = [[<c-t>]],
 			direction = 'float',
+			close_on_exit = false,
 			float_opts = {
 			  -- border = 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
 			  border = "curved",
@@ -142,5 +163,6 @@ use {
 			}
 		}
     end
-}
+	}
+
 end)

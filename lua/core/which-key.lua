@@ -5,12 +5,13 @@ wk.register({
 	["f"] = { ":NvimTreeToggle<CR>", "File Explorer" },
 	["a"] = { ":lua require('Comment').toggle()<CR>", "Comment" },
 	["m"] = { ':lua require("harpoon.mark").add_file()<CR>', 'Mark File'},
-	["n"] = { ':lua require("harpoon.ui").nav_file(1)<CR>', 'Mark File'},
-	["e"] = { ':lua require("harpoon.ui").nav_file(2)<CR>', 'Mark File'},
-	["i"] = { ':lua require("harpoon.ui").nav_file(3)<CR>', 'Mark File'},
-	["o"] = { ':lua require("harpoon.ui").nav_file(4)<CR>', 'Mark File'},
-	["<leader>"] = { ":Telescope git_files<CR>", "Find Files" },
-	-- ["d"] = toggle diagnostics
+	["n"] = { ':lua require("harpoon.ui").nav_file(1)<CR>', 'File 1'},
+	["e"] = { ':lua require("harpoon.ui").nav_file(2)<CR>', 'File 2'},
+	["i"] = { ':lua require("harpoon.ui").nav_file(3)<CR>', 'File 3'},
+	["o"] = { ':lua require("harpoon.ui").nav_file(4)<CR>', 'File 4'},
+	["r"] = { ':Telescope projects<CR>', 'Projects'},
+	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
+
 -- Packer
 	p = {
 		name = "Packer",
@@ -21,6 +22,7 @@ wk.register({
 		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
+
 -- Telescope
 	t = {
 		name = "Telescope",
@@ -29,8 +31,11 @@ wk.register({
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+        g = { "<cmd>Telescope live_grep<cr>", "Grep" },
   },
-},  { 
+
+-- Options
+},  {
     mode = "n", -- NORMAL mode
     prefix = "<leader>",
     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
@@ -39,18 +44,15 @@ wk.register({
     nowait = true, -- use `nowait` when creating keymaps
 })
 
+-- Visual Mode
 wk.register({
 	["a"] = { "<ESC><CMD>lua ___comment_gc(vim.fn.visualmode())<CR>", "Comment" },
 },  { 
     mode = "v", -- NORMAL mode
     prefix = "<leader>",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
-    noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
 })
 
-require('which-key').setup {
+wk.setup {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
     registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode

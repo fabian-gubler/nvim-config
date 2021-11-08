@@ -1,22 +1,22 @@
 local vim = vim
 local cmp = require'cmp'
 
-vim.o.completeopt = "menu,menuone,noselect"
+vim.o.completeopt = "menu,menuone"
 vim.opt.shortmess:append "c"
 
   cmp.setup({
     snippet = {
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
-      end,
+	expand = function(args)
+	  require'luasnip'.lsp_expand(args.body)
+	end,
     },
     mapping = {
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = {
       { name = 'nvim_lsp' },
+      { name = 'luasnip' },
       { name = 'nvim_lua' },
-      { name = 'vsnip' },
 	  { name = 'path'},
       { name = 'buffer' },
     },
