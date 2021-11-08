@@ -4,16 +4,14 @@ vim.o.completeopt = "menu,menuone,noselect"
 vim.opt.shortmess:append "c"
 
   cmp.setup({
-    -- snippet = {
-    --   expand = function(args)
-    --     vim.fn["vsnip#anonymous"](args.body)
-    --   end,
-    -- },
+    snippet = {
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body)
+      end,
+    },
     mapping = {
-	  -- ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-	  -- ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-      -- ['<C-e>'] = cmp.mapping.close(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      ['<Right>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = {
       { name = 'nvim_lsp' },

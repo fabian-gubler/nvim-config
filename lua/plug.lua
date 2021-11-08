@@ -37,18 +37,18 @@ return require('packer').startup(function(use)
 		requires = {{'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'}, {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-nvim-lua'}}
 	}
 
-	-- use {
-	-- 	'hrsh7th/vim-vsnip',
-	-- 	requires = {{'rafamadriz/friendly-snippets'}e
-	-- }
+	use {
+		'hrsh7th/vim-vsnip',
+		requires = {{'rafamadriz/friendly-snippets'}}
+	}
 
 -- Whichkey
     use {
 		'folke/which-key.nvim',
 		event = 'BufWinEnter',
-		config = function() require('core.which-key') 
+		config = function() require('core.which-key')
 	end
-  }
+    }
 
 -- File Navigation
 	use {

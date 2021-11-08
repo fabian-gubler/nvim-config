@@ -1,7 +1,4 @@
--- LSP Setup
-local lsp = { 'clangd', 'bashls', 'pyright', 'sumneko_lua', 'jdtls'}
-local cmd = vim.cmd
-
+local lsp = { 'tsserver', 'html', 'cssls', 'sumneko_lua', 'bashls', 'pyright', 'jdtls', 'clangd'}
 local lsp_installer_servers = require'nvim-lsp-installer.servers'
 
 -- Install Servers
@@ -14,7 +11,7 @@ for _, value in ipairs(lsp) do
 	end
 end
 
--- LSP Configuration
+-- Mappings
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -39,7 +36,7 @@ local on_attach = function(_, bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
--- Keymaps and snippet support
+-- Snippets
 local function make_config()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -51,6 +48,28 @@ local function make_config()
   }
 end
 
+-- Configure lua for neovim development
+local lua_settings = {
+  Lua = {
+    runtime = {
+      -- LuaJIT in the case of Neovim
+      version = 'LuaJIT',
+      path = vim.split(package.path, ';'),
+    },
+    diagnostics = {
+      -- Get the language server to recognize the `vim` global
+      globals = { 'vim' },
+    },
+    workspace = {
+      -- Make the server aware of Neovim runtime files
+      library = {
+        [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+        [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+      },
+    },
+  }
+}
+
 -- Setup Servers
 local function setup_servers()
 	local lsp_installer = require("nvim-lsp-installer")
@@ -61,16 +80,11 @@ local function setup_servers()
 	-- table.insert(servers, "sourcekit")
 
 	for _, server in pairs(servers) do
-	lsp_installer.on_server_ready(function(server)
-	local config = make_config()
-	-- if server == "lua" then
-	--   config.settings = lua_settings
-	-- end
-
-	-- (optional) Customize the options passed to the server
-	-- if server.name == "tsserver" then
-	--     opts.root_dir = function() ... end
-	-- end
+		lsp_installer.on_server_ready(function(server)
+		local config = make_config()
+		if server == "lua" then
+			config.settings = lua_settings
+	end
 
 	-- This setup() function is exactly the same as lspconfig's setup function.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/ADVANCED_README.md
@@ -82,7 +96,7 @@ end
 setup_servers()
 
 -- Design
-cmd 'sign define LspDiagnosticsSignError text='
-cmd 'sign define LspDiagnosticsSignWarning text='
-cmd 'sign define LspDiagnosticsSignInformation text='
-cmd 'sign define LspDiagnosticsSignHint text='
+vim.cmd 'sign define LspDiagnosticsSignError text='
+vim.cmd 'sign define LspDiagnosticsSignWarning text='
+vim.cmd 'sign define LspDiagnosticsSignInformation text='
+vim.cmd 'sign define LspDiagnosticsSignHint text='
