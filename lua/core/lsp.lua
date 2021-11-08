@@ -1,5 +1,5 @@
 local vim = vim
-local lsp = { 'clangd', 'bashls', 'pyright', 'sumneko_lua', 'ltex', 'jdtls'}
+local lsp = { 'tsserver', 'html', 'cssls', 'clangd', 'bashls', 'pyright', 'sumneko_lua', 'ltex', 'jdtls'}
 
 local lsp_installer_servers = require'nvim-lsp-installer.servers'
 -- local utils = require('utils')

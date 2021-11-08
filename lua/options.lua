@@ -6,11 +6,12 @@ local cmd = vim.cmd
 local indent = 4
 
 -- Global
-g.nvim_tree_quit_on_open = 1 
+g.nvim_tree_quit_on_open = 1
 g.auto_save = 1
 g.auto_save_silent = 1
 g.EasyMotion_keys='arstdhneioqwfpluygmbjzxcvk1234567890,'
 g.nord_borders = 'true'
+g.user_emmet_leader_key = ";"
 
 -- Options
 o.relativenumber = true
@@ -36,8 +37,3 @@ o.expandtab = false
 cmd 'autocmd VimEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o'
 cmd 'autocmd CmdlineEnter /,? :set hlsearch'
 cmd 'autocmd CmdlineLeave /,? :set nohlsearch'
-
--- Emmet
--- cmd 'let g:user_emmet_install_global = 0'
--- cmd 'autocmd FileType html,css EmmetInstall'
-cmd "let g:user_emmet_leader_key='<C-e>'"
