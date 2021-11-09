@@ -2,7 +2,6 @@ local vim = vim
 local lsp = { 'tsserver', 'html', 'cssls', 'clangd', 'bashls', 'pyright', 'sumneko_lua', 'ltex', 'jdtls'}
 
 local lsp_installer_servers = require'nvim-lsp-installer.servers'
--- local utils = require('utils')
 
 -- Install Servers
 for _, value in ipairs(lsp) do
@@ -84,22 +83,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	  signs = false,
 	}
 )
-
--- Emmet
--- local configs = require'lspconfig/configs'
--- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
---
--- configs.ls_emmet = {
---   default_config = {
---     cmd = { 'ls_emmet', '--stdio' };
---     filetypes = { 'html', 'css'};
---     root_dir = function(fname)
---       return vim.loop.cwd()
---     end;
---     settings = {};
---   };
--- }
---
--- require'lspconfig'.ls_emmet.setup{
--- 	capabilities = capabilities
--- }

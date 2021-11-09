@@ -14,9 +14,9 @@ vim.opt.shortmess:append "c"
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = {
-      { name = 'nvim_lsp' },
+      { name = 'nvim_lsp', max_item_count = 4 },
       { name = 'nvim_lua' },
-      { name = 'vsnip' },
+      { name = 'vsnip', max_item_count = 4 },
 	  { name = 'path'},
       { name = 'buffer' },
     },

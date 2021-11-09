@@ -10,6 +10,7 @@ wk.register({
 	["i"] = { ':lua require("harpoon.ui").nav_file(3)<CR>', '3'},
 	["o"] = { ':lua require("harpoon.ui").nav_file(4)<CR>', '4'},
 	["r"] = { ':Telescope projects<CR>', 'Projects'},
+	["l"] = { ':LspInfo<CR>', 'Lsp Info' },
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 
 -- Packer
