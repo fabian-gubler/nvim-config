@@ -39,6 +39,7 @@ cmd 'au CmdlineEnter /,? :set hlsearch'
 cmd 'au CmdlineLeave /,? :set nohlsearch'
 
 -- Set barbar's options
+
 vim.g.bufferline = {
   -- Enable/disable animations
   animation = false,
