@@ -1,4 +1,5 @@
 local map = vim.api.nvim_set_keymap
+local cmd = vim.cmd
 local opt = { noremap = true, silent = true }
 
 -- General
@@ -18,4 +19,18 @@ map('i', '<C-k>', '<Esc>lDa', opt)
 -- Plugins
 map('', ',', '<Plug>(easymotion-s)', {})
 map('', '/', '<Plug>(easymotion-sn)', {})
-map('', '<C-m>', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', {})
+
+-- Bar
+map('n', '<A-1>', ':BufferGoto 1<CR>', opt)
+map('n', '<A-2>', ':BufferGoto 2<CR>', opt)
+map('n', '<A-3>', ':BufferGoto 3<CR>', opt)
+map('n', '<A-4>', ':BufferGoto 4<CR>', opt)
+map('n', '<A-5>', ':BufferGoto 5<CR>', opt)
+
+map('n', '<A-e>', ':BufferPrevious<CR>', opt)
+map('n', '<A-n>', ':BufferNext<CR>', opt)
+
+map('n', '<A-S-e>', ':BufferMovePrevious<CR>', opt)
+map('n', '<A-S-n>', ' :BufferMoveNext<CR>', opt)
+
+cmd "nnoremap <silent> <Leader>b :execute 'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>"

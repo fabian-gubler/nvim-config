@@ -16,7 +16,6 @@ return require('packer').startup(function(use)
 	use '907th/vim-auto-save'
 	use 'easymotion/vim-easymotion'
 	use 'lukas-reineke/indent-blankline.nvim'
-	use 'ThePrimeagen/harpoon'
 	use 'mattn/emmet-vim'
 	use 'rafamadriz/friendly-snippets'
 	use 'saadparwaiz1/cmp_luasnip'
@@ -35,18 +34,6 @@ return require('packer').startup(function(use)
 		requires = {'williamboman/nvim-lsp-installer'}
 	}
 
-	-- use {
-	-- 	'hrsh7th/nvim-cmp',
-	-- 	config = function ()
-	-- 		require('core.nvim-cmp')
-	-- 	end,
-	-- 	requires = {{'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'}, {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-nvim-lua'}}
-	-- }
-	--
-	-- use {
-	-- 	'L3MON4D3/LuaSnip',
-	-- 	requires = {{'rafamadriz/friendly-snippets', 'saadparwaiz1/cmp_luasnip'}}
-	-- }
 	use {
 		'hrsh7th/nvim-cmp',
 		config = function ()
@@ -64,6 +51,12 @@ return require('packer').startup(function(use)
 	use {
 		'glacambre/firenvim',
 		run = function() vim.fn['firenvim#install'](0) end
+	}
+
+-- Bar
+	use {
+		'romgrk/barbar.nvim',
+		requires = {'kyazdani42/nvim-web-devicons'}
 	}
 
 -- Whichkey

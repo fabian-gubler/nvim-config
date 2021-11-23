@@ -11,7 +11,7 @@ vim.opt.shortmess:append "c"
       end,
     },
     mapping = {
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      ['<CR>'] = cmp.mapping.confirm({ select = false }),
     },
     sources = {
       { name = 'nvim_lsp', max_item_count = 4 },

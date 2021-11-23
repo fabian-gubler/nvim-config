@@ -2,14 +2,11 @@ local wk = require("which-key")
 
 wk.register({
 	["c"] = { ":bd!<CR>", "Close Buffer" },
-	["f"] = { ":NvimTreeToggle<CR>", "File Explorer" },
+	["e"] = { ":NvimTreeToggle<CR>", "File Explorer" },
 	["a"] = { ":lua require('Comment').toggle()<CR>", "Comment" },
-	["m"] = { ':lua require("harpoon.mark").add_file()<CR>', 'Mark File'},
-	["n"] = { ':lua require("harpoon.ui").nav_file(1)<CR>', '1'},
-	["e"] = { ':lua require("harpoon.ui").nav_file(2)<CR>', '2'},
-	["i"] = { ':lua require("harpoon.ui").nav_file(3)<CR>', '3'},
-	["o"] = { ':lua require("harpoon.ui").nav_file(4)<CR>', '4'},
 	["r"] = { ':Telescope projects<CR>', 'Projects'},
+	["d"] = { ':cd $HOME/.dotfiles | Telescope find_files<CR>', 'Dotfiles'},
+	["n"] = { ':cd $HOME/.config/nvim | Telescope find_files<CR>', 'Neovim Config'},
 	["l"] = { ':LspInfo<CR>', 'Lsp Info' },
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 

@@ -10,9 +10,9 @@ vim.o.termguicolors = true
 vim.cmd [[colorscheme nord]]
 
 -- Configuration files
-require('opt')			-- Options
-require('map')			-- Keymappings
-require('plug')			-- Plugins
+require('options')			-- Options
+require('mappings')			-- Keymappings
+require('plugins')			-- Plugins
 require('colemak')		-- Keyboard Layout
 
 -- Highlight on yank
