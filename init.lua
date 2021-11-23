@@ -11,7 +11,7 @@ vim.cmd [[colorscheme nord]]
 
 -- Configuration files
 require('options')			-- Options
-require('mappings')			-- Keymappings
+require('mappings')			-- Mappings
 require('plugins')			-- Plugins
 require('colemak')			-- Keyboard Layout
 
