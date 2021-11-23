@@ -34,7 +34,6 @@ o.expandtab = false
 
 -- Git automation
 cmd "au BufWritePost *  execute '! if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1 ; then git add % ; git commit -m %; fi'"
-cmd ""
 
 -- Autocommands
 cmd 'au VimEnter * :set showtabline=0'
