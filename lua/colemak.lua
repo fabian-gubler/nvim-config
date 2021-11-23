@@ -50,7 +50,6 @@ map('n', 'Z', '<C-R>', opt)          -- redo         normal
 map('x', 'Z', ':<C-U>redo<cr>', opt) -- redo         visual
 map('o', 'r', 'i', opt)   --    *r*     inner        operator pending
 
-
 -- no idea how this works
 cmd([[
   " Make insert/add work also in visual line mode

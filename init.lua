@@ -13,7 +13,7 @@ vim.cmd [[colorscheme nord]]
 require('options')			-- Options
 require('mappings')			-- Keymappings
 require('plugins')			-- Plugins
-require('colemak')		-- Keyboard Layout
+require('colemak')			-- Keyboard Layout
 
 -- Highlight on yank
 vim.api.nvim_exec(
