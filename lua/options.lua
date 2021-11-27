@@ -38,6 +38,7 @@ cmd 'au VimEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o'
 cmd 'au CmdlineEnter /,? :set hlsearch'
 cmd 'au CmdlineLeave /,? :set nohlsearch'
 
+cmd 'autocmd FileType typescript setlocal ts=2 sts=2 sw=2'
 -- Set barbar's options
 -- Testing Crontab
 
