@@ -10,8 +10,6 @@ return require('packer').startup(function(use)
 	use 'easymotion/vim-easymotion'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'mattn/emmet-vim'
-	use 'rafamadriz/friendly-snippets'
-	use 'saadparwaiz1/cmp_luasnip'
 
 -- Treesitter
 	use {
@@ -27,6 +25,7 @@ return require('packer').startup(function(use)
 		requires = {'williamboman/nvim-lsp-installer'}
 	}
 
+-- Completion
 	use {
 		'hrsh7th/nvim-cmp',
 		config = function ()
@@ -35,15 +34,10 @@ return require('packer').startup(function(use)
 		requires = {{'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'}, {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-nvim-lua'}, {'hrsh7th/cmp-vsnip'}, {'kdheepak/cmp-latex-symbols'}}
 	}
 
+-- Snippets
 	use {
 		'hrsh7th/vim-vsnip',
 		requires = {{'rafamadriz/friendly-snippets'}}
-	}
-
--- Firenvim
-	use {
-		'glacambre/firenvim',
-		run = function() vim.fn['firenvim#install'](0) end
 	}
 
 -- Bar
@@ -72,11 +66,7 @@ return require('packer').startup(function(use)
 use {
 	"ahmedkhalf/project.nvim",
 	config = function()
-	require("project_nvim").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
+	require("project_nvim").setup {}
 	require('telescope').load_extension('projects')
   end
 }
@@ -140,10 +130,7 @@ use {
 			direction = 'float',
 			close_on_exit = false,
 			float_opts = {
-			  -- border = 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
 			  border = "curved",
-			  -- width = <value>,
-			  -- height = <value>,
 			  winblend = 0,
 			  highlights = {
 				border = "Normal",
