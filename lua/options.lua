@@ -40,6 +40,7 @@ cmd 'au CmdlineLeave /,? :set nohlsearch'
 
 cmd 'autocmd FileType typescript setlocal ts=2 sts=2 sw=2'
 cmd 'autocmd FileType javascript setlocal ts=2 sts=2 sw=2'
+cmd 'autocmd FileType html setlocal ts=2 sts=2 sw=2'
 -- Set barbar's options
 -- Testing Crontab
 
