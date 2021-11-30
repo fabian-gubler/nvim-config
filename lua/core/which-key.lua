@@ -44,8 +44,8 @@ wk.register({
 
 -- Visual Mode
 wk.register({
-	["a"] = { "<ESC><CMD>lua ___comment_gc(vim.fn.visualmode())<CR>", "Comment" },
-},  { 
+	["a"] = { "<ESC><CMD>lua require('Comment.api').gc(vim.fn.visualmode())<CR>", "Comment" },
+},  {
     mode = "v", -- NORMAL mode
     prefix = "<leader>",
 })
