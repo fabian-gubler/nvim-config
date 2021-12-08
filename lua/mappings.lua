@@ -34,3 +34,6 @@ map('n', '<A-S-e>', ':BufferMovePrevious<CR>', opt)
 map('n', '<A-S-n>', ' :BufferMoveNext<CR>', opt)
 
 cmd "nnoremap <silent> <Leader>b :execute 'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>"
+
+-- LspSaga
+map('n', 'K', '<cmd>lua require("lspsaga.hover").render_hover_doc()<CR>', opt)
