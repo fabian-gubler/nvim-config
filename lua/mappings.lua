@@ -4,6 +4,7 @@ local opt = { noremap = true, silent = true }
 
 -- General
 map('n', 'q', ':q<cr>', opt)
+map('n', '<leader>y', 'ggVGY', opt)
 
 -- Windows
 map('n', '<M-m>', '<C-w><C-h>', opt)
