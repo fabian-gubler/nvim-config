@@ -1,15 +1,16 @@
 local wk = require("which-key")
 
 wk.register({
+-- General
 	["c"] = { ":bd!<CR>", "Close Buffer" },
 	["e"] = { ":NvimTreeToggle<CR>", "File Explorer" },
-	-- ["a"] = { ":lua require('Comment').toggle()<CR>", "Comment" },
 	["r"] = { ':Telescope projects<CR>', 'Projects'},
 	["d"] = { ':cd $HOME/.dotfiles | Telescope find_files<CR>', 'Dotfiles'},
 	["n"] = { ':cd $HOME/.config/nvim | Telescope find_files<CR>', 'Neovim Config'},
 	["l"] = { ':LspInfo<CR>', 'Lsp Info' },
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 
+-- Comments
 -- Packer
 	p = {
 		name = "Packer",
@@ -42,6 +43,13 @@ wk.register({
     nowait = true, -- use `nowait` when creating keymaps
 })
 
+wk.register({
+	["a"] = { "<ESC><CMD>lua require('Comment.api').gc(vim.fn.visualmode())<CR>", "Comment" },
+},  {
+    mode = "v", -- NORMAL mode
+    prefix = "<leader>",
+})
+
 wk.setup {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
@@ -50,27 +58,6 @@ wk.setup {
       enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
       suggestions = 20, -- how many suggestions should be shown in the list?
     },
-    -- the presets plugin, adds help for a bunch of default keybindings in Neovim
-    -- No actual key bindings are created
-    presets = {
-      operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-      motions = true, -- adds help for motions
-      text_objects = true, -- help for text objects triggered after entering an operator
-      windows = true, -- default bindings on <c-w>
-      nav = true, -- misc bindings to work with windows
-      z = true, -- bindings for folds, spelling and others prefixed with z
-      g = false, -- bindings for prefixed with g
-    },
-  },
-  -- add operators that will trigger motion and text object completion
-  -- to enable all native operators, set the preset / operators plugin above
-  operators = { gc = "Comments" },
-  key_labels = {
-    -- override the label used to display some keys. It doesn't effect WK in any other way.
-    -- For example:
-    -- ["<space>"] = "SPC",
-    -- ["<cr>"] = "RET",
-    -- ["<tab>"] = "TAB",
   },
   icons = {
     breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
@@ -97,8 +84,8 @@ wk.setup {
   ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "}, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
-  triggers = "auto", -- automatically setup triggers
-  -- triggers = {"<leader>"} -- or specify a list manually
+  -- triggers = "auto", -- automatically setup triggers
+  triggers = {"<leader>"}, -- or specify a list manually
   triggers_blacklist = {
     -- list of mode / prefixes that should never be hooked by WhichKey
     -- this is mostly relevant for key maps that start with a native binding

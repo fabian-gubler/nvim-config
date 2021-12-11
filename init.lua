@@ -19,8 +19,8 @@ vim.cmd [[colorscheme nord]]
 -- Configuration files
 require('options')			-- Options
 require('mappings')			-- Mappings
-require('plugins')			-- Plugins
 require('colemak')			-- Keyboard Layout
+require('plugins')			-- Plugins
 
 -- Highlight on yank
 vim.api.nvim_exec(
