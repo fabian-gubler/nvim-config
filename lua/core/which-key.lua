@@ -11,6 +11,11 @@ wk.register({
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 
 -- Comments
+	["a"] = { ":lua require('Comment').toggle()<CR>", "Comment Current Line" },
+	-- ["aT"] = { ":lua require('Comment.api').gcA()<CR>", "Comment Current Line end" },
+	-- ["ao"] = { ":lua require('Comment.api').gco()<CR>", "Comment Line down" },
+	-- ["aO"] = { ":lua require('Comment.api').gcO()<CR>", "Comment Line up" },
+
 -- Packer
 	p = {
 		name = "Packer",

@@ -6,12 +6,6 @@ local opt = { noremap = true, silent = true }
 map('n', 'q', ':q<cr>', opt)
 map('n', '<leader>y', 'ggVGY', opt)
 
--- Commenting
-map('n', '<C-s>s', ':lua require("Comment").toggle()<CR>', opt)
-map('n', 'ko', ':lua require("Comment.api").gco()<CR>', opt)
-map('n', 'kO', ':lua require("Comment.api").gcO()<CR>', opt)
-map('n', 'kT', ':lua require("Comment.api").gcT()<CR>', opt)
-
 -- Windows
 map('n', '<M-m>', '<C-w><C-h>', opt)
 map('n', '<M-n>', '<C-w><C-j>', opt)
