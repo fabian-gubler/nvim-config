@@ -34,7 +34,7 @@ o.expandtab = false
 
 -- Autocommands
 cmd 'au VimEnter * :set showtabline=0'
-cmd 'au VimEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o'
+cmd 'au BufNew,BufRead * setl fo-=orc'
 cmd 'au CmdlineEnter /,? :set hlsearch'
 cmd 'au CmdlineLeave /,? :set nohlsearch'
 

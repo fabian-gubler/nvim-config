@@ -48,8 +48,8 @@ return require('packer').startup(function(use)
 
 -- Whichkey
 	use {
-		'folke/which-key.nvim',
-		event = 'BufWinEnter',
+	 	'folke/which-key.nvim',
+	 	event = 'BufWinEnter',
 		config = function() require('core.which-key')
 	end
 	}
@@ -107,9 +107,7 @@ use {
 -- Commenting
 	use {
 		'numToStr/Comment.nvim',
-		event = "BufRead",
-		config = function() require('Comment').setup()
-    end
+		config = function() require('core.comment') end,
 }
 
 -- Autopairs
