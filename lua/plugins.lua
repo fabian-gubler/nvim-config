@@ -54,6 +54,12 @@ return require('packer').startup(function(use)
 	end
 	}
 
+-- Firenvim
+	use {
+		 'glacambre/firenvim',
+		 run = function() vim.fn['firenvim#install'](0) end
+}
+
 -- File Navigation
 	use {
 		'kyazdani42/nvim-tree.lua',
