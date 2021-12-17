@@ -1,0 +1,44 @@
+snippet test "Matrix"
+endsnippet
+
+# --- Matrix
+snippet 2x2 "Matrix"
+x = { 1 2, 3 4 };
+endsnippet
+
+snippet test "Matrix"
+endsnippet
+# --- PROGRAMMING
+snippet proc "Programming"
+proc (1) = name(arglist);
+	local $0;
+	retp();
+endp;
+endsnippet
+
+snippet for "Programming"
+for i (start, stop, step);
+	$0;
+endfor;
+endsnippet
+
+snippet ifelse "Programming"
+if expression;
+	$0;
+// elseif expression;
+else;
+	// statement
+endif;
+endsnippet
+
+snippet dowhile "Programming"
+do while expression;
+	$0
+endo;
+endsnippet
+
+snippet dountil "Programming"
+do until expression;
+	$0
+endo;
+endsnippet

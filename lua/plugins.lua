@@ -11,6 +11,9 @@ return require('packer').startup(function(use)
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'mattn/emmet-vim'
 
+	use 'fhill2/telescope-ultisnips.nvim'
+	use 'SirVer/ultisnips'
+
 -- Treesitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -83,7 +86,7 @@ use {
 		requires = { {'nvim-lua/plenary.nvim'} },
 		require('telescope').setup{
 			defaults = { file_ignore_patterns = {"node_modules"} }
-	  }
+	  },
 	}
 
 -- Colorizer

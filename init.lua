@@ -1,5 +1,6 @@
 local vim = vim
 local fn = vim.fn
+local cmd = vim.cmd
 
 -- Bootstrap packer
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -33,3 +34,5 @@ vim.api.nvim_exec(
   false
 )
 
+require('telescope').load_extension('ultisnips')
+cmd 'let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]'
