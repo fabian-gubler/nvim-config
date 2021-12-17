@@ -1,12 +1,69 @@
-snippet test "Matrix"
+# --- Regression
+
+# --- General
+snippet boilerplate "General"
+/*
+** Programming Assignment Gauss
+*/
+
+new; cls;
+
+@ Working directory @
+working_dir = "/analytics/gauss/"; 				// set working directory
+chdir ^working_dir;								// change to working dir
+
+@ Handle output @
+outputfile = working_dir $+ "results.out";		// file to save output
+output file =^outputfile reset;					// overwrite old output
 endsnippet
 
-# --- Matrix
-snippet 2x2 "Matrix"
-x = { 1 2, 3 4 };
+snippet load_data "General"
+@ Load and preview data @
+file_name = "$0";
+var_names = getname(file_name);
+//data_input = csvReadM(file_name);				// load csv data
+data_input = loadd(file_name);					// load dat data
 endsnippet
 
-snippet test "Matrix"
+# --- Descriptive
+snippet overview_all "Descriptive"
+"------------------------------------------------------------------------------------------";
+"Descriptive Statistics: Built in";
+"------------------------------------------------------------------------------------------";
+?;
+"Data source: " ;; $file_name;
+
+@ Descriptive statistics @
+//call dstatmt(0, enter_computation_directly); 	// if in memory		    
+call dstatmt(data_input, var_names); 			// compute stats for dataset
+
+@ Median @
+md = median(data_input);
+
+?;
+"----------------------------------  Median  ----------------------------------------------";
+?;
+for i (1, cols(data_input), 1);
+	$var_names[i];; md[i];
+endfor;
+endsnippet
+
+snippet custom_median "Descriptive"
+?; "--- Median ---"; ?;
+
+proc (0) = get_median(data);
+	local unsorted, sorted, length, index;
+	
+	for i (1, cols(data_input), 1);
+		unsorted = data_input[.,i];
+		sorted = sorthc(unsorted, 1);
+		length = rows(unsorted);
+		index = (length + 1) / 2;
+		$var_names[i];; sorted[index];
+	endfor;
+endp;
+
+get_median(data_input);
 endsnippet
 # --- PROGRAMMING
 snippet proc "Programming"
@@ -14,6 +71,68 @@ proc (1) = name(arglist);
 	local $0;
 	retp();
 endp;
+endsnippet
+
+snippet custom_mean "Descriptive"
+?; "--- Mean ---"; ?;
+
+proc (1) = get_mean(vector);
+	local n, sum, mean;
+	
+	n = rows(vector);
+	sum = sumc(vector);
+	mean = sum / n;
+	retp(mean);
+endp;
+
+proc (0) = print_all_means(data);
+	local column, mean;
+	
+	for i (1, cols(data), 1);
+		column = data[.,i];
+		mean = get_mean(column);
+		$var_names[i];; mean;
+	endfor;
+endp;
+
+print_all_means(data_input);
+endsnippet
+
+snippet custom_stand_dev "Descriptive"
+?; "--- Standard Deviation ---"; ?;
+
+proc (1) = get_standard_deviation(vector);
+	
+	// initialize
+	local n, standard_deviation, sum, mean;
+	sum = 0;
+	
+	n = rows(vector);				// amount of rows (n)
+	mean = get_mean(vector);		// compute mean
+	
+	// summing up diff of x_i & sample mean
+	for i (1, n, 1);
+		sum = sum + (vector[i] - mean) * (vector[i] - mean);
+	endfor;
+	
+	// compute std. deviation
+	standard_deviation = sqrt(1/n * sum);
+	retp(standard_deviation);
+endp;
+
+proc (0) = print_all_standard_deviations(data);
+	local column, standard_deviation;
+	
+	// go through all columns
+	for i (1, cols(data), 1);
+		column = data[.,i];										// isolate column
+		standard_deviation = get_standard_deviation(column);	// compute standard deviation
+		$var_names[i];; standard_deviation;						// print results to console
+	endfor;
+endp;
+
+// invoke function
+print_all_standard_deviations(data_input);
 endsnippet
 
 snippet for "Programming"
