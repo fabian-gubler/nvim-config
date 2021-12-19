@@ -1,4 +1,48 @@
 # --- Regression
+snippet old_custom "Regression"
+"------------------------------------------------------------------------------------------";
+"OLS Regression: Custom";
+"------------------------------------------------------------------------------------------";
+
+var1 = { Grade };
+var2 = { IQ };
+var3 = { HStudied };
+
+// add for loop for multiple variables
+proc(3) = extract_data(var1, var2, var3);
+	local data1, data2, data3, ind1, ind2, ind3; 
+
+	// retrieve index
+	{var1, ind1 } = indices(file_name, var1);
+	{var2, ind2 } = indices(file_name, var2);  
+	{var3, ind3 } = indices(file_name, var3);  
+	
+	// extract data
+	data1 = data_input[.,ind1];
+	data2 = data_input[.,ind2];
+	data3 = data_input[.,ind3];
+	
+	retp(data1, data2, data3);
+endp;
+
+// extract data and save to variables
+{y, x_1, x_2} = extract_data(var1, var2, var3);
+
+// concatenate our dependent variables
+x = x_1 ~ x_2;
+
+proc (1) = ols_custom(y, x);
+	local b;
+	
+	x = ones(rows(x),1) ~ x; 			// add constant
+	b = invpd(x'x) * x'y;			    // simple estimation formula
+	
+	retp(b);
+endp;
+
+{b_est} = ols_custom(y, x);
+endsnippet
+
 snippet old_built-in "Regression"
 "------------------------------------------------------------------------------------------";
 "OLS Regression: Built in";
