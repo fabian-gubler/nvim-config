@@ -1,4 +1,20 @@
 # --- Regression
+snippet old_built-in "Regression"
+"------------------------------------------------------------------------------------------";
+"OLS Regression: Built in";
+"------------------------------------------------------------------------------------------";
+
+@ OLS Built in (using Formula) @
+call ols(file_name, "Grade ~ .");
+
+@ OLS Built in (using Variables) @
+depvar = { Grade };
+indvars = { IQ, HStudied, QualityHS };
+call ols(file_name, depvar, indvars);
+
+@ Save Returned Values @
+{ vnam, m, b, stb, vc, stderr, sigma, cx, rsq, resid, dwstat }  = ols(file_name, "Grade ~ .");
+endsnippet
 
 # --- General
 snippet boilerplate "General"
@@ -6,7 +22,7 @@ snippet boilerplate "General"
 ** Programming Assignment Gauss
 */
 
-new; cls;
+new; cls; rndseed 534238;
 
 @ Working directory @
 working_dir = "/analytics/gauss/"; 				// set working directory

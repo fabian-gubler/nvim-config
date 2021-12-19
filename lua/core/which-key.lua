@@ -12,7 +12,8 @@ wk.register({
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 
 -- Comments
-	["a"] = { ":lua require('Comment').toggle()<CR>", "Comment Current Line" },
+	["a"] = { ":CommentToggle<CR>", "Comment Line"},
+   -- ["aa"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
 	-- ["aT"] = { ":lua require('Comment.api').gcA()<CR>", "Comment Current Line end" },
 	-- ["ao"] = { ":lua require('Comment.api').gco()<CR>", "Comment Line down" },
 	-- ["aO"] = { ":lua require('Comment.api').gcO()<CR>", "Comment Line up" },
@@ -50,7 +51,8 @@ wk.register({
 })
 
 wk.register({
-	["a"] = { "<ESC><CMD>lua require('Comment.api').gc(vim.fn.visualmode())<CR>", "Comment" },
+	["A"] = { "<ESC><CMD>lua require('Comment.api').gc(vim.fn.visualmode())<CR>", "Comment" },
+	["a"] = { ":CommentToggle<CR>", "Comment" },
 },  {
     mode = "v", -- NORMAL mode
     prefix = "<leader>",

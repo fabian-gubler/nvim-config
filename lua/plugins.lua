@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
 	use 'fhill2/telescope-ultisnips.nvim'
 	use 'SirVer/ultisnips'
 
+
 -- Treesitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -116,7 +117,16 @@ use {
 -- Commenting
 	use {
 		'numToStr/Comment.nvim',
-		config = function() require('core.comment') end,
+		config = function()
+			require('Comment').setup()
+	end
+}
+
+	use {
+		'terrortylor/nvim-comment',
+		config = function()
+			require('nvim_comment').setup()
+	end
 }
 
 -- Autopairs
