@@ -85,6 +85,11 @@ var_names = getname(file_name);
 data_input = loadd(file_name);					// load dat data
 endsnippet
 
+snippet scatter_plot "General"
+plotOpenWindow; 
+call plotscatter(data_input, "Grade ~ HStudied");
+endsnippet
+
 # --- Descriptive
 snippet overview_all "Descriptive"
 "------------------------------------------------------------------------------------------";
