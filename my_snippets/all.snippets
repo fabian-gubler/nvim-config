@@ -1,4 +1,34 @@
 # --- Regression
+
+snippet iv_built-in "Regression"
+"------------------------------------------------------------------------------------------";
+"Instrumental Variables: Built in";
+"------------------------------------------------------------------------------------------";
+
+struct gmmOut gmm_result;
+data_iv = file_name;
+gmm_result = gmmFitIV(data_iv, "Dependent ~ var + var");
+endsnippet
+
+snippet iv_custom "Regression"
+// iv: error term is correlated or simultaneity
+proc (1) = iv_custom(y, x, z);
+	local b;
+	
+	x = ones(rows(x),1) ~ x; 			// add constant
+	z = ones(rows(x),1) ~ z; 			// add constant
+	b = inv(z'x) * z'y;					// simple estimation formula, not symmetric
+	
+	retp(b);
+endp;
+
+// iv point estimation
+delta = -0.5;							// change
+mu = 3;
+x4 			= x[.,3] * delta + mu; 
+b_IV  = my_iv_xy(y,x,x[.,1 2]~x4,1);	// x3 is correletad and thus substituted by x4
+endsnippet
+
 snippet ols_custom "Regression"
 "------------------------------------------------------------------------------------------";
 "OLS Regression: Custom";
@@ -31,6 +61,7 @@ endp;
 // concatenate our dependent variables
 x = x_1 ~ x_2;
 
+// error term is uncorrelated -> ols
 proc (1) = ols_custom(y, x);
 	local b;
 	
