@@ -1,5 +1,40 @@
 # --- Regression
 
+snippet ols_standard-error "Regression"
+@ Standard Error OLS @
+proc (1) = get_sterr_ols(b_est);
+	local b_se, xx, sigma2_est, b_cv;
+
+	xx = ones(n, 1)~x;						// add constant
+	sigma2_est = sumc((y - xx * b_est .^2) / (n - cols(xx)));	// sum of square residuals / (number of observations - cols)
+	b_cv = sigma2_est * invpd(xx'xx);		// covariance matrix
+	b_se = sqrt(diag(b_cv));				// sqrt of diagonal vector
+	retp(b_se);
+endp;
+endsnippet
+
+snippet iv_standard-error "Regression"
+@ Standard Error IV @
+proc (1) = get_sterr_iv(b_iv);
+	local b_se, xx, zz, sigma2_est, b_cv, x_hat;
+
+	xx = ones(n, 1)~x;						// add constant
+	zz = ones(n, 1)~z;						// add constant
+	sigma2_est = sumc((y - xx * b_est .^2) / (n - cols(xx)));	// sum of square residuals / (number of observations - cols)
+	x_hat = zz * invpd(zz'zz)*zz'xx;
+	b_cv = sigma2_est * invpd(x_hat'x_hat);	// covariance matrix
+
+	b_se = sqrt(diag(b_cv));				// sqrt of diagonal vector
+	retp(b_se);
+endp;
+
+{b_se} = get_sterr_ols(b_est);
+print b_se;
+{b_se} = get_sterr_ols(b_est);
+print b_se;
+endsnippet
+
+
 snippet iv_built-in "Regression"
 "------------------------------------------------------------------------------------------";
 "Instrumental Variables: Built in";
@@ -26,7 +61,7 @@ endp;
 delta = -0.5;							// change
 mu = 3;
 x4 			= x[.,3] * delta + mu; 
-b_IV  = my_iv_xy(y,x,x[.,1 2]~x4,1);	// x3 is correletad and thus substituted by x4
+b_IV  = iv_custom(y,x,x[.,1 2]~x4,1);	// x3 is correletad and thus substituted by x4
 endsnippet
 
 snippet ols_custom "Regression"
@@ -116,7 +151,11 @@ var_names = getname(file_name);
 data_input = loadd(file_name);					// load dat data
 endsnippet
 
-snippet scatter_plot "General"
+snippet plot_hist "General"
+plotHist(var, 100)	// bins = 100
+
+endsnippet
+snippet plot_scatter "General"
 plotOpenWindow; 
 call plotscatter(data_input, "Grade ~ HStudied");
 endsnippet
