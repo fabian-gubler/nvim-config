@@ -70,9 +70,9 @@ snippet ols_custom "Regression"
 "OLS Regression: Custom";
 "------------------------------------------------------------------------------------------";
 
-var1 = { Grade };
-var2 = { IQ };
-var3 = { HStudied };
+var1 = { name1 };
+var2 = { name2 };
+var3 = { name3 };
 
 // add for loop for multiple variables
 proc(3) = extract_data(var1, var2, var3);
@@ -116,15 +116,15 @@ snippet ols_built-in "Regression"
 "------------------------------------------------------------------------------------------";
 
 @ OLS Built in (using Formula) @
-call ols(file_name, "Grade ~ .");
+call ols(file_name, "dependent ~ .");
 
 @ OLS Built in (using Variables) @
-depvar = { Grade };
-indvars = { IQ, HStudied, QualityHS };
+depvar = { name };
+indvars = { name1, name2, name3 };
 call ols(file_name, depvar, indvars);
 
 @ Save Returned Values @
-{ vnam, m, b, stb, vc, stderr, sigma, cx, rsq, resid, dwstat }  = ols(file_name, "Grade ~ .");
+{ vnam, m, b, stb, vc, stderr, sigma, cx, rsq, resid, dwstat }  = ols(file_name, "dep ~ .");
 endsnippet
 
 # --- General
@@ -163,7 +163,7 @@ plotHist(var, 100)	// bins = 100
 endsnippet
 snippet plot_scatter "General"
 plotOpenWindow; 
-call plotscatter(data_input, "Grade ~ HStudied");
+call plotscatter(data_input, "var1 ~ var2");
 endsnippet
 
 # --- Descriptive
