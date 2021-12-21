@@ -1,5 +1,6 @@
 # --- Regression
 
+
 snippet ols_standard-error "Regression"
 @ Standard Error OLS @
 proc (1) = get_sterr_ols(b_est);
@@ -141,6 +142,11 @@ chdir ^working_dir;								// change to working dir
 @ Handle output @
 outputfile = working_dir $+ "results.out";		// file to save output
 output file =^outputfile reset;					// overwrite old output
+endsnippet
+
+snippet filter_logic "Regression"
+data_filtered = selif(data_input, data_input[., 1] .== 0);
+rows(data_filtered);
 endsnippet
 
 snippet load_data "General"
