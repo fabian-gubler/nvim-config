@@ -8,7 +8,6 @@ wk.register({
 	["d"] = { ':cd $HOME/.dotfiles | Telescope find_files<CR>', 'Dotfiles'},
 	["n"] = { ':cd $HOME/.config/nvim | Telescope find_files<CR>', 'Neovim Config'},
 	["l"] = { ':LspInfo<CR>', 'Lsp Info' },
-	["u"] = { ':Telescope ultisnips<CR>', 'Load custom snippets'},
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 
 -- Comments

@@ -34,5 +34,3 @@ vim.api.nvim_exec(
   false
 )
 
-require('telescope').load_extension('ultisnips')
-cmd 'let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]'

@@ -46,4 +46,3 @@ cmd 'au BufEnter,BufNew *.gss set syntax=cpp'
 
 -- Set barbar's options
 require'core.bar'
-

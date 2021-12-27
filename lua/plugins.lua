@@ -11,8 +11,8 @@ return require('packer').startup(function(use)
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'mattn/emmet-vim'
 
-	use 'fhill2/telescope-ultisnips.nvim'
-	use 'SirVer/ultisnips'
+	-- use 'fhill2/telescope-ultisnips.nvim'
+	-- use 'SirVer/ultisnips'
 
 
 -- Treesitter
