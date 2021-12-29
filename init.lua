@@ -1,4 +1,3 @@
-local vim = vim
 local fn = vim.fn
 local cmd = vim.cmd
 
@@ -12,6 +11,7 @@ require('plugins')			-- Plugins
 require('options')			-- Options
 require('mappings')			-- Mappings
 require('colemak')			-- Keyboard Layout
+require('lsp')					-- Language Server Protocol
 
 -- Set Colorsceme
 vim.cmd [[
@@ -22,6 +22,7 @@ catch /^Vim\%((\a\+)\)\=:E185/
   set background=dark
 endtry
 ]]
+vim.o.termguicolors = true
 
 -- Highlight on yank
 vim.api.nvim_exec(

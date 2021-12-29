@@ -1,4 +1,3 @@
-local vim = vim
 local fn = vim.fn
 
 -- Automatically install packer
@@ -43,6 +42,7 @@ return packer.startup(function(use)
 	use 'mattn/emmet-vim'
 	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'
+	use "jose-elias-alvarez/null-ls.nvim"
 
 -- Treesitter
 	use {
@@ -54,7 +54,6 @@ return packer.startup(function(use)
 -- LSP
 	use {
 		'neovim/nvim-lspconfig',
-		config = function() require('core.lsp') end,
 		requires = {'williamboman/nvim-lsp-installer'}
 	}
 
