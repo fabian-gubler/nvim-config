@@ -20,6 +20,15 @@ catch /^Vim\%((\a\+)\)\=:E185/
 endtry
 ]]
 
+-- Tab Colours
+vim.cmd "hi BufferTabpageFill guibg=#2E3440"
+
+vim.cmd "hi BufferCurrent guifg=#ECEFF4 guibg=#3b4252"
+vim.cmd "hi BufferCurrentSign guibg=#3b4252"
+
+vim.cmd "hi BufferInactive guifg=#7D869A guibg=#2e3440"
+vim.cmd "hi BufferInactiveSign guibg=#2e3440"
+
 -- Highlight on yank
 vim.api.nvim_exec(
   [[

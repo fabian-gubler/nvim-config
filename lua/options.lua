@@ -14,6 +14,7 @@ g.nord_borders = 'true'
 -- Options
 o.termguicolors = true
 o.relativenumber = true
+o.numberwidth = 1
 o.showmode = false
 o.cursorline = false
 o.swapfile = false
@@ -25,6 +26,7 @@ o.undofile = true
 o.undodir = home .. '/.local/share/nvim/undodir'
 o.clipboard = "unnamedplus"
 o.smartindent = true
+o.signcolumn = "yes:1"
 o.wrap = false
 o.timeoutlen = 100
 o.shiftwidth = indent
