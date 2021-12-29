@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
 		requires = {'williamboman/nvim-lsp-installer'}
 	}
 
+	lo
 -- Completion
 	use {
 		'hrsh7th/nvim-cmp',
