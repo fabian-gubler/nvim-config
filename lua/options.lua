@@ -1,4 +1,3 @@
-local vim = vim
 local o = vim.opt
 local g = vim.g
 local home = os.getenv( "HOME" )
@@ -13,6 +12,7 @@ g.EasyMotion_keys='arstdhneioqwfpluygmbjzxcvk1234567890,'
 g.nord_borders = 'true'
 
 -- Options
+o.termguicolors = true
 o.relativenumber = true
 o.showmode = false
 o.cursorline = false

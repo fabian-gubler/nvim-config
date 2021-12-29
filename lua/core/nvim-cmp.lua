@@ -1,4 +1,3 @@
-local vim = vim
 local cmp = require'cmp'
 
 vim.o.completeopt = "menu,menuone,noselect"

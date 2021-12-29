@@ -1,6 +1,3 @@
-local fn = vim.fn
-local cmd = vim.cmd
-
 -- Space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
@@ -22,7 +19,6 @@ catch /^Vim\%((\a\+)\)\=:E185/
   set background=dark
 endtry
 ]]
-vim.o.termguicolors = true
 
 -- Highlight on yank
 vim.api.nvim_exec(
