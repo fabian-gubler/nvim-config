@@ -8,7 +8,6 @@ wk.register({
 	["r"] = { ':Telescope projects<CR>', 'Projects'},
 	["d"] = { ':cd $HOME/.dotfiles | Telescope find_files<CR>', 'Dotfiles'},
 	["n"] = { ':cd $HOME/.config/nvim | Telescope find_files<CR>', 'Neovim Config'},
-	["l"] = { ':LspInfo<CR>', 'Lsp Info' },
 	["y"] = { 'ggVGY', 'Copy All' },
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 
@@ -40,6 +39,18 @@ wk.register({
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         g = { "<cmd>Telescope live_grep<cr>", "Grep" },
+  },
+
+-- Telescope
+	l = {
+		name = "LSP",
+			n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic"},
+			e = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic"},
+			d = { ':Telescope diagnostics<cr>', 'Telescope Diagnostics'},
+			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+			i = { ':LspInfo<CR>', 'LSP Info' },
+			I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+			f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
   },
 
 -- Options
