@@ -70,14 +70,13 @@ return packer.startup(function(use)
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-nvim-lua" },
-			{ "hrsh7th/cmp-vsnip" },
-			{ "kdheepak/cmp-latex-symbols" },
+			{ "saadparwaiz1/cmp_luasnip" }
 		},
 	})
 
 	-- Snippets
 	use({
-		"hrsh7th/vim-vsnip",
+		"L3MON4D3/LuaSnip",
 		requires = { "rafamadriz/friendly-snippets" },
 	})
 
