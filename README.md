@@ -1,5 +1,5 @@
 # Neovim Configuration
-![config preview](https://raw.githubusercontent.com/fabian-gubler/nvim-config/main/preview_alt.png)
+![config preview](https://raw.githubusercontent.com/fabian-gubler/nvim-config/main/preview_alt.jpg)
 
 # Installation 
 ```
