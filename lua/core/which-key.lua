@@ -22,6 +22,7 @@ wk.register({
 -- Packer
 	p = {
 		name = "Packer",
+		r = { "<cmd>so% | PackerSync<cr>", "Refresh"},
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
 		C = { "<cmd>PackerClean<cr>", "Clean" },
 		i = { "<cmd>PackerInstall<cr>", "Install" },

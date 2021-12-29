@@ -42,6 +42,7 @@ return packer.startup(function(use)
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'mattn/emmet-vim'
 	use 'nvim-lua/plenary.nvim'
+	use 'nvim-telescope/telescope.nvim'
 
 -- Treesitter
 	use {
@@ -107,11 +108,6 @@ use {
     require("project_nvim").setup {}
   end
 }
-
--- Telescope
-	use {
-		'nvim-telescope/telescope.nvim',
-	}
 
 -- Colorizer
 	use {
