@@ -13,12 +13,11 @@ if not snip_status_ok then
 	return
 end
 
+luasnip.filetype_extend("typescriptreact", { "javascript" })
 luasnip.filetype_extend("typescriptreact", { "html" })
-require("luasnip/loaders/from_vscode").lazy_load()
 
-function name()
-	-- code
-end
+require("luasnip.loaders.from_vscode").load({ include = { "lua", "javascript", "html", "css", "python" } })
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -26,7 +25,7 @@ cmp.setup({
 		end,
 	},
 	mapping = {
-		["<CR>"] = cmp.mapping.confirm({ select = false }),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if luasnip.expandable() then
 				luasnip.expand()
