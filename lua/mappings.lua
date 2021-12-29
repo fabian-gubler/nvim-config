@@ -4,7 +4,6 @@ local opt = { noremap = true, silent = true }
 
 -- General
 map('n', 'q', ':q<cr>', opt)
-map('n', '<leader>y', 'ggVGY', opt)
 
 -- Windows
 map('n', '<M-m>', '<C-w><C-h>', opt)
@@ -17,11 +16,11 @@ map('i', '<C-a>', '<Home>', opt)
 map('i', '<C-e>', '<End>', opt)
 map('i', '<C-k>', '<Esc>lDa', opt)
 
--- Plugins
+-- Easymotion
 map('', ',', '<Plug>(easymotion-s)', {})
 map('', '/', '<Plug>(easymotion-sn)', {})
 
--- Bar
+-- Tabs
 map('n', '<A-1>', ':BufferGoto 1<CR>', opt)
 map('n', '<A-2>', ':BufferGoto 2<CR>', opt)
 map('n', '<A-3>', ':BufferGoto 3<CR>', opt)
@@ -33,5 +32,3 @@ map('n', '<A-n>', ':BufferNext<CR>', opt)
 
 map('n', '<A-S-e>', ':BufferMovePrevious<CR>', opt)
 map('n', '<A-S-n>', ' :BufferMoveNext<CR>', opt)
-
-cmd "nnoremap <silent> <Leader>b :execute 'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>"

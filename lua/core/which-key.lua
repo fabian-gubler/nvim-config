@@ -3,19 +3,21 @@ local wk = require("which-key")
 wk.register({
 -- General
 	["c"] = { ":bd!<CR>", "Close Buffer" },
+	["b"] = { ":execute 'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>", "Toggle Bar"},
 	["e"] = { ":NvimTreeToggle<CR>", "File Explorer" },
 	["r"] = { ':Telescope projects<CR>', 'Projects'},
 	["d"] = { ':cd $HOME/.dotfiles | Telescope find_files<CR>', 'Dotfiles'},
 	["n"] = { ':cd $HOME/.config/nvim | Telescope find_files<CR>', 'Neovim Config'},
 	["l"] = { ':LspInfo<CR>', 'Lsp Info' },
+	["y"] = { 'ggVGY', 'Copy All' },
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 
 -- Comments
-	["a"] = { ":CommentToggle<CR>", "Comment Line"},
+	["a"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment Line"},
    -- ["aa"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
-	-- ["aT"] = { ":lua require('Comment.api').gcA()<CR>", "Comment Current Line end" },
-	-- ["ao"] = { ":lua require('Comment.api').gco()<CR>", "Comment Line down" },
-	-- ["aO"] = { ":lua require('Comment.api').gcO()<CR>", "Comment Line up" },
+	-- ["aT"] = { "<cmd>lua require('Comment.api').gcA()<CR>", "Comment Current Line end" },
+	-- ["ao"] = { "<cmd>lua require('Comment.api').gco()<CR>", "Comment Line down" },
+	-- ["aO"] = { "<cmd>lua require('Comment.api').gcO()<CR>", "Comment Line up" },
 
 -- Packer
 	p = {
@@ -49,14 +51,15 @@ wk.register({
     nowait = true, -- use `nowait` when creating keymaps
 })
 
+-- Visualmode
 wk.register({
-	["A"] = { "<ESC><CMD>lua require('Comment.api').gc(vim.fn.visualmode())<CR>", "Comment" },
-	["a"] = { ":CommentToggle<CR>", "Comment" },
+	["a"] = { "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
 },  {
     mode = "v", -- NORMAL mode
     prefix = "<leader>",
 })
 
+-- Whichkey Settings
 wk.setup {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `

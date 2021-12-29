@@ -11,10 +11,6 @@ return require('packer').startup(function(use)
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'mattn/emmet-vim'
 
-	-- use 'fhill2/telescope-ultisnips.nvim'
-	-- use 'SirVer/ultisnips'
-
-
 -- Treesitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -41,7 +37,7 @@ return require('packer').startup(function(use)
 -- Snippets
 	use {
 		'hrsh7th/vim-vsnip',
-		requires = {{'rafamadriz/friendly-snippets'}}
+		requires = {'rafamadriz/friendly-snippets'}
 	}
 
 -- Bar
@@ -74,10 +70,9 @@ return require('packer').startup(function(use)
 
 -- Project
 use {
-	"ahmedkhalf/project.nvim",
-	config = function()
-	require("project_nvim").setup {}
-	require('telescope').load_extension('projects')
+  "ahmedkhalf/project.nvim",
+  config = function()
+    require("project_nvim").setup {}
   end
 }
 
@@ -119,13 +114,6 @@ use {
 		'numToStr/Comment.nvim',
 		config = function()
 			require('Comment').setup()
-	end
-}
-
-	use {
-		'terrortylor/nvim-comment',
-		config = function()
-			require('nvim_comment').setup()
 	end
 }
 
