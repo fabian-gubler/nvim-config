@@ -2,26 +2,26 @@ local vim = vim
 local fn = vim.fn
 local cmd = vim.cmd
 
--- Bootstrap packer
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-end
-
 -- Space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Set colorscheme
-vim.o.termguicolors = true
-vim.cmd [[colorscheme nord]]
-
 -- Configuration files
+require('plugins')			-- Plugins
 require('options')			-- Options
 require('mappings')			-- Mappings
 require('colemak')			-- Keyboard Layout
-require('plugins')			-- Plugins
+
+-- Set Colorsceme
+vim.cmd [[
+try
+  colorscheme nord
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme default
+  set background=dark
+endtry
+]]
 
 -- Highlight on yank
 vim.api.nvim_exec(
@@ -33,4 +33,3 @@ vim.api.nvim_exec(
 ]],
   false
 )
-
