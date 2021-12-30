@@ -41,7 +41,6 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("mattn/emmet-vim")
 	use("nvim-lua/plenary.nvim")
-	use("nvim-telescope/telescope.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- Treesitter
@@ -70,7 +69,7 @@ return packer.startup(function(use)
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-nvim-lua" },
-			{ "saadparwaiz1/cmp_luasnip" }
+			{ "saadparwaiz1/cmp_luasnip" },
 		},
 	})
 
@@ -78,6 +77,15 @@ return packer.startup(function(use)
 	use({
 		"L3MON4D3/LuaSnip",
 		requires = { "rafamadriz/friendly-snippets" },
+	})
+
+	-- Telescope
+	use({
+		"nvim-telescope/telescope.nvim",
+		requires = { { "nvim-lua/plenary.nvim" } },
+		require("telescope").setup({
+			defaults = { file_ignore_patterns = { "node_modules" } },
+		}),
 	})
 
 	-- Bar
