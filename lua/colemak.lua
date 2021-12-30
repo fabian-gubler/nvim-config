@@ -16,6 +16,22 @@ map('n', 'i', 'l', opt)    --    i       right        any
 map('n', 'n', 'j', opt)    --    j       down         any
 map('n', 'e', 'k', opt)    --    k       up           any
 
+map('x', 'm', 'h', opt)    --    m       left         any
+map('x', 'i', 'l', opt)    --    i       right        any
+map('x', 'n', 'j', opt)    --    j       down         any
+map('x', 'e', 'k', opt)    --    k       up           any
+
+map('o', 'm', 'h', opt)    --    m       left         any
+map('o', 'i', 'l', opt)    --    i       right        any
+map('o', 'n', 'j', opt)    --    j       down         any
+map('o', 'e', 'k', opt)    --    k       up           any
+
+map('n', 'a', 'v', opt)    --    a       visual       any
+map('n', 'A', 'V', opt)    --    A       visual       any
+
+map('x', 'a', 'v', opt)    --    a       visual       any
+map('x', 'A', 'V', opt)    --    A       visual       any
+
 map('', 'l', 'b', opt)    --    l       back         any
 map('', 'L', 'B', opt)    --    L       back         any
 map('', 'y', 'w', opt)    --    y       forward      any
@@ -23,9 +39,6 @@ map('', 'Y', 'W', opt)    --    Y       forward      any
 map('', 'u', 'e', opt)    --    u       end          any
 map('', 'U', 'E', opt)    --    U       end          any
 
-
-map('', 'a', 'v', opt)    --    a       visual       any
-map('', 'A', 'V', opt)    --    A       visual       any
 map('', 'p', 't', opt)    --    p       find         any
 map('', 'P', 'T', opt)    --    P       find         any
 
