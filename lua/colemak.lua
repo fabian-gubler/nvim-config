@@ -1,15 +1,29 @@
 -- Mappings originate from:
 -- https://github.com/jooize/vim-colemak
 
+function i()
+	-- code
+end
+
 local map = vim.api.nvim_set_keymap
 local opt = { noremap = true }
 local cmd = vim.cmd
 
 -- Navigation                 [Key]   [Action]     [Mode]
-map('', 'm', 'h', opt)    --    m       left         any
-map('', 'i', 'l', opt)    --    i       right        any
-map('', 'n', 'j', opt)    --    j       down         any
-map('', 'e', 'k', opt)    --    k       up           any
+map('n', 'm', 'h', opt)    --    m       left         any
+map('n', 'i', 'l', opt)    --    i       right        any
+map('n', 'n', 'j', opt)    --    j       down         any
+map('n', 'e', 'k', opt)    --    k       up           any
+
+map('x', 'm', 'h', opt)    --    m       left         any
+map('x', 'i', 'l', opt)    --    i       right        any
+map('x', 'n', 'j', opt)    --    j       down         any
+map('x', 'e', 'k', opt)    --    k       up           any
+
+map('o', 'm', 'h', opt)    --    m       left         any
+map('o', 'i', 'l', opt)    --    i       right        any
+map('o', 'n', 'j', opt)    --    j       down         any
+map('o', 'e', 'k', opt)    --    k       up           any
 
 map('', 'l', 'b', opt)    --    l       back         any
 map('', 'L', 'B', opt)    --    L       back         any
