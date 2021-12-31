@@ -1,15 +1,10 @@
 {
-  "name": "friendly-snippets",
-  "engines": {
-    "vscode": "^1.11.0"
-  },
+  "name": "custom-snippets",
   "contributes": {
     "snippets": [
       {
         "language": [
-		  "javascript",
 		  "javascriptreact",
-		  "typescript",
           "typescriptreact"
         ],
         "path": "./jsx.json"
