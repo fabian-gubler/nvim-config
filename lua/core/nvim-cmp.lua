@@ -19,6 +19,7 @@ luasnip.filetype_extend("javascript", { "html" })
 
 require("luasnip.loaders.from_vscode").load({ include = { "lua", "javascript", "html", "css", "python" } })
 
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -30,7 +31,19 @@ cmp.setup({
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if luasnip.expandable() then
 				luasnip.expand()
-			elseif luasnip.expand_or_jumpable() then
+			-- elseif luasnip.expand_or_jumpable() then
+			-- 	luasnip.expand_or_jump()
+			elseif check_backspace() then
+				fallback()
+			else
+				fallback()
+			end
+		end, {
+			"i",
+			"s",
+		}),
+		["<C-n>"] = cmp.mapping(function(fallback)
+			if luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
 			elseif check_backspace() then
 				fallback()
@@ -41,7 +54,7 @@ cmp.setup({
 			"i",
 			"s",
 		}),
-		["<S-Tab>"] = cmp.mapping(function(fallback)
+		["<C-p>"] = cmp.mapping(function(fallback)
 			if luasnip.jumpable(-1) then
 				luasnip.jump(-1)
 			else
