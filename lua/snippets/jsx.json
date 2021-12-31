@@ -1,0 +1,7 @@
+{
+  "cnm": {
+    "prefix": "cnm",
+    "body": "className\"$1\"",
+    "description": "JSX - Classname property"
+  }
+}

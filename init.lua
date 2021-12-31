@@ -4,7 +4,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Snippets dir
-vim.o.runtimepath = vim.o.runtimepath .. ',/home/fabian/.config/nvim/lua/friendly-snippets,'
+vim.o.runtimepath = vim.o.runtimepath .. ',/home/fabian/.config/nvim/lua/snippets,'
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
