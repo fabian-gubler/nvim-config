@@ -4,7 +4,19 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Snippets dir
-vim.o.runtimepath = vim.o.runtimepath..'~/.config/nvim/lua/friendly-snippets'
+vim.o.runtimepath = vim.o.runtimepath .. ',/home/fabian/.config/nvim/lua/friendly-snippets,'
+
+local snip_status_ok, luasnip = pcall(require, "luasnip")
+if not snip_status_ok then
+	return
+end
+
+luasnip.filetype_extend("typescriptreact", { "html" })
+luasnip.filetype_extend("typescriptreact", { "javascript" })
+luasnip.filetype_extend("typescriptreact", { "custom" })
+luasnip.filetype_extend("javascript", { "html" })
+
+require("luasnip.loaders.from_vscode").load({ include = { "lua", "javascript", "html", "css", "python" } })
 
 -- Configuration files
 require('plugins')			-- Plugins

@@ -13,13 +13,6 @@ if not snip_status_ok then
 	return
 end
 
-luasnip.filetype_extend("typescriptreact", { "javascript" })
-luasnip.filetype_extend("typescriptreact", { "html" })
-luasnip.filetype_extend("javascript", { "html" })
-
-require("luasnip.loaders.from_vscode").load({ include = { "lua", "javascript", "html", "css", "python" } })
-
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
