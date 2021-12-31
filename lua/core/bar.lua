@@ -3,7 +3,7 @@ vim.g.bufferline = {
 	animation = false,
 
 	-- Enable/disable auto-hiding the tab bar when there is a single buffer
-	auto_hide = false,
+	auto_hide = true,
 
 	-- Enable/disable current/total tabpages indicator (top right corner)
 	tabpages = true,

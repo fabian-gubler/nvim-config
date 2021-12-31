@@ -11,6 +11,12 @@ map('n', '<M-n>', '<C-w><C-j>', opt)
 map('n', '<M-e>', '<C-w><C-k>', opt)
 map('n', '<M-i>', '<C-w><C-l>', opt)
 
+-- Text operation
+map('n', '<S-n>', ':m+<CR>', opt)
+map('n', '<S-e>', ':m-2<CR>', opt)
+map('v', '<S-n>', ':m ">+1<CR>gv=gv', opt)
+map('v', '<S-e>', ':m ">-2<CR>gv=gv', opt)
+
 -- Emacs
 map('i', '<C-a>', '<Home>', opt)
 map('i', '<C-e>', '<End>', opt)
