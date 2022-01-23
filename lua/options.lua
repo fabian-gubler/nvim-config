@@ -46,6 +46,7 @@ cmd("autocmd FileType html setlocal ts=2 sts=2 sw=2")
 cmd("autocmd FileType javascript setlocal ts=2 sts=2 sw=2")
 cmd("autocmd FileType javascriptreact setlocal ts=2 sts=2 sw=2")
 cmd("autocmd FileType lua setlocal ts=3 sts=3 sw=3")
+cmd("autocmd FileType r setlocal ts=3 sts=3 sw=3")
 cmd("au BufEnter,BufNew *.gss set syntax=cpp")
 
 -- Set barbar's options
