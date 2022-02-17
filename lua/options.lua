@@ -10,6 +10,8 @@ g.auto_save = 1
 g.auto_save_silent = 1
 g.EasyMotion_keys = "arstdhneioqwfpluygmbjzxcvk1234567890,"
 g.nord_borders = "true"
+g.vimtex_view_method = "zathura"
+g.vimtex_mappings_enabled = "false"
 
 -- Options
 o.termguicolors = true
@@ -47,6 +49,7 @@ cmd("autocmd FileType javascript setlocal ts=2 sts=2 sw=2")
 cmd("autocmd FileType javascriptreact setlocal ts=2 sts=2 sw=2")
 cmd("autocmd FileType lua setlocal ts=3 sts=3 sw=3")
 cmd("autocmd FileType r setlocal ts=3 sts=3 sw=3")
+cmd("autocmd FileType tex setlocal wrap")
 cmd("au BufEnter,BufNew *.gss set syntax=cpp")
 
 -- Set barbar's options
@@ -54,5 +57,4 @@ require("core.bar")
 
 -- Vimtex
 cmd[[
-let g:vimtex_view_method = 'zathura'
 ]]

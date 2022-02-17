@@ -30,6 +30,14 @@ wk.register({
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
 
+-- Vimtex
+	x = {
+		name = "Vimtex",
+		c = { "<cmd>VimtexCompile<cr>", "Compile"},
+		s = { "<cmd>VimtexStop<cr>", "Stop"},
+		t = { "<cmd>VimtexTocToggle<cr>", "Table of Contents"},
+  },
+
 -- Telescope
 	t = {
 		name = "Telescope",
