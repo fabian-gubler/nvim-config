@@ -43,6 +43,7 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("tpope/vim-surround")
+	use("lervag/vimtex")
 
 	-- Treesitter
 	use({
