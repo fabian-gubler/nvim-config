@@ -35,6 +35,7 @@ wk.register({
 		name = "Vimtex",
 		c = { "<cmd>VimtexCompile<cr>", "Compile"},
 		s = { "<cmd>VimtexStop<cr>", "Stop"},
+		C = { "<cmd>VimtexClean<cr>", "Clean"},
 		t = { "<cmd>VimtexTocToggle<cr>", "Table of Contents"},
   },
 
