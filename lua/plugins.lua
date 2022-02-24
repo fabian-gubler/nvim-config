@@ -86,7 +86,7 @@ return packer.startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
 		require("telescope").setup({
-			defaults = { file_ignore_patterns = { "node_modules" } },
+			defaults = { file_ignore_patterns = { "node_modules", "venv" } },
 		}),
 	})
 
