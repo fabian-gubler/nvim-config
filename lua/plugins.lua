@@ -39,10 +39,8 @@ return packer.startup(function(use)
 	use("907th/vim-auto-save")
 	use("easymotion/vim-easymotion")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("mattn/emmet-vim")
 	use("nvim-lua/plenary.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
-	use("tpope/vim-surround")
 	use("lervag/vimtex")
 
 	-- Treesitter
@@ -91,15 +89,15 @@ return packer.startup(function(use)
 	})
 
 	-- Git
-	-- use({
-	-- 	"lewis6991/gitsigns.nvim",
-	-- 	requires = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 	},
-	-- 	config = function ()
-	-- 		require('gitsigns').setup()
-	-- 	end
-	-- })
+	use({
+		"lewis6991/gitsigns.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = function ()
+			require('gitsigns').setup()
+		end
+	})
 
 	-- Bar
 	use({
@@ -113,14 +111,6 @@ return packer.startup(function(use)
 		event = "BufWinEnter",
 		config = function()
 			require("core.which-key")
-		end,
-	})
-
-	-- Firenvim
-	use({
-		"glacambre/firenvim",
-		run = function()
-			vim.fn["firenvim#install"](0)
 		end,
 	})
 
