@@ -5,10 +5,11 @@ wk.register({
 	["c"] = { ":bd!<CR>", "Close Buffer" },
 	["b"] = { ":execute 'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>", "Toggle Bar"},
 	["e"] = { ":NvimTreeToggle<CR>", "File Explorer" },
-	["r"] = { ':Telescope projects<CR>', 'Projects'},
+	-- ["r"] = { ':Telescope projects<CR>', 'Projects'},
 	["d"] = { ':cd $HOME/.dotfiles | Telescope find_files<CR>', 'Dotfiles'},
 	["n"] = { ':cd $HOME/.config/nvim | Telescope find_files<CR>', 'Neovim Config'},
 	["y"] = { 'ggVGY', 'Copy All' },
+	["r"] = { ':call VimuxRunCommand("clear; python3 " . bufname("%"))<CR>', 'Run python'},
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 
 -- Comments
