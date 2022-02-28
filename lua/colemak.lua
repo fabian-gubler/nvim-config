@@ -39,22 +39,26 @@ map('n', 'y', 'w', opt)    --    y       forward      any
 map('o', 'y', 'w', opt)    --    y       forward      any
 map('x', 'y', 'w', opt)    --    y       forward      any
 
-map('n', 'Y', 'W', opt)    --    L       back         any
-map('o', 'Y', 'W', opt)    --    L       back         any
-map('x', 'Y', 'W', opt)    --    L       back         any
+map('n', 'Y', 'W', opt)    --    Y       forward      any
+map('o', 'Y', 'W', opt)    --    Y       forward      any
+map('x', 'Y', 'W', opt)    --    Y       forward      any
 
-map('', 'y', 'w', opt)    --    y       forward      any
-map('', 'Y', 'W', opt)    --    Y       forward      any
-map('', 'u', 'e', opt)    --    u       end          any
-map('', 'U', 'E', opt)    --    U       end          any
+map('n', 'u', 'e', opt)    --    u       end          any
+map('o', 'u', 'e', opt)    --    u       end          any
+map('x', 'u', 'e', opt)    --    u       end          any
 
-map('n', 'p', 't', opt)
-map('o', 'p', 't', opt)
-map('x', 'p', 't', opt)
+map('n', 'U', 'E', opt)    --    U       end          any
+map('o', 'U', 'E', opt)    --    U       end          any
+map('x', 'U', 'E', opt)    --    U       end          any
 
-map('n', 'P', 'T', opt)
-map('o', 'P', 'T', opt)
-map('x', 'P', 'T', opt)
+map('n', 'p', 't', opt)    --    p       find         any
+map('o', 'p', 't', opt)    --    p       find         any
+map('x', 'p', 't', opt)    --    p       find         any
+
+map('n', 'P', 'T', opt)    --    P       find         any
+map('o', 'P', 'T', opt)    --    P       find         any
+map('x', 'P', 'T', opt)    --    P       find         any
+
 
 -- Operation
 map('n', 's', 'i', opt)   --    s       insert       normal
@@ -69,13 +73,13 @@ map('', 'c', 'y', opt)    --    c       copy         any
 map('n', 'C', 'yy', opt)  --    C       copy         normal
 map('x', 'C', 'y', opt)   --    C       copy         visual
 
-map('n', 'v', 'p', opt)
-map('o', 'v', 'p', opt)
-map('x', 'v', 'p', opt)
+map('n', 'v', 'p', opt)    --    v       paste        any
+map('o', 'v', 'p', opt)    --    v       paste        any
+map('x', 'v', 'p', opt)    --    v       paste        any
 
-map('n', 'V', 'P', opt)
-map('x', 'V', 'P', opt)
-map('o', 'V', 'P', opt)
+map('n', 'V', 'P', opt)    --    V       paste        any
+map('x', 'V', 'P', opt)    --    V       paste        any
+map('o', 'V', 'P', opt)    --    V       paste        any
 
 -- MISC
 map('v', 'b', 'u', opt)   --    b       case         visual & select
