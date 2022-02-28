@@ -37,7 +37,6 @@ o.softtabstop = indent
 o.expandtab = false
 
 -- Autocommands
--- cmd("au VimEnter * :set showtabline=0")
 cmd("au BufNew,BufRead * setl fo-=orc")
 cmd("au CmdlineEnter /,? :set hlsearch")
 cmd("au CmdlineLeave /,? :set nohlsearch")
@@ -50,11 +49,3 @@ cmd("autocmd FileType javascriptreact setlocal ts=2 sts=2 sw=2")
 cmd("autocmd FileType lua setlocal ts=3 sts=3 sw=3")
 cmd("autocmd FileType r setlocal ts=3 sts=3 sw=3")
 cmd("autocmd FileType tex setlocal wrap")
-cmd("au BufEnter,BufNew *.gss set syntax=cpp")
-
--- Set barbar's options
-require("core.bar")
-
--- Vimtex
-cmd[[
-]]

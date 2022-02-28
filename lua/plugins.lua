@@ -92,9 +92,6 @@ return packer.startup(function(use)
 	-- Git
 	use({
 		"lewis6991/gitsigns.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-		},
 		config = function ()
 			require('gitsigns').setup()
 		end
@@ -104,6 +101,7 @@ return packer.startup(function(use)
 	use({
 		"romgrk/barbar.nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
+		require("core.bar")
 	})
 
 	-- Whichkey
@@ -121,14 +119,6 @@ return packer.startup(function(use)
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("nvim-tree").setup({})
-		end,
-	})
-
-	-- Project
-	use({
-		"ahmedkhalf/project.nvim",
-		config = function()
-			require("project_nvim").setup({})
 		end,
 	})
 

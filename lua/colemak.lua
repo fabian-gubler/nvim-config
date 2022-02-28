@@ -6,11 +6,6 @@ local opt = { noremap = true }
 local cmd = vim.cmd
 
 -- Navigation                 [Key]   [Action]     [Mode]
--- map('', 'm', 'h', opt)    --    m       left         any
--- map('', 'i', 'l', opt)    --    i       right        any
--- map('', 'n', 'j', opt)    --    j       down         any
--- map('', 'e', 'k', opt)    --    k       up           any
-
 map('n', 'm', 'h', opt)    --    m       left         any
 map('n', 'i', 'l', opt)    --    i       right        any
 map('n', 'n', 'j', opt)    --    j       down         any
@@ -32,15 +27,34 @@ map('n', 'A', 'V', opt)    --    A       visual       any
 map('x', 'a', 'v', opt)    --    a       visual       any
 map('x', 'A', 'V', opt)    --    A       visual       any
 
-map('', 'l', 'b', opt)    --    l       back         any
-map('', 'L', 'B', opt)    --    L       back         any
+map('n', 'l', 'b', opt)    --    l       back         any
+map('o', 'l', 'b', opt)    --    l       back         any
+map('x', 'l', 'b', opt)    --    l       back         any
+
+map('n', 'L', 'B', opt)    --    L       back         any
+map('o', 'L', 'B', opt)    --    L       back         any
+map('x', 'L', 'B', opt)    --    L       back         any
+
+map('n', 'y', 'w', opt)    --    y       forward      any
+map('o', 'y', 'w', opt)    --    y       forward      any
+map('x', 'y', 'w', opt)    --    y       forward      any
+
+map('n', 'Y', 'W', opt)    --    L       back         any
+map('o', 'Y', 'W', opt)    --    L       back         any
+map('x', 'Y', 'W', opt)    --    L       back         any
+
 map('', 'y', 'w', opt)    --    y       forward      any
 map('', 'Y', 'W', opt)    --    Y       forward      any
 map('', 'u', 'e', opt)    --    u       end          any
 map('', 'U', 'E', opt)    --    U       end          any
 
-map('', 'p', 't', opt)    --    p       find         any
-map('', 'P', 'T', opt)    --    P       find         any
+map('n', 'p', 't', opt)
+map('o', 'p', 't', opt)
+map('x', 'p', 't', opt)
+
+map('n', 'P', 'T', opt)
+map('o', 'P', 'T', opt)
+map('x', 'P', 'T', opt)
 
 -- Operation
 map('n', 's', 'i', opt)   --    s       insert       normal
@@ -54,9 +68,14 @@ map('x', 'x', 'd', opt)   --    x       cut          visual
 map('', 'c', 'y', opt)    --    c       copy         any
 map('n', 'C', 'yy', opt)  --    C       copy         normal
 map('x', 'C', 'y', opt)   --    C       copy         visual
-map('', 'v', 'p', opt)    --    v       paste        any
-map('', 'V', 'P', opt)    --    v       paste        any
 
+map('n', 'v', 'p', opt)
+map('o', 'v', 'p', opt)
+map('x', 'v', 'p', opt)
+
+map('n', 'V', 'P', opt)
+map('x', 'V', 'P', opt)
+map('o', 'V', 'P', opt)
 
 -- MISC
 map('v', 'b', 'u', opt)   --    b       case         visual & select
