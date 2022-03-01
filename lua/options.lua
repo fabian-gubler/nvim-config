@@ -50,5 +50,6 @@ cmd("au FileType lua setlocal ts=3 sts=3 sw=3")
 cmd("au FileType r setlocal ts=3 sts=3 sw=3")
 
 cmd("au FileType tex setlocal wrap")
+cmd("au FileType tex let b:auto_save = 0")
 cmd("au FileType markdown setlocal wrap")
 cmd("au FileType markdown lua require('cmp').setup.buffer { enabled = false }")
