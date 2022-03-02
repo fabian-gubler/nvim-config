@@ -66,6 +66,7 @@ return packer.startup(function(use)
 			require("core.nvim-cmp")
 		end,
 		requires = {
+			{ "kdheepak/cmp-latex-symbols"},
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-nvim-lsp" },
