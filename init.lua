@@ -21,15 +21,15 @@ require('colemak')			-- Keyboard Layout
 require('lsp')					-- Language Server Protocol
 
 -- Snippets dir
--- vim.o.runtimepath = vim.o.runtimepath .. ',/home/fabian/.config/nvim/lua/snippets,'
+vim.o.runtimepath = vim.o.runtimepath .. ',/home/fabian/.config/nvim/lua/snippets,'
 
 -- Luasnip
--- local snip_status_ok, luasnip = pcall(require, "luasnip")
--- if not snip_status_ok then
--- 	return
--- end
---
--- require("luasnip.loaders.from_vscode").load()					-- Load all VSCode snippets
+local snip_status_ok, luasnip = pcall(require, "luasnip")
+if not snip_status_ok then
+	return
+end
+
+require("luasnip.loaders.from_vscode").load()					-- Load all VSCode snippets
 
 -- Tab Colours
 vim.cmd "hi BufferTabpageFill guibg=#2E3440"
