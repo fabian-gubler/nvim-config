@@ -3,7 +3,7 @@ local fn = vim.fn
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
+	packer_bootstrap = fn.system({
 		"git",
 		"clone",
 		"--depth",
@@ -11,8 +11,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 		"https://github.com/wbthomason/packer.nvim",
 		install_path,
 	})
-	print("Installing packer ...")
-	vim.cmd([[packadd packer.nvim]])
 end
 
 -- Use a protected call so we don't error out on first use
@@ -34,6 +32,14 @@ return packer.startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	-- Commenting
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+
 	-- Simple Setup
 	use("shaunsingh/nord.nvim")
 	use("907th/vim-auto-save")
@@ -52,7 +58,7 @@ return packer.startup(function(use)
 			require("core.treesitter")
 		end,
 	})
-
+	--
 	-- LSP
 	use({
 		"neovim/nvim-lspconfig",
@@ -66,7 +72,7 @@ return packer.startup(function(use)
 			require("core.nvim-cmp")
 		end,
 		requires = {
-			{ "kdheepak/cmp-latex-symbols"},
+			{ "kdheepak/cmp-latex-symbols" },
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-nvim-lsp" },
@@ -84,25 +90,30 @@ return packer.startup(function(use)
 	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
+		config = function()
+			require("telescope").setup({
+				defaults = {
+					file_ignore_patterns = { "node_modules", "venv" },
+				},
+			})
+		end,
 		requires = { { "nvim-lua/plenary.nvim" } },
-		require("telescope").setup({
-			defaults = { file_ignore_patterns = { "node_modules", "venv" } },
-		}),
 	})
-
 	-- Git
 	use({
 		"lewis6991/gitsigns.nvim",
-		config = function ()
-			require('gitsigns').setup()
-		end
+		config = function()
+			require("gitsigns").setup()
+		end,
 	})
 
 	-- Bar
 	use({
 		"romgrk/barbar.nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
-		require("core.bar")
+		config = function()
+			require("core.bar")
+		end,
 	})
 
 	-- Whichkey
@@ -119,7 +130,9 @@ return packer.startup(function(use)
 		"kyazdani42/nvim-tree.lua",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-			require("nvim-tree").setup({})
+			require("nvim-tree").setup({
+				-- open_on_setup        = false,
+			})
 		end,
 	})
 
@@ -147,14 +160,6 @@ return packer.startup(function(use)
 			require("neoscroll").setup({
 				mappings = { "<C-u>", "<C-d>" },
 			})
-		end,
-	})
-
-	-- Commenting
-	use({
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
 		end,
 	})
 
@@ -189,7 +194,7 @@ return packer.startup(function(use)
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
-	if PACKER_BOOTSTRAP then
+	if packer_bootstrap then
 		require("packer").sync()
 	end
 end)

@@ -3,25 +3,6 @@ vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Snippets dir
-vim.o.runtimepath = vim.o.runtimepath .. ',/home/fabian/.config/nvim/lua/snippets,'
-
--- Luasnip
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-	return
-end
-
-luasnip.filetype_extend("javascriptreact", { "html" })		-- Html snippets for jsx
-require("luasnip.loaders.from_vscode").load()					-- Load all VSCode snippets
-
--- Configuration files
-require('plugins')			-- Plugins
-require('options')			-- Options
-require('mappings')			-- Mappings
-require('colemak')			-- Keyboard Layout
-require('lsp')					-- Language Server Protocol
-
 -- Set Colorsceme
 vim.cmd [[
 try
@@ -31,6 +12,24 @@ catch /^Vim\%((\a\+)\)\=:E185/
   set background=dark
 endtry
 ]]
+
+-- Configuration files
+require('plugins')			-- Plugins
+require('options')			-- Options
+require('mappings')			-- Mappings
+require('colemak')			-- Keyboard Layout
+require('lsp')					-- Language Server Protocol
+
+-- Snippets dir
+-- vim.o.runtimepath = vim.o.runtimepath .. ',/home/fabian/.config/nvim/lua/snippets,'
+
+-- Luasnip
+-- local snip_status_ok, luasnip = pcall(require, "luasnip")
+-- if not snip_status_ok then
+-- 	return
+-- end
+--
+-- require("luasnip.loaders.from_vscode").load()					-- Load all VSCode snippets
 
 -- Tab Colours
 vim.cmd "hi BufferTabpageFill guibg=#2E3440"

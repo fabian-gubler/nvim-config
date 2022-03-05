@@ -5,7 +5,7 @@ local cmd = vim.cmd
 local indent = 4
 
 -- Global
-g.nvim_tree_quit_on_open = 1
+-- g.nvim_tree_quit_on_open = 1
 g.auto_save = 1
 g.auto_save_silent = 1
 g.EasyMotion_keys = "arstdhneioqwfpluygmbjzxcvk1234567890,"

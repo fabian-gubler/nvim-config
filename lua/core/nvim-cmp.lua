@@ -76,6 +76,7 @@ cmp.setup({
 		{ name = "buffer", max_item_count = 5 },
 		{ name = "nvim_lua" },
 		{ name = "path" },
+		{ name = "latex_symbols" },
 	},
 	documentation = {
 		border = "rounded",
