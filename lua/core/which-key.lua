@@ -26,6 +26,11 @@ wk.register({
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
 
+	-- Packer
+	o = {
+		name = "Open",
+		t = { ":!typora % &<cr>", "Typora"}
+	},
 	-- Vimtex
 	x = {
 		name = "Vimtex",
