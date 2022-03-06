@@ -29,7 +29,7 @@ wk.register({
 	-- Packer
 	o = {
 		name = "Open",
-		t = { ":!typora % &<cr>", "Typora"}
+		t = { ":!typora % &<cr><cr>", "Typora"}
 	},
 	-- Vimtex
 	x = {
