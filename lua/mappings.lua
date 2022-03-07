@@ -2,6 +2,9 @@ local map = vim.keymap.set
 local cmd = vim.cmd
 local opt = { noremap = true, silent = true }
 
+-- Unmapping
+-- map("n", "k", "<Nop>")
+
 -- General
 map("n", "q", ":q<cr>", opt)
 

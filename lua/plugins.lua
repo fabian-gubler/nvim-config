@@ -58,7 +58,7 @@ return packer.startup(function(use)
 			require("core.treesitter")
 		end,
 	})
-	--
+
 	-- LSP
 	use({
 		"neovim/nvim-lspconfig",
