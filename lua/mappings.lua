@@ -7,6 +7,7 @@ local opt = { noremap = true, silent = true }
 
 -- General
 map("n", "q", ":q<cr>", opt)
+map("i", "<C-H>", "<C-W>", opt)
 
 -- Windows
 map("n", "<M-m>", "<C-w><C-h>", opt)
@@ -21,11 +22,6 @@ cmd("vnoremap <S-n> :m '>+1<CR>gv=gv")
 cmd("vnoremap <S-e> :m '<-2<CR>gv=gv")
 cmd("vnoremap > >gv")
 cmd("vnoremap < <gv")
-
--- Emacs
-map("i", "<C-a>", "<Home>", opt)
-map("i", "<C-e>", "<End>", opt)
-map("i", "<C-k>", "<Esc>lDa", opt)
 
 -- Easymotion
 map("", "/", "<Plug>(easymotion-sn)", {})
