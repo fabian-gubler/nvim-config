@@ -1,7 +1,7 @@
 -- Mappings originate from:
 -- https://github.com/jooize/vim-colemak
 
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opt = { noremap = true }
 local cmd = vim.cmd
 

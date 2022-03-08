@@ -1,27 +1,23 @@
 local map = vim.keymap.set
-local cmd = vim.cmd
 local opt = { noremap = true, silent = true }
-
--- Unmapping
--- map("n", "k", "<Nop>")
 
 -- General
 map("n", "q", ":q<cr>", opt)
 map("i", "<C-H>", "<C-W>", opt)
 
 -- Windows
-map("n", "<M-m>", "<C-w><C-h>", opt)
-map("n", "<M-n>", "<C-w><C-j>", opt)
-map("n", "<M-e>", "<C-w><C-k>", opt)
-map("n", "<M-i>", "<C-w><C-l>", opt)
+map("n", "<S-m>", "<C-w><C-h>", opt)
+map("n", "<S-n>", "<C-w><C-j>", opt)
+map("n", "<S-e>", "<C-w><C-k>", opt)
+map("n", "<S-i>", "<C-w><C-l>", opt)
+map("n", "_", "<C-w>_", opt)
+map("n", "=", "<C-w>=", opt)
 
 -- Shifting
-map("n", "<S-n>", ":m+<CR>", opt)
-map("n", "<S-e>", ":m-2<CR>", opt)
-cmd("vnoremap <S-n> :m '>+1<CR>gv=gv")
-cmd("vnoremap <S-e> :m '<-2<CR>gv=gv")
-cmd("vnoremap > >gv")
-cmd("vnoremap < <gv")
+map("v", "<S-e>", ":m '<-2<CR>gv=gv")
+map("v", "<S-n>", ":m '>+1<CR>gv=gv")
+map("v", ">", ">gv")
+map("v", "<", "<gv")
 
 -- Easymotion
 map("", "/", "<Plug>(easymotion-sn)", {})
