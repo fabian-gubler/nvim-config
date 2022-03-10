@@ -49,7 +49,7 @@ wk.register({
 		d = { ":Telescope diagnostics<cr>", "Telescope Diagnostics" },
 		-- b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		-- c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		-- h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		-- k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 	},
 

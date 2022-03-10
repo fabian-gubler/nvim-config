@@ -93,6 +93,10 @@ return packer.startup(function(use)
 		config = function()
 			require("telescope").setup({
 				defaults = {
+					layout_strategy = "vertical",
+					-- layout_config = {
+					-- 	vertical = { width = 0.5 },
+					-- },
 					file_ignore_patterns = { "node_modules", "venv" },
 				},
 			})
