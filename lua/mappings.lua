@@ -2,7 +2,7 @@ local map = vim.keymap.set
 local opt = { noremap = true, silent = true }
 
 -- General
-map("n", "q", ":q<cr>", opt)
+-- map("n", "q", ":q<cr>", opt)
 map("i", "<C-H>", "<C-W>", opt)
 
 -- Windows
