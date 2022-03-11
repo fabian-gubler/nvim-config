@@ -1,9 +1,8 @@
 local map = vim.keymap.set
 local opt = { noremap = true, silent = true }
 
--- General
--- map("n", "q", ":q<cr>", opt)
-map("i", "<C-H>", "<C-W>", opt)
+-- CTRL Backspace to Delete Word
+map("i", "<C-H>", "<C-W>", opt) 
 
 -- Windows
 map("n", "<S-m>", "<C-w><C-h>", opt)
