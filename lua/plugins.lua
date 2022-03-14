@@ -47,7 +47,6 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
-	use("lervag/vimtex")
 	use("preservim/vimux")
 
 	-- Treesitter

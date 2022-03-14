@@ -3,14 +3,13 @@ local g = vim.g
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_autogroup
 local indent = 4
+local cmd = vim.cmd
 
 -- Global
 g.auto_save = 1
 g.auto_save_silent = 1
 g.EasyMotion_keys = "arstdhneioqwfpluygmbjzxcvk1234567890,"
 g.nord_borders = "true"
-g.vimtex_view_method = "zathura"
-g.vimtex_mappings_enabled = "false"
 
 -- Options
 o.termguicolors = true
@@ -50,3 +49,4 @@ autocmd("FileType", {
 autocmd("FileType", { pattern = "markdown", command = "lua require('cmp').setup.buffer { enabled = false }" })
 autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap" })
 autocmd("FileType", { pattern = "tex", command = "let b:auto_save=0" })
+
