@@ -27,6 +27,7 @@ o.undodir = os.getenv("HOME") .. "/.local/share/nvim/undodir"
 o.clipboard = "unnamedplus"
 o.smartindent = true
 o.signcolumn = "yes:1"
+o.colorcolumn = "100"
 o.wrap = false
 o.timeoutlen = 100
 o.shiftwidth = indent
@@ -47,6 +48,7 @@ autocmd("FileType", {
 
 -- Writing Text
 autocmd("FileType", { pattern = "markdown", command = "lua require('cmp').setup.buffer { enabled = false }" })
+autocmd("FileType", { pattern = "markdown", command = "set cc=" })
 autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap" })
-autocmd("FileType", { pattern = "tex", command = "let b:auto_save=0" })
+-- autocmd("FileType", { pattern = "tex", command = "let b:auto_save=0" })
 
