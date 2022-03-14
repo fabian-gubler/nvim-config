@@ -112,13 +112,13 @@ return packer.startup(function(use)
 	})
 
 	-- Bar
-	use({
-		"romgrk/barbar.nvim",
-		requires = { "kyazdani42/nvim-web-devicons" },
-		config = function()
-			require("core.bar")
-		end,
-	})
+	-- use({
+	-- 	"romgrk/barbar.nvim",
+	-- 	requires = { "kyazdani42/nvim-web-devicons" },
+	-- 	config = function()
+	-- 		require("core.bar")
+	-- 	end,
+	-- })
 
 	-- Whichkey
 	use({

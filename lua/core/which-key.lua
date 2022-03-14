@@ -3,7 +3,7 @@ local wk = require("which-key")
 wk.register({
 	-- General
 	["c"] = { ":bd!<CR>", "Close Buffer" },
-	["b"] = { ":execute 'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>", "Toggle Bar" },
+	["b"] = { ":execute 'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)", "Toggle Bar" },
 	["e"] = { ":NvimTreeToggle<cr>", "File Explorer" },
 	["d"] = { ":cd $HOME/.dotfiles | Telescope find_files<CR>", "Dotfiles" },
 	["n"] = { ":cd $HOME/.config/nvim | Telescope find_files<CR>", "Neovim Config" },
