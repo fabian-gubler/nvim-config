@@ -16,6 +16,7 @@ o.termguicolors = true
 o.relativenumber = true
 o.numberwidth = 1
 o.showmode = false
+o.laststatus = 3
 o.cursorline = false
 o.swapfile = false
 o.splitbelow = true
