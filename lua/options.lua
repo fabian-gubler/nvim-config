@@ -36,6 +36,9 @@ o.tabstop = indent
 o.softtabstop = indent
 o.expandtab = false
 
+-- Autocmds
+autocmd("BufEnter", { command = "set laststatus=3" })
+
 -- Tab Size
 autocmd("FileType", {
 	pattern = { "typescript", "typescriptreact", "html", "javascript", "javascriptreact" },
@@ -49,7 +52,5 @@ autocmd("FileType", {
 
 -- Writing Text
 autocmd("FileType", { pattern = "markdown", command = "lua require('cmp').setup.buffer { enabled = false }" })
-autocmd("FileType", { pattern = "markdown", command = "set cc=" })
+autocmd("FileType", { pattern = { "markdown", "tex" }, command = "set cc=" })
 autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap" })
--- autocmd("FileType", { pattern = "tex", command = "let b:auto_save=0" })
-
