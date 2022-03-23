@@ -30,7 +30,9 @@ map("n", "<A-4>", ":BufferGoto 4<CR>", opt)
 map("n", "<A-5>", ":BufferGoto 5<CR>", opt)
 
 map("n", "<A-e>", ":bp<CR>", opt)
+map("n", "<A-C-e>", ":tabprevious<CR>", opt)
 map("n", "<A-n>", ":bn<CR>", opt)
+map("n", "<A-C-n>", ":tabnext<CR>", opt)
 
 map("n", "<A-S-e>", ":BufferMovePrevious<CR>", opt)
 map("n", "<A-S-n>", " :BufferMoveNext<CR>", opt)
