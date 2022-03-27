@@ -49,8 +49,3 @@ autocmd("FileType", {
 	pattern = { "lua", "r" },
 	command = "setlocal ts=3 sts=3 sw=3",
 })
-
--- Writing Text
-autocmd("FileType", { pattern = "markdown", command = "lua require('cmp').setup.buffer { enabled = false }" })
-autocmd("FileType", { pattern = { "markdown", "tex" }, command = "set cc=" })
-autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap" })

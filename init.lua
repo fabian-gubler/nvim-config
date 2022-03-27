@@ -3,13 +3,6 @@ vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Configuration files
-require('plugins')			-- Plugins
-require('options')			-- Options
-require('mappings')			-- Mappings
-require('colemak')			-- Keyboard Layout
-require('lsp')					-- Language Server Protocol
-
 -- Set Colorsceme
 vim.cmd [[
 try
@@ -19,6 +12,13 @@ catch /^Vim\%((\a\+)\)\=:E185/
   set background=dark
 endtry
 ]]
+-- Configuration files
+require('plugins')			-- Plugins
+require('options')			-- Options
+require('mappings')			-- Mappings
+require('colemak')			-- Keyboard Layout
+require('lsp')					-- Language Server Protocol
+
 
 -- Snippets dir
 vim.o.runtimepath = vim.o.runtimepath .. ',/home/fabian/.config/nvim/lua/snippets,'
