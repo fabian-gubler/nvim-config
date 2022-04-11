@@ -11,6 +11,7 @@ wk.register({
 	["n"] = { ":cd $HOME/.config/nvim | Telescope find_files<CR>", "Neovim Config" },
 	["y"] = { "ggVGY", "Copy All" },
 	["r"] = { ':call VimuxRunCommand("clear; python3 " . bufname("%"))<CR>', "Run python" },
+	["z"] = { ':ZenMode<cr>', "Zen Mode"},
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 
 	-- Comments

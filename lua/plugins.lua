@@ -58,6 +58,42 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Zen Mode
+	use {
+		"folke/zen-mode.nvim",
+		config = function()
+			require("zen-mode").setup {
+				window = {
+					backdrop = 1,
+					width = 80,
+					height = 1,
+				options = {
+					number = false,
+					relativenumber = false,
+					cursorcolumn = false,
+					},
+				},
+				plugins = {
+					options = {
+						enabled = true,
+						ruler = false, -- disables the ruler text in the cmd line area
+						showcmd = true, -- disables the command in the last line of the screen
+					},
+					twilight = { enabled = false }, -- enable to start Twilight when zen mode opens
+					gitsigns = { enabled = true }, -- disables git signs
+					tmux = { enabled = true }, -- disables the tmux statusline
+					-- this will change the font size on kitty when in zen mode
+					-- to make this work, you need to set the following kitty options:
+					-- - allow_remote_control socket-only
+					-- - listen_on unix:/tmp/kitty
+					kitty = {
+						enabled = true,
+						font = "+2", -- font size increment
+					},
+				},
+			}
+	  end
+	}
 	-- LSP
 	use({
 		"neovim/nvim-lspconfig",

@@ -3,6 +3,7 @@ local opt = { noremap = true, silent = true }
 
 -- CTRL Backspace to Delete Word
 map("i", "<C-H>", "<C-W>", opt) 
+map("i", "<C-K>", "<C-O>D", opt) 
 
 -- Windows
 map("n", "<S-m>", "<C-w><C-h>", opt)
@@ -19,8 +20,8 @@ map("v", ">", ">gv")
 map("v", "<", "<gv")
 
 -- Easymotion
-map("", "/", "<Plug>(easymotion-sn)", {})
-map("", ",", "<Plug>(easymotion-s)", {})
+map("", "/", "<Plug>(easymotion-sn)", opt)
+map("", ",", "<Plug>(easymotion-s)", opt)
 
 -- Tabs
 map("n", "<A-1>", ":BufferGoto 1<CR>", opt)

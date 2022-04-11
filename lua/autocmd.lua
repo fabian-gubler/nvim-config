@@ -1,0 +1,39 @@
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_autogroup
+
+-- Appearance
+autocmd("BufEnter", { command = "set laststatus=3" })
+
+-- Tab Size
+autocmd("FileType", {
+	pattern = { "typescript", "typescriptreact", "html", "javascript", "javascriptreact" },
+	command = "setlocal ts=2 sts=2 sw=2",
+})
+
+autocmd("FileType", {
+	pattern = { "lua", "r" },
+	command = "setlocal ts=3 sts=3 sw=3",   
+})
+
+-- Writing Text
+autocmd("FileType", { pattern = {"markdown", "tex"}, command = "lua require('cmp').setup.buffer { enabled = false }" })
+autocmd("FileType", { pattern = { "markdown"}, command = "set cc=" })
+autocmd("FileType", { pattern = { "tex" }, command = "set cc=79" })
+autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap" })
+autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal linebreak" })
+
+-- No highlight
+autocmd("InsertLeave", { command = "setlocal nohlsearch"})
+
+-- Run current file
+vim.cmd [[
+	augroup run_file
+		autocmd BufEnter *.java let @g=":w\<CR>:vsp | terminal java %\<CR>i"
+		autocmd BufEnter *.py let @g=":w\<CR>:vsp |terminal python3 %\<CR>i" 
+		autocmd BufEnter *.cpp let @g=":w\<CR> :!g++ %\<CR> | :vsp |terminal ./a.out\<CR>i" 
+		autocmd BufEnter *.c let @g=":w\<CR> :!gcc %\<CR> | :vsp |terminal ./a.out\<CR>i" 
+		autocmd BufEnter *.go let @g=":w\<CR> :vsp | terminal go run % \<CR>i" 
+		autocmd BufEnter *.js let @g=":w\<CR> :vsp | terminal node % \<CR>i" 
+		autocmd BufEnter *.html let @g=":w\<CR> :silent !firefox % \<CR>"
+	augroup end
+]]
