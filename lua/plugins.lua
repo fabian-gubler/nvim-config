@@ -47,7 +47,6 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
-	use("preservim/vimux")
 
 	-- Treesitter
 	use({
@@ -81,14 +80,14 @@ return packer.startup(function(use)
 					},
 					twilight = { enabled = false }, -- enable to start Twilight when zen mode opens
 					gitsigns = { enabled = true }, -- disables git signs
-					tmux = { enabled = true }, -- disables the tmux statusline
+					tmux = { enabled = false }, -- disables the tmux statusline
 					-- this will change the font size on kitty when in zen mode
 					-- to make this work, you need to set the following kitty options:
 					-- - allow_remote_control socket-only
 					-- - listen_on unix:/tmp/kitty
 					kitty = {
-						enabled = true,
-						font = "+2", -- font size increment
+						enabled = false,
+						font = "+5", -- font size increment
 					},
 				},
 			}
@@ -138,6 +137,7 @@ return packer.startup(function(use)
 		end,
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+
 	-- Git
 	use({
 		"lewis6991/gitsigns.nvim",
@@ -217,6 +217,7 @@ return packer.startup(function(use)
 		config = function()
 			require("toggleterm").setup({
 				open_mapping = [[<c-t>]],
+				size = 20,
 				direction = "float",
 				close_on_exit = false,
 				float_opts = {
