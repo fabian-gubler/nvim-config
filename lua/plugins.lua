@@ -48,12 +48,32 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 
+	-- Java
+	use({
+		"mfussenegger/nvim-jdtls",
+	})
+
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = function()
 			require("core.treesitter")
+		end,
+	})
+
+	-- Debugging
+	use({
+		"mfussenegger/nvim-dap",
+		-- config = function()
+		-- 	require("nvim-dap").setup()
+		-- end,
+	})
+
+	use({
+		"rcarriga/nvim-dap-ui",
+		config = function()
+			require("dapui").setup()
 		end,
 	})
 
@@ -66,10 +86,10 @@ return packer.startup(function(use)
 					backdrop = 1,
 					width = 80,
 					height = 1,
-				options = {
-					number = false,
-					relativenumber = false,
-					cursorcolumn = false,
+					options = {
+						number = false,
+						relativenumber = false,
+						cursorcolumn = false,
 					},
 				},
 				plugins = {
@@ -91,7 +111,7 @@ return packer.startup(function(use)
 					},
 				},
 			}
-	  end
+		end
 	}
 	-- LSP
 	use({
@@ -171,6 +191,10 @@ return packer.startup(function(use)
 		config = function()
 			require("nvim-tree").setup({
 				-- open_on_setup        = false,
+				view = {
+					relativenumber = true,
+					width = 50
+				}
 			})
 		end,
 	})
@@ -207,28 +231,6 @@ return packer.startup(function(use)
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup()
-		end,
-	})
-
-	-- Terminal
-	use({
-		"akinsho/toggleterm.nvim",
-		event = "BufWinEnter",
-		config = function()
-			require("toggleterm").setup({
-				open_mapping = [[<c-t>]],
-				size = 20,
-				direction = "float",
-				close_on_exit = false,
-				float_opts = {
-					border = "curved",
-					winblend = 0,
-					highlights = {
-						border = "Normal",
-						background = "Normal",
-					},
-				},
-			})
 		end,
 	})
 

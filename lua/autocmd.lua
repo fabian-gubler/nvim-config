@@ -28,12 +28,12 @@ autocmd("InsertLeave", { command = "setlocal nohlsearch"})
 -- Run current file
 vim.cmd [[
 	augroup run_file
-		autocmd BufEnter *.java let @g=":w\<CR>:vsp | terminal java %\<CR>i"
-		autocmd BufEnter *.py let @g=":w\<CR>:vsp |terminal python3 %\<CR>i" 
-		autocmd BufEnter *.cpp let @g=":w\<CR> :!g++ %\<CR> | :vsp |terminal ./a.out\<CR>i" 
-		autocmd BufEnter *.c let @g=":w\<CR> :!gcc %\<CR> | :vsp |terminal ./a.out\<CR>i" 
-		autocmd BufEnter *.go let @g=":w\<CR> :vsp | terminal go run % \<CR>i" 
-		autocmd BufEnter *.js let @g=":w\<CR> :vsp | terminal node % \<CR>i" 
+		autocmd BufEnter *.java let @g=":w\<CR>:terminal java %\<CR>"
+		autocmd BufEnter *.py let @g=":w\<CR>:10 sp |terminal python3 %\<CR>i" 
+		autocmd BufEnter *.cpp let @g=":w\<CR> :!g++ %\<CR> | :10 sp |terminal ./a.out\<CR>i" 
+		autocmd BufEnter *.c let @g=":w\<CR> :!gcc %\<CR> | :10 sp |terminal ./a.out\<CR>i" 
+		autocmd BufEnter *.go let @g=":w\<CR> :10 sp | terminal go run % \<CR>i" 
+		autocmd BufEnter *.js let @g=":w\<CR> :10 sp | terminal node % \<CR>i" 
 		autocmd BufEnter *.html let @g=":w\<CR> :silent !firefox % \<CR>"
 	augroup end
 ]]

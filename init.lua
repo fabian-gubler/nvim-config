@@ -8,7 +8,7 @@ require('plugins')			-- Plugins
 require('options')			-- Options
 require('mappings')			-- Mappings
 require('autocmd')
-require('colemak')			-- Keyboard Layout
+-- require('colemak')			-- Keyboard Layout
 require('lsp')					-- Language Server Protocol
 
 -- Set Colorsceme

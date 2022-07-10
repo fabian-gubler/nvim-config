@@ -16,7 +16,8 @@ o.relativenumber = true
 o.numberwidth = 1
 o.showmode = false
 o.laststatus = 3
-o.cursorline = false
+-- o.cursorline = true
+-- o.cursorlineopt = "number"
 o.swapfile = false
 o.splitbelow = true
 o.splitright = true
@@ -35,4 +36,3 @@ o.shiftwidth = indent
 o.tabstop = indent
 o.softtabstop = indent
 o.expandtab = false
-

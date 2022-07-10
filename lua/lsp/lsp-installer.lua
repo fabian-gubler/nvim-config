@@ -4,7 +4,13 @@ if not status_ok then
 end
 
 -- Bootstrap Lsp Servers
-local lsp = { 'tsserver', 'html', 'cssls', 'clangd', 'bashls', 'pyright', 'sumneko_lua', 'ltex', 'jdtls'}
+local lsp = { 
+	-- programming
+	'pyright', 'jdtls', 'clangd',
+	-- web
+	'tsserver', 'html', 'cssls', 
+	-- system
+	'bashls', 'sumneko_lua', 'ltex'}
 
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).

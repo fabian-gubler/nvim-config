@@ -5,22 +5,21 @@ local opt = { noremap = true, silent = true }
 map("i", "<C-H>", "<C-W>", opt) 
 map("i", "<C-K>", "<C-O>D", opt) 
 
--- Windows
-map("n", "<S-m>", "<C-w><C-h>", opt)
-map("n", "<S-n>", "<C-w><C-j>", opt)
-map("n", "<S-e>", "<C-w><C-k>", opt)
-map("n", "<S-i>", "<C-w><C-l>", opt)
-map("n", "_", "<C-w>_", opt)
-map("n", "=", "<C-w>=", opt)
-
--- Shifting
-map("v", "<S-e>", ":m '<-2<CR>gv=gv")
-map("v", "<S-n>", ":m '>+1<CR>gv=gv")
+-- Useful
 map("v", ">", ">gv")
 map("v", "<", "<gv")
 
+-- Debugging
+-- map("n", "<F1>", ":lua require'dap'.continue()<CR>")
+-- map("n", "<F2>", ":lua require'dap'.step_over()<CR>")
+-- map("n", "<F3>", ":lua require'dap'.step_into()<CR>")
+-- map("n", "<F4>", ":lua require'dap'.step_out()<CR>")
+-- map("n", "<leader>bp", ":lua require'dap'.toggle_breakpoint()<CR>")
+-- map("n", "<leader>bc", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+-- map("n", "<leader>bb", ":lua require('dapui').toggle()<CR>")
+
 -- Easymotion
-map("", "/", "<Plug>(easymotion-sn)", opt)
+map("", "\\", "<Plug>(easymotion-sn)", opt)
 map("", ",", "<Plug>(easymotion-s)", opt)
 
 -- Tabs
@@ -29,11 +28,5 @@ map("n", "<A-2>", ":BufferGoto 2<CR>", opt)
 map("n", "<A-3>", ":BufferGoto 3<CR>", opt)
 map("n", "<A-4>", ":BufferGoto 4<CR>", opt)
 map("n", "<A-5>", ":BufferGoto 5<CR>", opt)
-
-map("n", "<A-e>", ":bp<CR>", opt)
-map("n", "<A-C-e>", ":tabprevious<CR>", opt)
-map("n", "<A-n>", ":bn<CR>", opt)
-map("n", "<A-C-n>", ":tabnext<CR>", opt)
-
 map("n", "<A-S-e>", ":BufferMovePrevious<CR>", opt)
 map("n", "<A-S-n>", " :BufferMoveNext<CR>", opt)

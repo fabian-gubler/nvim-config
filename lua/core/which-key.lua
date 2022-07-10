@@ -3,15 +3,10 @@ local wk = require("which-key")
 wk.register({
 	-- General
 	["c"] = { ":bd!<CR>", "Close Buffer" },
-	["b"] = { ":vertical resize 125<cr>", "Toggle Bar" },
-	-- ["b"] = { "<cmd>execute 'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<cr>", "Toggle Bar" },
-	-- ["b"] = { ":Telescope buffers<cr>", "Toggle Bar" },
 	["e"] = { ":NvimTreeToggle<cr>", "File Explorer" },
 	["d"] = { ":cd $HOME/.dotfiles | Telescope find_files<CR>", "Dotfiles" },
 	["n"] = { ":cd $HOME/.config/nvim | Telescope find_files<CR>", "Neovim Config" },
-	["y"] = { "ggVGY", "Copy All" },
-	["r"] = { ':call VimuxRunCommand("clear; python3 " . bufname("%"))<CR>', "Run python" },
-	["z"] = { ':ZenMode<cr>', "Zen Mode"},
+	["z"] = { ':ZenMode<cr>', "Zen Mode" },
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 
 	-- Comments
@@ -29,19 +24,10 @@ wk.register({
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
 
-	-- Packer
+	-- Open
 	o = {
 		name = "Open",
-		t = { ":!typora % &<cr><cr>", "Typora"}
-	},
-	-- Vimtex
-	x = {
-		name = "Vimtex",
-		c = { "<cmd>VimtexCompile<cr>", "Compile" },
-		s = { "<cmd>VimtexStop<cr>", "Stop" },
-		S = { "<cmd>VimtexStatus<cr>", "Status" },
-		C = { "<cmd>VimtexClean<cr>", "Clean" },
-		t = { "<cmd>VimtexTocToggle<cr>", "Table of Contents" },
+		t = { ":!typora % &<cr><cr>", "Typora" }
 	},
 
 	-- Telescope
@@ -50,10 +36,9 @@ wk.register({
 		r = { "<cmd>Telescope lsp_references<cr>", "References" },
 		g = { "<cmd>Telescope live_grep<cr>", "Grep" },
 		d = { ":Telescope diagnostics<cr>", "Telescope Diagnostics" },
-		-- b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		-- c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-		-- k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 	},
 
 	-- LSP

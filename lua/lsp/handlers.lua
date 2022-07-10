@@ -34,7 +34,7 @@ M.setup = function()
 	-- Only Show diagnostics if Warning or Error
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 		signs = {
-			severity_limit = "Warning",
+			severity_limit = "Error",
 		},
 		underline = {
 			severity_limit = "Warning",
