@@ -88,7 +88,7 @@ return packer.startup(function(use)
 					height = 1,
 					options = {
 						number = false,
-						relativenumber = false,
+						relativenumber = true,
 						cursorcolumn = false,
 					},
 				},
@@ -148,9 +148,6 @@ return packer.startup(function(use)
 			require("telescope").setup({
 				defaults = {
 					layout_strategy = "vertical",
-					-- layout_config = {
-					-- 	vertical = { width = 0.5 },
-					-- },
 					file_ignore_patterns = { "node_modules", "venv" },
 				},
 			})
