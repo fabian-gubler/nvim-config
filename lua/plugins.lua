@@ -49,8 +49,19 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- Java
+	use 'mfussenegger/nvim-jdtls'
+
+	-- Debugging
 	use({
-		"mfussenegger/nvim-jdtls",
+		"mfussenegger/nvim-dap",
+		config = function()
+			require("core.dap")
+		end,
+
+	})
+
+	use({
+		"rcarriga/nvim-dap-ui",
 	})
 
 	-- Treesitter
@@ -59,21 +70,6 @@ return packer.startup(function(use)
 		run = ":TSUpdate",
 		config = function()
 			require("core.treesitter")
-		end,
-	})
-
-	-- Debugging
-	use({
-		"mfussenegger/nvim-dap",
-		-- config = function()
-		-- 	require("nvim-dap").setup()
-		-- end,
-	})
-
-	use({
-		"rcarriga/nvim-dap-ui",
-		config = function()
-			require("dapui").setup()
 		end,
 	})
 
@@ -187,11 +183,15 @@ return packer.startup(function(use)
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
 			require("nvim-tree").setup({
-				-- open_on_setup        = false,
 				view = {
 					relativenumber = true,
-					width = 50
-				}
+					width = 50,
+					mappings = {
+						list = {
+							{ key = "o", action = "open" },
+						},
+					},
+				},
 			})
 		end,
 	})

@@ -10,13 +10,10 @@ map("v", ">", ">gv")
 map("v", "<", "<gv")
 
 -- Debugging
--- map("n", "<F1>", ":lua require'dap'.continue()<CR>")
--- map("n", "<F2>", ":lua require'dap'.step_over()<CR>")
--- map("n", "<F3>", ":lua require'dap'.step_into()<CR>")
--- map("n", "<F4>", ":lua require'dap'.step_out()<CR>")
--- map("n", "<leader>bp", ":lua require'dap'.toggle_breakpoint()<CR>")
--- map("n", "<leader>bc", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
--- map("n", "<leader>bb", ":lua require('dapui').toggle()<CR>")
+map("n", "<F1>", ":lua require'dap'.continue()<CR>")
+map("n", "<F2>", ":lua require'dap'.step_over()<CR>")
+map("n", "<F3>", ":lua require'dap'.step_into()<CR>")
+map("n", "<F4>", ":lua require'dap'.step_out()<CR>")
 
 -- Easymotion
 map("", "\\", "<Plug>(easymotion-sn)", opt)

@@ -8,7 +8,6 @@ require('plugins')			-- Plugins
 require('options')			-- Options
 require('mappings')			-- Mappings
 require('autocmd')
--- require('colemak')			-- Keyboard Layout
 require('lsp')					-- Language Server Protocol
 
 -- Set Colorsceme
@@ -53,3 +52,4 @@ vim.api.nvim_exec(
 ]],
   false
 )
+

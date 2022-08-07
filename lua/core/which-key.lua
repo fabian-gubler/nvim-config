@@ -7,6 +7,7 @@ wk.register({
 	["d"] = { ":cd $HOME/.dotfiles | Telescope find_files<CR>", "Dotfiles" },
 	["n"] = { ":cd $HOME/.config/nvim | Telescope find_files<CR>", "Neovim Config" },
 	["z"] = { ':ZenMode<cr>', "Zen Mode" },
+	["B"] = { ':lua require"dap".toggle_breakpoint()<CR>', "Breakpoint"},
 	["<leader>"] = { ":Telescope find_files<CR>", "Find Files" },
 
 	-- Comments
@@ -22,6 +23,13 @@ wk.register({
 		s = { "<cmd>PackerSync<cr>", "Sync" },
 		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
+	},
+
+	-- Debugging
+	b = {
+		name = "Debugging",
+		c = { ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", "Breakpoint condition" },
+		b = { ":lua require('dapui').toggle()<CR>", "UI" },
 	},
 
 	-- Open

@@ -29,6 +29,7 @@ M.setup = function()
 		},
 	}
 
+
 	vim.diagnostic.config(config)
 
 	-- Only Show diagnostics if Warning or Error
@@ -86,7 +87,9 @@ M.on_attach = function(client)
 	end
 	lsp_keymaps()
 	lsp_highlight_document(client)
+
 end
+
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
