@@ -9,6 +9,8 @@ require('options')			-- Options
 require('mappings')			-- Mappings
 require('autocmd')
 require('lsp')					-- Language Server Protocol
+require('core.dap')
+require("dapui").setup()
 
 -- Set Colorsceme
 vim.cmd [[
