@@ -39,18 +39,6 @@ wk.register({
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 	},
 
-	-- LSP
-	-- l = {
-	-- 	name = "LSP",
-	-- 	n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
-	-- 	e = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
-	-- 	r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-	-- 	i = { ":LspInfo<CR>", "LSP Info" },
-	-- 	I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-	-- 	f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
-	-- },
-
-	-- Options
 }, {
 	mode = "n", -- NORMAL mode
 	prefix = "<leader>",

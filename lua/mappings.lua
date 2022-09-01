@@ -1,11 +1,22 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- Lsp
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
-keymap("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
-keymap("n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
+-- General
+keymap("n", "<leader>c", ":bd!<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>.", ":cd $HOME/.dotfiles | Telescope find_files<CR>", opts)
+keymap("n", "<leader>n", ":cd $HOME/.config/nvim | Telescope find_files<CR>", opts)
+keymap("n", "<leader><leader>", ":Telescope find_files<CR>", opts)
 
+
+-- Center
+keymap("n", "<C-u>", "<C-u>zz")
+keymap("n", "<C-d>", "<C-d>zz")
+
+-- Lsp
+keymap("n", "<leader>mf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
+keymap("n", "<leader>mi", "<cmd>LspInfo<cr>", opts)
+keymap("n", "<leader>mm", "<cmd>Mason<cr>", opts)
 
 -- CTRL Backspace to Delete Word
 keymap("i", "<C-H>", "<C-W>", opts) 
@@ -14,12 +25,6 @@ keymap("i", "<C-K>", "<C-O>D", opts)
 -- Useful
 keymap("v", ">", ">gv")
 keymap("v", "<", "<gv")
-
--- Debugging
-keymap("n", "<F1>", ":lua require'dap'.continue()<CR>")
-keymap("n", "<F2>", ":lua require'dap'.step_over()<CR>")
-keymap("n", "<F3>", ":lua require'dap'.step_into()<CR>")
-keymap("n", "<F4>", ":lua require'dap'.step_out()<CR>")
 
 -- Easymotion
 keymap("", "\\", "<Plug>(easymotion-sn)", opts)

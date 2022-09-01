@@ -29,7 +29,6 @@ o.smartindent = true
 o.breakindent = true
 o.signcolumn = "yes:1"
 o.colorcolumn = "100"
-o.timeoutlen = 100
 o.shiftwidth = indent
 o.tabstop = indent
 o.softtabstop = indent

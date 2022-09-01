@@ -4,34 +4,14 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Configuration files
-require('plugins')			-- Plugins
-require('options')			-- Options
-require('mappings')			-- Mappings
+require('plugins')
+require('options')
+require('mappings')
 require('autocmd')
-require('lsp')					-- Language Server Protocol
-require('core.dap')
-require("dapui").setup()
+require('lsp')
 
 -- Set Colorsceme
-vim.cmd [[
-try
-  colorscheme nord
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-  set background=dark
-endtry
-]]
-
--- Snippets dir
-vim.o.runtimepath = vim.o.runtimepath .. ',/home/fabian/.config/nvim/lua/snippets,'
-
--- Luasnip
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-	return
-end
-
-require("luasnip.loaders.from_vscode").load()					-- Load all VSCode snippets
+vim.cmd "colorscheme nord"
 
 -- Tab Colours
 vim.cmd "hi BufferTabpageFill guibg=#2E3440"
@@ -44,6 +24,7 @@ vim.cmd "hi BufferInactiveSign guibg=#2e3440"
 
 vim.cmd "hi BufferVisible guibg=#2E3440 guifg=#7D869A"
 vim.cmd "hi BufferVisibleSign guibg=#2E3440"
+
 -- Highlight on yank
 vim.api.nvim_exec(
   [[
@@ -54,4 +35,3 @@ vim.api.nvim_exec(
 ]],
   false
 )
-

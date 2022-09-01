@@ -32,13 +32,6 @@ return packer.startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
-	-- Commenting
-	use({
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	})
 
 	-- Simple Setup
 	use("shaunsingh/nord.nvim")
@@ -47,6 +40,16 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
+	use("rcarriga/nvim-dap-ui")
+
+	-- Mason
+	use({
+		"williamboman/mason.nvim",
+		requires = { "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" },
+		config = function()
+			require("mason").setup()
+		end,
+	})
 
 	-- Java
 	use 'mfussenegger/nvim-jdtls'
@@ -54,15 +57,12 @@ return packer.startup(function(use)
 	-- Debugging
 	use({
 		"mfussenegger/nvim-dap",
-		config = function()
-			require("core.dap")
-		end,
+		config = function() require("core.dap") end,
 
 	})
 
-	use({
-		"rcarriga/nvim-dap-ui",
-	})
+	-- Data Science
+	use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
 
 	-- Treesitter
 	use({
@@ -71,48 +71,6 @@ return packer.startup(function(use)
 		config = function()
 			require("core.treesitter")
 		end,
-	})
-
-	-- Zen Mode
-	use {
-		"folke/zen-mode.nvim",
-		config = function()
-			require("zen-mode").setup {
-				window = {
-					backdrop = 1,
-					width = 80,
-					height = 1,
-					options = {
-						number = false,
-						relativenumber = true,
-						cursorcolumn = false,
-					},
-				},
-				plugins = {
-					options = {
-						enabled = true,
-						ruler = false, -- disables the ruler text in the cmd line area
-						showcmd = true, -- disables the command in the last line of the screen
-					},
-					twilight = { enabled = false }, -- enable to start Twilight when zen mode opens
-					gitsigns = { enabled = true }, -- disables git signs
-					tmux = { enabled = false }, -- disables the tmux statusline
-					-- this will change the font size on kitty when in zen mode
-					-- to make this work, you need to set the following kitty options:
-					-- - allow_remote_control socket-only
-					-- - listen_on unix:/tmp/kitty
-					kitty = {
-						enabled = false,
-						font = "+5", -- font size increment
-					},
-				},
-			}
-		end
-	}
-	-- LSP
-	use({
-		"neovim/nvim-lspconfig",
-		requires = { "williamboman/nvim-lsp-installer" },
 	})
 
 	-- Completion
@@ -127,7 +85,7 @@ return packer.startup(function(use)
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-nvim-lua" },
-			{ "hrsh7th/cmp-nvim-lsp-signature-help"},
+			{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 			{ "saadparwaiz1/cmp_luasnip" },
 		},
 	})
@@ -136,6 +94,7 @@ return packer.startup(function(use)
 	use({
 		"L3MON4D3/LuaSnip",
 		requires = { "rafamadriz/friendly-snippets" },
+		config = function() require("core.snippets") end,
 	})
 
 	-- Telescope
@@ -166,15 +125,6 @@ return packer.startup(function(use)
 		requires = { "kyazdani42/nvim-web-devicons" },
 		config = function()
 			require("core.bar")
-		end,
-	})
-
-	-- Whichkey
-	use({
-		"folke/which-key.nvim",
-		event = "BufWinEnter",
-		config = function()
-			require("core.which-key")
 		end,
 	})
 
@@ -212,16 +162,6 @@ return packer.startup(function(use)
 			require("core.lualine")
 		end,
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
-
-	-- Scrolling
-	use({
-		"karb94/neoscroll.nvim",
-		config = function()
-			require("neoscroll").setup({
-				mappings = { "<C-u>", "<C-d>" },
-			})
-		end,
 	})
 
 	-- Autopairs
