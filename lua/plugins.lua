@@ -32,15 +32,20 @@ return packer.startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	-- Commenting
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
 
 	-- Simple Setup
 	use("shaunsingh/nord.nvim")
 	use("907th/vim-auto-save")
-	use("easymotion/vim-easymotion")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
-	use("rcarriga/nvim-dap-ui")
 
 	-- Mason
 	use({
@@ -57,8 +62,12 @@ return packer.startup(function(use)
 	-- Debugging
 	use({
 		"mfussenegger/nvim-dap",
-		config = function() require("core.dap") end,
+		config = function () require("core.dap") end,
 
+	})
+
+	use({
+		"rcarriga/nvim-dap-ui",
 	})
 
 	-- Data Science
@@ -94,7 +103,7 @@ return packer.startup(function(use)
 	use({
 		"L3MON4D3/LuaSnip",
 		requires = { "rafamadriz/friendly-snippets" },
-		config = function() require("core.snippets") end,
+		config = function () require("core.snippets") end,
 	})
 
 	-- Telescope
@@ -127,6 +136,15 @@ return packer.startup(function(use)
 			require("core.bar")
 		end,
 	})
+
+	-- Whichkey
+	-- use({
+	-- 	"folke/which-key.nvim",
+	-- 	event = "BufWinEnter",
+	-- 	config = function()
+	-- 		require("core.which-key")
+	-- 	end,
+	-- })
 
 	-- File Navigation
 	use({

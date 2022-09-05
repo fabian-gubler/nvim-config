@@ -15,8 +15,6 @@ local dynamicn = ls.dynamic_node
 ls.add_snippets("markdown", {
 	snip({
 		trig = "figure",
-		namr = "Figure",
-		dscr = "Figures for markdown",
 	}, {
 		text({ "<figure markdown>",
 			"  ![Image](" }),
