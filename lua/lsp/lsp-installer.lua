@@ -1,14 +1,11 @@
 require("mason-lspconfig").setup({
-	ensure_installed = { "sumneko_lua", "pyright", "jdtls" }
+	ensure_installed = { 
+		-- LSP
+		"sumneko_lua", "pyright", "jdtls",
+		-- Formatters
+		"stylua", -- npm install google-java-format
+	}
 })
-
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<leader>y', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
 -- Lsp Completion
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")

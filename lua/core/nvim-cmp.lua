@@ -1,5 +1,5 @@
 -- Setup nvim-cmp.
-local cmp = require 'cmp'
+local cmp = require("cmp")
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
@@ -34,7 +34,7 @@ local kind_icons = {
 	TypeParameter = "",
 }
 
-cmp.setup {
+cmp.setup({
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
@@ -45,16 +45,16 @@ cmp.setup {
 		documentation = cmp.config.window.bordered(),
 	},
 	mapping = {
-		["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-		["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+		["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+		["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
 		["<C-d>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<c-y>"] = cmp.mapping(
-			cmp.mapping.confirm {
+			cmp.mapping.confirm({
 				behavior = cmp.ConfirmBehavior.Insert,
 				select = true,
-			},
+			}),
 			{ "i", "c" }
 		),
 
@@ -98,6 +98,7 @@ cmp.setup {
 	},
 
 	sources = cmp.config.sources({
+		{ name = "nvim_lsp_signature_help" },
 		{ name = "luasnip", max_item_count = 5 },
 		{ name = "nvim_lsp", max_item_count = 8 },
 		{ name = "nvim_lua", max_item_count = 5 },
@@ -107,4 +108,11 @@ cmp.setup {
 	experimental = {
 		ghost_text = false,
 	},
-}
+})
+
+-- Set configuration for specific filetype.
+cmp.setup.filetype("markdown", {
+	sources = cmp.config.sources({
+		{ name = "luasnip" },
+	}),
+})

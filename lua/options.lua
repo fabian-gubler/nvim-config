@@ -7,9 +7,10 @@ local cmd = vim.cmd
 -- Global
 g.auto_save = 1
 g.auto_save_silent = 1
-g.EasyMotion_verbose = 0
-g.EasyMotion_keys = "arstdhneioqwfpluygmbjzxcvk1234567890,"
 g.nord_borders = "true"
+g.netrw_bufsettings = "noma nomod nu nobl nowrap ro"
+g.netrw_banner = 0
+-- g.netrw_browsex_viewer = "xdg-open"
 
 -- Options
 o.termguicolors = true

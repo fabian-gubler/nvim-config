@@ -53,22 +53,49 @@ end
 M.on_attach = function(client, bufnr)
 	-- Mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
+	local keymap = vim.keymap.set
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
-	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-	vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-	vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-	vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-	vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-	vim.keymap.set('n', '<leader>wl', function()
+	keymap("n", "gD", vim.lsp.buf.declaration, bufopts)
+	keymap("n", "gd", vim.lsp.buf.definition, bufopts)
+	keymap("n", "K", vim.lsp.buf.hover, bufopts)
+	keymap("n", "gi", vim.lsp.buf.implementation, bufopts)
+	keymap("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+	keymap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, bufopts)
+	keymap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+	keymap("n", "<leader>wl", function()
 		print(vim.inspect(vim.lsp.buf.list_workleader_folders()))
 	end, bufopts)
-	vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-	vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-	vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, bufopts)
-	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-	vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
+	keymap("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
+	keymap("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+	keymap("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
+	keymap("n", "gr", vim.lsp.buf.references, bufopts)
+	keymap("n", "<leader>f", vim.lsp.buf.formatting, bufopts)
+	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+	keymap('n', '<leader>y', vim.diagnostic.open_float, bufopts)
+	keymap('n', '[d', vim.diagnostic.goto_prev, bufopts)
+	keymap('n', ']d', vim.diagnostic.goto_next, bufopts)
+	keymap('n', '<leader>q', vim.diagnostic.setloclist, bufopts)
+	-- Require Plugins
+
+
+	-- LSP Specific Capabilities
+	-- Nvim 0.8 Change: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
+	local util = require("vim.lsp.util")
+
+	local formatting_callback = function(client, bufnr)
+		vim.keymap.set("n", "<leader>f", function()
+			local params = util.make_formatting_params({})
+			client.request("textDocument/formatting", params, nil, bufnr)
+		end, { buffer = bufnr })
+	end
+
+	if client.name == "jdt.ls" then
+		formatting_callback(client, bufnr)
+	end
+
+	if client.name == "sumneko_lua" then
+		formatting_callback(client, bufnr)
+	end
 end
 
 return M

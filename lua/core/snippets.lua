@@ -1,7 +1,7 @@
 local ls = require("luasnip")
 
 -- Load all VSCode snippets
-require("luasnip.loaders.from_vscode").load()					
+require("luasnip.loaders.from_vscode").load()
 
 -- Custom Snippets
 local snip = ls.snippet
@@ -16,15 +16,18 @@ ls.add_snippets("markdown", {
 	snip({
 		trig = "figure",
 	}, {
-		text({ "<figure markdown>",
-			"  ![Image](" }),
+		text({ "<figure markdown>", "  ![Image](" }),
 		insert(1, "/path/to/file"),
-		text({ "){width='300'}",
-			"  <figcaption>" }),
+		text({ "){width='300'}", "  <figcaption>" }),
 		insert(2, "caption"),
-		text({ "</figcaption>",
-			"</figure>"
-		})
+		text({ "</figcaption>", "</figure>" }),
+	}),
+	snip({
+		trig = "anki",
+	}, {
+		text({ "## " }),
+		insert(1, "Title"),
+		text({ "", "%", "" }),
+		insert(2, "Description"),
 	}),
 })
-

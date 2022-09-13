@@ -16,7 +16,4 @@ keymap("n", "<Leader>rc", ":noautocmd MagmaEnterOutput<CR>", opts)
 keymap("n", "<Leader>rs", ":MagmaSave<CR> <bar> :echo 'saved successfully'<CR> ", opts)
 
 keymap("n", "<C-Enter>", ":MagmaReevaluateCell<CR>", opts)
-
-local autocmd = vim.api.nvim_create_autocmd
-
--- autocmd("BufLeave", { command = "MagmaSave" })
+-- keymap("n", "<A-Enter>", ":MagmaReevaluateCell<CR> |:normal })<CR>")

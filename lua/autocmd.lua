@@ -1,6 +1,8 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_autogroup
 
+-- Need to Convert
+
 -- Appearance
 autocmd("BufEnter", { command = "set laststatus=3" })
 
@@ -36,4 +38,9 @@ vim.cmd [[
 		autocmd BufEnter *.js let @g=":w\<CR> :10 sp | terminal node % \<CR>i" 
 		autocmd BufEnter *.html let @g=":w\<CR> :silent !firefox % \<CR>"
 	augroup end
+]]
+
+vim.cmd [[
+		autocmd BufEnter *.py let @a=":MagmaReevaluateCell\<CR> |:normal })\<CR>"
+		autocmd BufEnter *.py let @o="<expr> <Leader>r nvim_exec('MagmaEvaluateOperator', v:true)"
 ]]

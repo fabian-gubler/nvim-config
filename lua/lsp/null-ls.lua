@@ -11,6 +11,8 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
+		-- Java
+		formatting.google_java_format,
 		-- Javascript
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote", "--trailingComma none" } }),
 		-- Lua

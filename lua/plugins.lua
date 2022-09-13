@@ -32,6 +32,14 @@ return packer.startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	-- simple setup
+	use("shaunsingh/nord.nvim")
+	use("907th/vim-auto-save")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("jose-elias-alvarez/null-ls.nvim")
+	use("stevearc/dressing.nvim")
+	use("ThePrimeagen/harpoon")
+
 	-- Commenting
 	use({
 		"numToStr/Comment.nvim",
@@ -40,56 +48,39 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- Simple Setup
-	use("shaunsingh/nord.nvim")
-	use("907th/vim-auto-save")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("nvim-lua/plenary.nvim")
-	use("jose-elias-alvarez/null-ls.nvim")
-
 	-- Mason
 	use({
 		"williamboman/mason.nvim",
 		requires = { "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" },
-		config = function()
-			require("mason").setup()
-		end,
+		config = function() require("mason").setup() end,
 	})
+
+	-- Data Science
+	use({ "dccsillag/magma-nvim", run = ":UpdateRemotePlugins" })
 
 	-- Java
 	use 'mfussenegger/nvim-jdtls'
 
 	-- Debugging
 	use({
-		"mfussenegger/nvim-dap",
-		config = function () require("core.dap") end,
-
-	})
-
-	use({
 		"rcarriga/nvim-dap-ui",
+		requires = { "mfussenegger/nvim-dap" },
+		config = function() require("core.dap") end,
 	})
 
-	-- Data Science
-	use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
 
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
-		config = function()
-			require("core.treesitter")
-		end,
+		config = function() require("core.treesitter") end,
 	})
 
 	-- Completion
 	use({
 		"hrsh7th/nvim-cmp",
-		config = function()
-			require("core.nvim-cmp")
-		end,
+		config = function() require("core.nvim-cmp") end,
 		requires = {
-			{ "kdheepak/cmp-latex-symbols" },
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-nvim-lsp" },
@@ -103,7 +94,7 @@ return packer.startup(function(use)
 	use({
 		"L3MON4D3/LuaSnip",
 		requires = { "rafamadriz/friendly-snippets" },
-		config = function () require("core.snippets") end,
+		config = function() require("core.snippets") end,
 	})
 
 	-- Telescope
@@ -123,54 +114,20 @@ return packer.startup(function(use)
 	-- Git
 	use({
 		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
-		end,
+		config = function() require("gitsigns").setup() end,
 	})
 
 	-- Bar
-	use({
-		"romgrk/barbar.nvim",
-		requires = { "kyazdani42/nvim-web-devicons" },
-		config = function()
-			require("core.bar")
-		end,
-	})
-
-	-- Whichkey
 	-- use({
-	-- 	"folke/which-key.nvim",
-	-- 	event = "BufWinEnter",
-	-- 	config = function()
-	-- 		require("core.which-key")
-	-- 	end,
+	-- 	"romgrk/barbar.nvim",
+	-- 	requires = { "kyazdani42/nvim-web-devicons" },
+	-- 	config = function() require("core.bar") end,
 	-- })
-
-	-- File Navigation
-	use({
-		"kyazdani42/nvim-tree.lua",
-		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("nvim-tree").setup({
-				view = {
-					relativenumber = true,
-					width = 50,
-					mappings = {
-						list = {
-							{ key = "o", action = "open" },
-						},
-					},
-				},
-			})
-		end,
-	})
 
 	-- Colorizer
 	use({
 		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup()
-		end,
+		config = function() require("colorizer").setup() end,
 	})
 
 	-- Statusline
@@ -185,9 +142,7 @@ return packer.startup(function(use)
 	-- Autopairs
 	use({
 		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup()
-		end,
+		config = function() require("nvim-autopairs").setup() end,
 	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
