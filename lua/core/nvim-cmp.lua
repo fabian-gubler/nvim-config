@@ -113,6 +113,6 @@ cmp.setup({
 -- Set configuration for specific filetype.
 cmp.setup.filetype("markdown", {
 	sources = cmp.config.sources({
-		{ name = "luasnip" },
+		{ name = "luasnip", keyword_length = 3 },
 	}),
 })
