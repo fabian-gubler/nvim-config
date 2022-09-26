@@ -94,7 +94,7 @@ M.on_attach = function(client, bufnr)
 	end
 
 	if client.name == "sumneko_lua" then
-		formatting_callback(client, bufnr)
+		-- formatting_callback(client, bufnr)
 	end
 end
 

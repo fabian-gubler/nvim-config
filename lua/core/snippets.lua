@@ -18,8 +18,8 @@ ls.add_snippets("markdown", {
 	}, {
 		text({ "<figure markdown>", "  ![Image](" }),
 		insert(1, "/path/to/file"),
-		text({ "){width='300'}", "  <figcaption>" }),
-		insert(2, "caption"),
+		text({ ")", "  <figcaption>" }),
+		insert(2, ""),
 		text({ "</figcaption>", "</figure>" }),
 	}),
 	snip({

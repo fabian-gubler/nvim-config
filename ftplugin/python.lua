@@ -5,7 +5,7 @@ vim.cmd[[
 nnoremap <expr> <Leader>r nvim_exec('MagmaEvaluateOperator', v:true)
 let g:magma_automatically_open_output = v:false
 let g:magma_output_window_borders = v:false
-let g:magma_image_provider = "none"
+let g:magma_image_provider = "ueberzug"
 ]]
 
 keymap("n", "<Leader>R", ":MagmaLoad<CR>")
@@ -15,5 +15,5 @@ keymap("n", "<Leader>ro", ":MagmaShowOutput<CR>", opts)
 keymap("n", "<Leader>rc", ":noautocmd MagmaEnterOutput<CR>", opts)
 keymap("n", "<Leader>rs", ":MagmaSave<CR> <bar> :echo 'saved successfully'<CR> ", opts)
 
-keymap("n", "<C-Enter>", ":MagmaReevaluateCell<CR>", opts)
--- keymap("n", "<A-Enter>", ":MagmaReevaluateCell<CR> |:normal })<CR>")
+-- keymap("n", "<C-Enter>", ":MagmaReevaluateCell<CR>", opts)				-- Evaluate Cell
+keymap("n", "<C-Enter>", ":MagmaReevaluateCell<CR> |:normal })<CR>")		-- Evaluate Cell & Jump to Next
