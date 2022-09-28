@@ -19,7 +19,7 @@ autocmd("FileType", {
 
 -- Writing Text
 -- autocmd("FileType", { pattern = {"markdown", "tex"}, command = "lua require('cmp').setup.buffer { enabled = false }" })
-autocmd("FileType", { pattern = { "markdown"}, command = "set cc=" })
+autocmd("FileType", { pattern = { "markdown"}, command = "set cc= ignorecase smartcase" })
 autocmd("FileType", { pattern = { "tex" }, command = "set cc=79" })
 autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap" })
 autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal linebreak" })

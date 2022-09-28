@@ -12,6 +12,7 @@ keymap("x", "[#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#/##/<CR>", bufo
 keymap("n", "<leader>g", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader><leader>", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>e", ":Lexplore<CR>", opts)
+keymap("n", "<leader>R", "set laststatus=0", opts)
 
 -- Center
 keymap("n", "<C-u>", "<C-u>zz")

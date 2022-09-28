@@ -69,7 +69,6 @@ return packer.startup(function(use)
 		config = function() require("core.dap") end,
 	})
 
-
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -139,6 +138,14 @@ return packer.startup(function(use)
 		end,
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
+
+	-- Terminal
+	use { "akinsho/toggleterm.nvim", config = function()
+		require("toggleterm").setup{
+			open_mapping = [[<c-t>]],
+			direction = "float",
+		}
+	end }
 
 	-- Autopairs
 	use({
