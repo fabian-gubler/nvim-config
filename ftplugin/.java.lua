@@ -1,5 +1,12 @@
--- local install_path = '/home/fabian/local/share/nvim/mason/packages/jdtls/'
-local install_path = '/home/fabian/.config/nvim/jdtls/'
+-- Determine OS
+local home = os.getenv "HOME"
+
+-- change path
+local install_path = home .. '/.local/share/nvim/mason/packages/jdtls/'
+
+-- data directory configuration
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+local workspace_dir = home .. '/workspace/' .. project_name
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -40,7 +47,7 @@ local config = {
 
     -- 💀
     -- See `data directory configuration` section in the README
-    '-data', '/path/to/unique/per/project/workspace/folder'
+    '-data', workspace_dir,
   },
 
   -- 💀
@@ -69,4 +76,10 @@ local config = {
 }
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
+--
+
+local temp = {
+	cmd = { 'java' }
+}
+
 require('jdtls').start_or_attach(config)

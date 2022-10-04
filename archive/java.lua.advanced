@@ -1,3 +1,5 @@
+-- Debugging -> https://github.com/mfussenegger/nvim-jdtls#troubleshooting
+
 local status, jdtls = pcall(require, "jdtls")
 if not status then
   return
@@ -5,7 +7,6 @@ end
 
 -- Determine OS
 local home = os.getenv "HOME"
-WORKSPACE_PATH = home .. "/workspace/"
 
 -- Find root of project
 local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
@@ -17,15 +18,16 @@ end
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
+-- workspace dir
+WORKSPACE_PATH = home .. "/workspace/"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-
 local workspace_dir = WORKSPACE_PATH .. project_name
 
-local bundles = {
-  vim.fn.glob(
-    home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
-  ),
-}
+-- local bundles = {
+--   vim.fn.glob(
+--     home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+--   ),
+-- }
 
 vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/nvim/vscode-java-test/server/*.jar"), "\n"))
 
@@ -69,8 +71,7 @@ local config = {
 
     -- 💀
     -- See `data directory configuration` section in the README
-    "-data",
-    workspace_dir,
+    "-data", workspace_dir,
   },
 
   on_attach = require("lsp.handlers").on_attach,
@@ -149,10 +150,10 @@ local config = {
   -- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
   --
   -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
-  init_options = {
-    -- bundles = {},
-    bundles = bundles,
-  },
+  -- init_options = {
+  --   bundles = {},
+  --   -- bundles = bundles,
+  -- },
 }
 
 -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
