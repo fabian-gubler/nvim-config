@@ -1,7 +1,7 @@
 require("mason-lspconfig").setup({
 	ensure_installed = { 
 		-- LSP
-		"sumneko_lua", "pyright", "jdtls",
+		"sumneko_lua", "pyright", "jdtls@v1.9.0",
 		-- Formatters
 		"stylua", -- npm install google-java-format
 	}
