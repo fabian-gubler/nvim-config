@@ -40,6 +40,7 @@ return packer.startup(function(use)
 	use("stevearc/dressing.nvim")
 	use("ThePrimeagen/harpoon")
 	use("nvim-treesitter/nvim-treesitter-context")
+	use("itchyny/calendar.vim")
 
 	-- Commenting
 	use({
@@ -61,6 +62,16 @@ return packer.startup(function(use)
 
 	-- Java
 	use 'mfussenegger/nvim-jdtls'
+
+	-- Surround
+	use({
+    "kylechui/nvim-surround",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+})
 
 	-- Debugging
 	use({
