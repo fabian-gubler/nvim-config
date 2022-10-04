@@ -9,9 +9,6 @@ require('mappings')
 require('autocmd')
 require('lsp')
 
-vim.cmd "let g:calendar_google_calendar = 1"
-vim.cmd "source ~/.cache/calendar.vim/credentials.vim"
-
 -- Set Colorsceme
 vim.cmd "colorscheme nord"
 
