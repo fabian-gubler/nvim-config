@@ -40,7 +40,6 @@ return packer.startup(function(use)
 	use("stevearc/dressing.nvim")
 	use("ThePrimeagen/harpoon")
 	use("nvim-treesitter/nvim-treesitter-context")
-	use("itchyny/calendar.vim")
 
 	-- Commenting
 	use({
@@ -65,13 +64,13 @@ return packer.startup(function(use)
 
 	-- Surround
 	use({
-    "kylechui/nvim-surround",
-    config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
-})
+		"kylechui/nvim-surround",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end
+	})
 
 	-- Debugging
 	use({
@@ -152,7 +151,7 @@ return packer.startup(function(use)
 
 	-- Terminal
 	use { "akinsho/toggleterm.nvim", config = function()
-		require("toggleterm").setup{
+		require("toggleterm").setup {
 			open_mapping = [[<c-t>]],
 			direction = "float",
 		}

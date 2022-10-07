@@ -1,9 +1,9 @@
 require("mason-lspconfig").setup({
 	ensure_installed = { 
 		-- LSP
-		"sumneko_lua", "pyright", "jdtls@v1.9.0",
+		"sumneko_lua", "pyright", "jdtls", "bash",
 		-- Formatters
-		"stylua", -- npm install google-java-format
+		"stylua", "black", "prettier"
 	}
 })
 
@@ -14,7 +14,6 @@ if not status_ok then
 end
 
 -- Configuration
-
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
 	return

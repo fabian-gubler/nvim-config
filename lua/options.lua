@@ -13,6 +13,7 @@ g.netrw_banner = 0
 -- g.netrw_browsex_viewer = "xdg-open"
 
 -- Options
+o.ignorecase = true
 o.termguicolors = true
 o.relativenumber = true
 o.numberwidth = 1
