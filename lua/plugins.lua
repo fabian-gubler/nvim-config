@@ -40,6 +40,7 @@ return packer.startup(function(use)
 	use("stevearc/dressing.nvim")
 	use("ThePrimeagen/harpoon")
 	use("nvim-treesitter/nvim-treesitter-context")
+	use("lewis6991/impatient.nvim")
 
 	-- Commenting
 	use({
@@ -53,14 +54,17 @@ return packer.startup(function(use)
 	use({
 		"williamboman/mason.nvim",
 		requires = { "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" },
-		config = function() require("mason").setup() end,
+		config = function()
+			require("mason").setup()
+		end,
 	})
 
 	-- Data Science
 	use({ "dccsillag/magma-nvim", run = ":UpdateRemotePlugins" })
 
-	-- Java
-	use 'mfussenegger/nvim-jdtls'
+	-- Programming Language Extensions
+	use("mfussenegger/nvim-jdtls")
+	use("simrat39/rust-tools.nvim")
 
 	-- Surround
 	use({
@@ -69,27 +73,33 @@ return packer.startup(function(use)
 			require("nvim-surround").setup({
 				-- Configuration here, or leave empty to use defaults
 			})
-		end
+		end,
 	})
 
 	-- Debugging
 	use({
 		"rcarriga/nvim-dap-ui",
 		requires = { "mfussenegger/nvim-dap" },
-		config = function() require("core.dap") end,
+		config = function()
+			require("core.dap")
+		end,
 	})
 
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
-		config = function() require("core.treesitter") end,
+		config = function()
+			require("core.treesitter")
+		end,
 	})
 
 	-- Completion
 	use({
 		"hrsh7th/nvim-cmp",
-		config = function() require("core.nvim-cmp") end,
+		config = function()
+			require("core.nvim-cmp")
+		end,
 		requires = {
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
@@ -104,7 +114,9 @@ return packer.startup(function(use)
 	use({
 		"L3MON4D3/LuaSnip",
 		requires = { "rafamadriz/friendly-snippets" },
-		config = function() require("core.snippets") end,
+		config = function()
+			require("core.snippets")
+		end,
 	})
 
 	-- Telescope
@@ -124,7 +136,9 @@ return packer.startup(function(use)
 	-- Git
 	use({
 		"lewis6991/gitsigns.nvim",
-		config = function() require("gitsigns").setup() end,
+		config = function()
+			require("gitsigns").setup()
+		end,
 	})
 
 	-- Bar
@@ -137,7 +151,9 @@ return packer.startup(function(use)
 	-- Colorizer
 	use({
 		"norcalli/nvim-colorizer.lua",
-		config = function() require("colorizer").setup() end,
+		config = function()
+			require("colorizer").setup()
+		end,
 	})
 
 	-- Statusline
@@ -150,17 +166,22 @@ return packer.startup(function(use)
 	})
 
 	-- Terminal
-	use { "akinsho/toggleterm.nvim", config = function()
-		require("toggleterm").setup {
-			open_mapping = [[<c-t>]],
-			direction = "float",
-		}
-	end }
+	use({
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("toggleterm").setup({
+				open_mapping = [[<c-t>]],
+				direction = "float",
+			})
+		end,
+	})
 
 	-- Autopairs
 	use({
 		"windwp/nvim-autopairs",
-		config = function() require("nvim-autopairs").setup() end,
+		config = function()
+			require("nvim-autopairs").setup()
+		end,
 	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
