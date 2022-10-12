@@ -5,7 +5,7 @@ vim.cmd[[
 nnoremap <expr> <Leader>r nvim_exec('MagmaEvaluateOperator', v:true)
 let g:magma_automatically_open_output = v:false
 let g:magma_output_window_borders = v:false
-let g:magma_image_provider = "none"
+let g:magma_image_provider = "ueberzug"
 ]]
 
 keymap("n", "<Leader>R", ":MagmaLoad<CR>")

@@ -1,7 +1,6 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local bufopts = { noremap = true, silent = true, buffer = 0 }
-
 -- markdown
 keymap("n", "]#", ":keeppatterns s/^/#/e<CR>", bufopts)
 keymap("n", "[#", ":keeppatterns s/^#//e<CR>", bufopts)
@@ -11,9 +10,8 @@ keymap("x", "[#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#/##/<CR>", bufo
 -- general
 keymap("n", "<leader>tg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader><leader>", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>e", ":Lexplore<CR>", opts)
-keymap("n", "<leader>R", "set laststatus=0", opts)
-keymap("n", "<C-_>", ":b#<CR>")
+keymap("n", "<leader>e", ":silent Lexplore<CR>")
+keymap("n", "<leader>o", ":b#<CR>")
 
 -- center
 keymap("n", "<C-u>", "<C-u>zz")

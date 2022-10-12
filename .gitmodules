@@ -1,0 +1,6 @@
+[submodule "vscode-java-test"]
+	path = vscode-java-test
+	url = https://github.com/microsoft/vscode-java-test
+[submodule "java-debug"]
+	path = java-debug
+	url = https://github.com/microsoft/java-debug

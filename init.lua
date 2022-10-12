@@ -11,7 +11,7 @@ require("lsp")
 require("terminal")
 
 -- Set Colorsceme
-vim.cmd.colorscheme('blue')
+vim.cmd.colorscheme('nord')
 
 -- Highlight on yank
 vim.api.nvim_exec(
