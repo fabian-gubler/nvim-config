@@ -77,7 +77,6 @@ M.on_attach = function(client, bufnr)
 	keymap('n', '<leader>q', vim.diagnostic.setloclist, bufopts)
 	-- Require Plugins
 
-
 	-- LSP Specific Capabilities
 	-- Nvim 0.8 Change: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
 	local util = require("vim.lsp.util")
@@ -89,7 +88,9 @@ M.on_attach = function(client, bufnr)
 		end, { buffer = bufnr })
 	end
 
-	if client.name == "jdt.ls" then
+	if client.name == "jdtls" then
+		require('jdtls').setup_dap({ hotcodereplace = 'auto' })
+		require("jdtls.dap").setup_dap_main_class_configs()
 		formatting_callback(client, bufnr)
 	end
 

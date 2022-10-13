@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd java-debug
+./mvnw clean install
+
+cd ..
+
+cd vscode-java-test
+npm install
+npm run build-plugin

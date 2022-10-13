@@ -67,6 +67,9 @@ local config = {
 		workspace_dir,
 	},
 
+
+
+
 	on_attach = require("lsp.handlers").on_attach,
 	capabilities = require("lsp.handlers").capabilities,
 
@@ -144,7 +147,6 @@ local config = {
 	--
 	-- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
 	init_options = {
-		-- bundles = {},
 		bundles = bundles,
 	},
 }
@@ -174,7 +176,10 @@ keymap("n", "<leader>jc", "<Cmd>lua require('jdtls').extract_constant()<CR>", op
 keymap("n", "<leader>jt", "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", opts)
 keymap("n", "<leader>jT", "<Cmd>lua require'jdtls'.test_class()<CR>", opts)
 keymap("n", "<leader>ju", "<Cmd>JdtUpdateConfig<CR>", opts)
-
 keymap("v", "<leader>jv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
 keymap("v", "<leader>jc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
 keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
+
+require("dapui").setup()
+
+

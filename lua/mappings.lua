@@ -13,6 +13,10 @@ keymap("n", "<leader><leader>", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>e", ":silent Lexplore<CR>")
 keymap("n", "<leader>o", ":b#<CR>")
 
+-- resize windows
+keymap("n", "+", ":res +5<CR>")
+keymap("n", "-", ":res -5<CR>")
+
 -- center
 keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "<C-d>", "<C-d>zz")

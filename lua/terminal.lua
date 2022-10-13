@@ -5,7 +5,7 @@ local lazygit = Terminal:new({
   dir = "git_dir",
   direction = "float",
   float_opts = {
-    border = "double",
+    border = "single",
   },
   -- function to run on opening the terminal
   on_open = function(term)
@@ -22,4 +22,4 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<C-S-t>", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
