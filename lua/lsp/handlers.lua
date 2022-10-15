@@ -50,6 +50,17 @@ M.setup = function()
 	})
 end
 
+--- New
+local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_cmp_ok then
+	return
+end
+
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+--- New
+
 M.on_attach = function(client, bufnr)
 	-- Mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -66,21 +77,20 @@ M.on_attach = function(client, bufnr)
 		print(vim.inspect(vim.lsp.buf.list_workleader_folders()))
 	end, bufopts)
 	keymap("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
-	keymap("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+	-- keymap("n", "<leader>rn", vim.lsp.buf.rbname, bufopts)
 	keymap("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 	keymap("n", "gr", vim.lsp.buf.references, bufopts)
-	keymap("n", "<leader>f", vim.lsp.buf.format , bufopts)
+	keymap("n", "<leader>f", vim.lsp.buf.format, bufopts)
 	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
-	keymap('n', '<leader>y', vim.diagnostic.open_float, bufopts)
-	keymap('n', '[d', vim.diagnostic.goto_prev, bufopts)
-	keymap('n', ']d', vim.diagnostic.goto_next, bufopts)
-	keymap('n', '<leader>q', vim.diagnostic.setloclist, bufopts)
-	-- Require Plugins
+	keymap("n", "<leader>y", vim.diagnostic.open_float, bufopts)
+	keymap("n", "[d", vim.diagnostic.goto_prev, bufopts)
+	keymap("n", "]d", vim.diagnostic.goto_next, bufopts)
+	keymap("n", "<leader>q", vim.diagnostic.setloclist, bufopts)
 
-	-- LSP Specific Capabilities
-	-- Nvim 0.8 Change: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
+-- Nvim 0.8 Change: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
+
 	local util = require("vim.lsp.util")
-
+	
 	local formatting_callback = function(client, bufnr)
 		vim.keymap.set("n", "<leader>f", function()
 			local params = util.make_formatting_params({})
@@ -89,7 +99,7 @@ M.on_attach = function(client, bufnr)
 	end
 
 	if client.name == "jdtls" then
-		require('jdtls').setup_dap({ hotcodereplace = 'auto' })
+		require("jdtls").setup_dap({ hotcodereplace = "auto" })
 		require("jdtls.dap").setup_dap_main_class_configs()
 		formatting_callback(client, bufnr)
 	end

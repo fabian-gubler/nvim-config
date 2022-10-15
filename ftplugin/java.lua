@@ -14,8 +14,6 @@ local workspace_dir = home .. '/workspace/' .. project_name
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
-
-
 local bundles = {
 	vim.fn.glob(
 		home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
@@ -66,9 +64,6 @@ local config = {
 		"-data",
 		workspace_dir,
 	},
-
-
-
 
 	on_attach = require("lsp.handlers").on_attach,
 	capabilities = require("lsp.handlers").capabilities,
@@ -160,6 +155,8 @@ local config = {
 
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
+
+
 require("jdtls").start_or_attach(config)
 
 vim.cmd "command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
@@ -181,5 +178,3 @@ keymap("v", "<leader>jc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)
 keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
 
 require("dapui").setup()
-
-

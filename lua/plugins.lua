@@ -42,6 +42,21 @@ return packer.startup(function(use)
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("lewis6991/impatient.nvim")
 
+	-- Setup
+	use({
+		"nvim-tree/nvim-tree.lua",
+		config = function()
+			require("nvim-tree").setup({
+				view = {
+					auto_resize = true,
+					side = "left",
+					width = 60,
+					relativenumber = true,
+				},
+			})
+		end,
+	})
+
 	-- Commenting
 	use({
 		"numToStr/Comment.nvim",

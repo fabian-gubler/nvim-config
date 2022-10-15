@@ -10,7 +10,8 @@ keymap("x", "[#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#/##/<CR>", bufo
 -- general
 keymap("n", "<leader>tg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader><leader>", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>e", ":silent Lexplore<CR>")
+-- keymap("n", "<leader>e", ":silent Lexplore<CR>")
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>")
 keymap("n", "<leader>o", ":b#<CR>")
 
 -- resize windows

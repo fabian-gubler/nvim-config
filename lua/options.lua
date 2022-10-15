@@ -9,6 +9,8 @@ g.auto_save_silent = 1
 g.nord_borders = "true"
 g.netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 g.netrw_banner = 0
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
 -- options
 o.cmdheight = 0

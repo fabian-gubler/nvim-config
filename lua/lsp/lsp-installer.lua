@@ -41,13 +41,6 @@ for _, server in pairs(servers) do
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
 
-	-- if server == "pyright" then
-	-- 	cmd = { 
-	-- 	"pyright-langserver", 
-	-- 	"--stdio", 
-	-- 	"-p",
-	-- 	home .. "/.pyrightconfig.json",
-	-- }
 	-- end
 
 	lspconfig[server].setup(opts)
