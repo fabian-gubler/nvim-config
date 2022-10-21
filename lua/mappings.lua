@@ -22,9 +22,18 @@ keymap("n", "-", ":res -5<CR>")
 keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "<C-d>", "<C-d>zz")
 
+-- -- xdg-open
+-- keymap("n", "gx",":!xdg-open <C-r><C-a>", opts) -- because i disabled netrw
+
 -- lsp
 keymap("n", "<leader>m", "<cmd>LspInfo<CR>", opts)
 keymap("n", "<leader>M", "<cmd>Mason<CR>", opts)
+
+-- clipboard
+keymap("n", "<leader>y", "\"+y")
+keymap("v", "<leader>y", "\"+y")
+keymap("n", "<leader>p", "\"+p")
+keymap("v", "<leader>p", "\"+p")
 
 -- ctrl backspace to delete word
 keymap("i", "<C-H>", "<C-W>", opts)

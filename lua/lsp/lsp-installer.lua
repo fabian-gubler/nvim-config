@@ -1,10 +1,10 @@
 require("mason-lspconfig").setup({
-	ensure_installed = { 
-		-- LSP
-		"sumneko_lua", "pyright", "jdtls", "bash", "rust-analyzer",
-		-- Formatters
-		"stylua", "black", "prettier"
-	}
+	-- ensure_installed = { 
+	-- 	-- LSP
+	-- 	"sumneko_lua", "pyright", "jdtls", "bash", "rust-analyzer",
+	-- 	-- Formatters
+	-- 	"stylua", "black", "prettier"
+	-- }
 })
 
 -- Lsp Completion
@@ -20,9 +20,11 @@ if not lspconfig_status_ok then
 end
 
 local servers = {
+	"clangd",
 	"sumneko_lua",
 	"pyright",
 	"rust_analyzer",
+	-- "json",
 }
 
 local home = os.getenv "HOME"

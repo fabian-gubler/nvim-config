@@ -46,14 +46,7 @@ return packer.startup(function(use)
 	use({
 		"nvim-tree/nvim-tree.lua",
 		config = function()
-			require("nvim-tree").setup({
-				view = {
-					auto_resize = true,
-					side = "left",
-					width = 60,
-					relativenumber = true,
-				},
-			})
+			require("core.tree")
 		end,
 	})
 
