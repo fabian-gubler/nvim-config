@@ -12,13 +12,16 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		-- Java
-		formatting.google_java_format,
+		-- formatting.google_java_format,
+
 		-- Javascript
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote", "--trailingComma none" } }),
+
 		-- Lua
 		formatting.stylua,
+
 		-- Python
 		formatting.black.with({ extra_args = { "--fast" } }),
-		-- diagnostics.flake8,
+		diagnostics.flake8,
 	},
 })

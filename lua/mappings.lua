@@ -8,7 +8,7 @@ keymap("x", "]#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#//<CR>", bufopt
 keymap("x", "[#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#/##/<CR>", bufopts)
 
 -- general
-keymap("n", "<leader>tg", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>g", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader><leader>", ":Telescope find_files<CR>", opts)
 -- keymap("n", "<leader>e", ":silent Lexplore<CR>")
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>")

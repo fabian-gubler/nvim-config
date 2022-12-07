@@ -1,11 +1,39 @@
-require("mason-lspconfig").setup({
-	-- ensure_installed = { 
-	-- 	-- LSP
-	-- 	"sumneko_lua", "pyright", "jdtls", "bash", "rust-analyzer",
-	-- 	-- Formatters
-	-- 	"stylua", "black", "prettier"
-	-- }
+require("mason-tool-installer").setup({
+	ensure_installed = {
+
+		-- LSP
+		"lua-language-server",
+		"clangd",
+		"pyright",
+		"rust-analyzer",
+		"texlab",
+
+		-- you can pin a tool to a particular version
+		{ "jdtls", version = "v1.18.0" },
+
+		-- you can turn off/on auto_update per tool
+		{ "bash-language-server", auto_update = true },
+
+		-- Formatters
+		"stylua",
+		"shellcheck",
+		"black",
+		"prettier",
+		"flake8",
+	},
+
+	auto_update = false,
+	run_on_start = true,
+	start_delay = 3000, -- 3 second delay
 })
+
+local servers = {
+	"clangd",
+	"sumneko_lua",
+	"pyright",
+	"rust_analyzer",
+	"texlab",
+}
 
 -- Lsp Completion
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -19,17 +47,6 @@ if not lspconfig_status_ok then
 	return
 end
 
-local servers = {
-	"clangd",
-	"sumneko_lua",
-	"pyright",
-	"rust_analyzer",
-	-- "json",
-}
-
-local home = os.getenv "HOME"
-
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 for _, server in pairs(servers) do
@@ -39,7 +56,7 @@ for _, server in pairs(servers) do
 	}
 
 	if server == "sumneko_lua" then
-		local sumneko_opts = require "lsp.settings.sumneko_lua"
+		local sumneko_opts = require("lsp.settings.sumneko_lua")
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
 
@@ -47,5 +64,4 @@ for _, server in pairs(servers) do
 
 	lspconfig[server].setup(opts)
 	::continue::
-
 end

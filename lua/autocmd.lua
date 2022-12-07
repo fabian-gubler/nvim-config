@@ -15,9 +15,20 @@ autocmd("FileType", {
 	command = "setlocal ts=3 sts=3 sw=3",
 })
 
+-- cmdheight
+autocmd("RecordingEnter", {
+	pattern = "*",
+	command = "set cmdheight=1"
+})
+
+autocmd("RecordingLeave", {
+	pattern = "*",
+	command = "set cmdheight=0"
+})
+
 -- writing text
 autocmd("FileType", { pattern = { "markdown" }, command = "set cc= ignorecase smartcase" })
-autocmd("FileType", { pattern = { "tex" }, command = "set cc=79" })
+autocmd("FileType", { pattern = { "tex" }, command = "set cc=79"})
 autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap | setlocal linebreak" })
 
 -- no highlight
@@ -37,6 +48,10 @@ vim.cmd([[
 ]])
 
 vim.cmd([[
-		autocmd BufEnter *.py let @a=":MagmaReevaluateCell\<CR> |:normal })\<CR>"
-		autocmd BufEnter *.py let @o="<expr> <Leader>r nvim_exec('MagmaEvaluateOperator', v:true)"
+		autocmd BufEnter *.md let @o=":!typora %&<CR>"
 ]])
+
+-- vim.cmd([[
+-- 		autocmd BufEnter *.py let @a=":MagmaReevaluateCell\<CR> |:normal })\<CR>"
+-- 		autocmd BufEnter *.py let @o="<expr> <Leader>r nvim_exec('MagmaEvaluateOperator', v:true)"
+-- ]])

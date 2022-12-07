@@ -4,7 +4,7 @@ local ls = require("luasnip")
 -- require("luasnip.loaders.from_vscode").load()
 
 -- Load only python snippets
-require("luasnip/loaders/from_vscode").load({ include = { "python" } }) 
+require("luasnip.loaders.from_vscode").lazy_load()
 
 -- Custom Snippets
 local snip = ls.snippet

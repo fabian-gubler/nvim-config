@@ -82,7 +82,7 @@ M.on_attach = function(client, bufnr)
 	keymap("n", "gr", vim.lsp.buf.references, bufopts)
 	keymap("n", "<leader>f", vim.lsp.buf.format, bufopts)
 	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
-	keymap("n", "<leader>o", vim.diagnostic.open_float, bufopts)
+	keymap("n", "<leader>u", vim.diagnostic.open_float, bufopts)
 	keymap("n", "[d", vim.diagnostic.goto_prev, bufopts)
 	keymap("n", "]d", vim.diagnostic.goto_next, bufopts)
 	keymap("n", "<leader>q", vim.diagnostic.setloclist, bufopts)
