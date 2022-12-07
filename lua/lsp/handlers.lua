@@ -59,29 +59,21 @@ end
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
---- New
 
 M.on_attach = function(client, bufnr)
-	-- Mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local keymap = vim.keymap.set
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	keymap("n", "gD", vim.lsp.buf.declaration, bufopts)
 	keymap("n", "gd", vim.lsp.buf.definition, bufopts)
-	keymap("n", "K", vim.lsp.buf.hover, bufopts)
 	keymap("n", "gi", vim.lsp.buf.implementation, bufopts)
-	keymap("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
-	keymap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, bufopts)
-	keymap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
-	keymap("n", "<leader>wl", function()
-		print(vim.inspect(vim.lsp.buf.list_workleader_folders()))
-	end, bufopts)
-	keymap("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
-	-- keymap("n", "<leader>rn", vim.lsp.buf.rbname, bufopts)
-	keymap("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 	keymap("n", "gr", vim.lsp.buf.references, bufopts)
+	keymap("n", "K", vim.lsp.buf.hover, bufopts)
+	keymap("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+	keymap("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
+	keymap("n", "<leader>r", vim.lsp.buf.rename, bufopts)
+	keymap("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 	keymap("n", "<leader>f", vim.lsp.buf.format, bufopts)
-	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
 	keymap("n", "<leader>u", vim.diagnostic.open_float, bufopts)
 	keymap("n", "[d", vim.diagnostic.goto_prev, bufopts)
 	keymap("n", "]d", vim.diagnostic.goto_next, bufopts)

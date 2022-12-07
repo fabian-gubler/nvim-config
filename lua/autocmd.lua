@@ -48,7 +48,7 @@ vim.cmd([[
 ]])
 
 vim.cmd([[
-		autocmd BufEnter *.md let @o=":!typora %&<CR>"
+	autocmd BufEnter *.md let @o=":!typora %&<CR>"
 ]])
 
 -- vim.cmd([[

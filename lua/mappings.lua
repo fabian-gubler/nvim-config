@@ -7,6 +7,11 @@ keymap("n", "[#", ":keeppatterns s/^#//e<CR>", bufopts)
 keymap("x", "]#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#//<CR>", bufopts)
 keymap("x", "[#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#/##/<CR>", bufopts)
 
+-- sniprun
+keymap('v', 's', '<Plug>SnipRun', {silent = true})
+keymap('n', '<leader>s', '<Plug>SnipRunOperator', {silent = true})
+keymap('n', '<leader>ss', '<Plug>SnipRun', {silent = true})
+
 -- general
 keymap("n", "<leader>g", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader><leader>", ":Telescope find_files<CR>", opts)

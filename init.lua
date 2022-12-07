@@ -8,7 +8,8 @@ require("options")
 require("mappings")
 require("autocmd")
 require("lsp")
-require("terminal")
+require("core.terminal")
+require("core.sniprun")
 
 -- Set Colorsceme
 vim.cmd.colorscheme('nord')

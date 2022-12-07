@@ -41,6 +41,7 @@ return packer.startup(function(use)
 	use("ThePrimeagen/harpoon")
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("lewis6991/impatient.nvim")
+	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 
 	-- Setup
 	use({
@@ -61,8 +62,8 @@ return packer.startup(function(use)
 	-- Mason
 	use({
 		"williamboman/mason.nvim",
-		requires = { 
-			"williamboman/mason-lspconfig.nvim", 
+		requires = {
+			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 		},
