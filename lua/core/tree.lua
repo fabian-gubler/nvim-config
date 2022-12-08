@@ -1,4 +1,8 @@
+# NOTE: nvim-tree.view.mappings
+
 require("nvim-tree").setup({
+	-- disable_netrw = true,
+	-- hijack_netrw = false,
 	view = {
 		adaptive_size = true,
 		side = "left",

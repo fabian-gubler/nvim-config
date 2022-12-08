@@ -39,7 +39,6 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("stevearc/dressing.nvim")
 	use("ThePrimeagen/harpoon")
-	use("nvim-treesitter/nvim-treesitter-context")
 	use("lewis6991/impatient.nvim")
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 

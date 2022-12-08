@@ -17,6 +17,7 @@ keymap("n", "<leader>g", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader><leader>", ":Telescope find_files<CR>", opts)
 -- keymap("n", "<leader>e", ":silent Lexplore<CR>")
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>")
+keymap("n", "<leader>E", ":NvimTreeFindFileToggle<CR>")
 keymap("n", "<leader>o", ":b#<CR>")
 
 -- resize windows
@@ -28,7 +29,7 @@ keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "<C-d>", "<C-d>zz")
 
 -- -- xdg-open
--- keymap("n", "gx",":!xdg-open <C-r><C-a>", opts) -- because i disabled netrw
+keymap("n", "gx",":!xdg-open <C-r><C-a><CR>", opts) -- because i disabled netrw
 
 -- lsp
 keymap("n", "<leader>m", "<cmd>LspInfo<CR>", opts)
