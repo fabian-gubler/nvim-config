@@ -153,13 +153,6 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- Bar
-	-- use({
-	-- 	"romgrk/barbar.nvim",
-	-- 	requires = { "kyazdani42/nvim-web-devicons" },
-	-- 	config = function() require("core.bar") end,
-	-- })
-
 	-- Colorizer
 	use({
 		"norcalli/nvim-colorizer.lua",

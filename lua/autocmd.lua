@@ -15,20 +15,24 @@ autocmd("FileType", {
 	command = "setlocal ts=3 sts=3 sw=3",
 })
 
+-- turn off lsp
+
+vim.cmd("autocmd BufRead,BufNewFile config.py :LspStop")
+
 -- cmdheight
 autocmd("RecordingEnter", {
 	pattern = "*",
-	command = "set cmdheight=1"
+	command = "set cmdheight=1",
 })
 
 autocmd("RecordingLeave", {
 	pattern = "*",
-	command = "set cmdheight=0"
+	command = "set cmdheight=0",
 })
 
 -- writing text
 autocmd("FileType", { pattern = { "markdown" }, command = "set cc= ignorecase smartcase" })
-autocmd("FileType", { pattern = { "tex" }, command = "set cc=79"})
+autocmd("FileType", { pattern = { "tex" }, command = "set cc=79" })
 autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap | setlocal linebreak" })
 
 -- no highlight
@@ -38,7 +42,6 @@ autocmd("InsertLeave", { command = "setlocal nohlsearch" })
 vim.cmd([[
 	augroup run_file
 		autocmd BufEnter *.java let @g=":w\<CR>:terminal java %\<CR>"
-		autocmd BufEnter *.py let @g=":w\<CR>:10 sp |terminal python3 %\<CR>i" 
 		autocmd BufEnter *.cpp let @g=":w\<CR> :!g++ %\<CR> | :10 sp |terminal ./a.out\<CR>i" 
 		autocmd BufEnter *.c let @g=":w\<CR> :!gcc %\<CR> | :10 sp |terminal ./a.out\<CR>i" 
 		autocmd BufEnter *.go let @g=":w\<CR> :10 sp | terminal go run % \<CR>i" 
@@ -51,7 +54,12 @@ vim.cmd([[
 	autocmd BufEnter *.md let @o=":!typora %&<CR>"
 ]])
 
--- vim.cmd([[
--- 		autocmd BufEnter *.py let @a=":MagmaReevaluateCell\<CR> |:normal })\<CR>"
--- 		autocmd BufEnter *.py let @o="<expr> <Leader>r nvim_exec('MagmaEvaluateOperator', v:true)"
--- ]])
+vim.api.nvim_create_augroup("run_file", { clear = true })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	group = "run_file",
+	pattern = { "*.py" },
+	callback = function()
+		vim.fn.setreg("g", ":10 sp |terminal python3 %")
+	end,
+})

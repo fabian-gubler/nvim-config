@@ -1,9 +1,6 @@
 local ls = require("luasnip")
 
 -- Load all VSCode snippets
--- require("luasnip.loaders.from_vscode").load()
-
--- Load only python snippets
 require("luasnip.loaders.from_vscode").lazy_load()
 
 -- Custom Snippets
@@ -16,21 +13,23 @@ local choice = ls.choice_node
 local dynamicn = ls.dynamic_node
 
 ls.add_snippets("markdown", {
-	snip({
-		trig = "figure",
-	}, {
+	snip({ trig = "figure" }, {
 		text({ "<figure markdown>", "  ![Image](" }),
 		insert(1, "/path/to/file"),
 		text({ ")", "  <figcaption>" }),
 		insert(2, ""),
 		text({ "</figcaption>", "</figure>" }),
 	}),
-	snip({
-		trig = "anki",
-	}, {
-		text({ "## " }),
-		insert(1, "Title"),
-		text({ "", "%", "" }),
-		insert(2, "Description"),
+})
+
+ls.add_snippets("mail", {
+	snip({ trig = "sign" }, {
+		text({ "Yours sincerly,", "Fabian Gubler" }),
+	}),
+	snip({ trig = "best" }, {
+		text({ "Best Regards,", "Fabian Gubler" }),
+	}),
+	snip({ trig = "grüsse" }, {
+		text({ "Freundliche Grüsse,", "Fabian Gubler" }),
 	}),
 })
