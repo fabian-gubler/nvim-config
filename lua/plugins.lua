@@ -42,6 +42,7 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 
+
 	-- Setup
 	use({
 		"nvim-tree/nvim-tree.lua",
