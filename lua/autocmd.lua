@@ -31,7 +31,7 @@ autocmd("RecordingLeave", {
 })
 
 -- writing text
-autocmd("FileType", { pattern = { "markdown" }, command = "set cc= ignorecase smartcase" })
+autocmd("FileType", { pattern = { "markdown" }, command = "set cc= ignorecase smartcase | set foldlevel=2" })
 autocmd("FileType", { pattern = { "tex" }, command = "set cc=79" })
 autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap | setlocal linebreak" })
 
@@ -41,6 +41,7 @@ autocmd("InsertLeave", { command = "setlocal nohlsearch" })
 -- Run current file
 vim.cmd([[
 	augroup run_file
+		autocmd BufEnter *.py let @g=":w\<CR>:terminal python3 %\<CR>"
 		autocmd BufEnter *.java let @g=":w\<CR>:terminal java %\<CR>"
 		autocmd BufEnter *.cpp let @g=":w\<CR> :!g++ %\<CR> | :10 sp |terminal ./a.out\<CR>i" 
 		autocmd BufEnter *.c let @g=":w\<CR> :!gcc %\<CR> | :10 sp |terminal ./a.out\<CR>i" 
@@ -50,16 +51,7 @@ vim.cmd([[
 	augroup end
 ]])
 
+-- Open Current File
 vim.cmd([[
-	autocmd BufEnter *.md let @o=":!typora %&<CR>"
+	autocmd BufEnter *.md let @o=":!typora %&\<CR>"
 ]])
-
-vim.api.nvim_create_augroup("run_file", { clear = true })
-
-vim.api.nvim_create_autocmd("BufEnter", {
-	group = "run_file",
-	pattern = { "*.py" },
-	callback = function()
-		vim.fn.setreg("g", ":10 sp |terminal python3 %")
-	end,
-})
