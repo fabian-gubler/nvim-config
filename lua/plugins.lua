@@ -41,6 +41,7 @@ return packer.startup(function(use)
 	use("ThePrimeagen/harpoon")
 	use("lewis6991/impatient.nvim")
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
+	use("godlygeek/tabular")
 
 	-- Setup
 	use({
