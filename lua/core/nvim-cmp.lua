@@ -1,6 +1,9 @@
 -- Setup nvim-cmp.
 local cmp = require("cmp")
 
+
+
+
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
 	return
@@ -26,6 +29,7 @@ local kind_icons = {
 	File = "",
 	Reference = "",
 	Folder = "",
+	Copilot = "",
 	EnumMember = "",
 	Constant = "",
 	Struct = "",
@@ -100,6 +104,7 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "path" },
 		{ name = "nvim_lsp_signature_help" },
+		-- { name = "copilot", group_index = 2 },
 		{ name = "luasnip", max_item_count = 5 },
 		{ name = "nvim_lsp", max_item_count = 8 },
 		{ name = "nvim_lua", max_item_count = 5 },

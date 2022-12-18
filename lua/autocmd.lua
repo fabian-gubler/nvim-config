@@ -4,20 +4,18 @@ local augroup = vim.api.nvim_create_autogroup
 -- appearance
 autocmd("BufEnter", { command = "set laststatus=3 | set formatoptions-=o" })
 
+
 -- tab size
 autocmd("FileType", {
 	pattern = { "typescript", "typescriptreact", "html", "javascript", "javascriptreact" },
 	command = "setlocal ts=2 sts=2 sw=2",
 })
 
+
 autocmd("FileType", {
 	pattern = { "lua", "r" },
 	command = "setlocal ts=3 sts=3 sw=3",
 })
-
--- turn off lsp
-
-vim.cmd("autocmd BufRead,BufNewFile config.py :LspStop")
 
 -- cmdheight
 autocmd("RecordingEnter", {
@@ -54,4 +52,6 @@ vim.cmd([[
 -- Open Current File
 vim.cmd([[
 	autocmd BufEnter *.md let @o=":!typora %&\<CR>"
+	autocmd BufEnter *.md let @p=":!pandoc -s % -o %:r.pdf &"
+	autocmd BufEnter *.tex let @p=":!pandoc -s % -o %:r.pdf &"
 ]])

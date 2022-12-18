@@ -43,6 +43,25 @@ return packer.startup(function(use)
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 	use("godlygeek/tabular")
 
+	-- Copilot
+	use({
+		"zbirenbaum/copilot.lua",
+		event = "VimEnter",
+		config = function()
+			vim.schedule(function()
+				require("core.copilot")
+			end)
+		end,
+	})
+
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	})
+
 	-- Setup
 	use({
 		"nvim-tree/nvim-tree.lua",

@@ -1,6 +1,7 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local bufopts = { noremap = true, silent = true, buffer = 0 }
+
 -- markdown
 keymap("n", "]#", ":keeppatterns s/^/#/e<CR>", bufopts)
 keymap("n", "[#", ":keeppatterns s/^#//e<CR>", bufopts)
@@ -8,38 +9,46 @@ keymap("x", "]#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#//<CR>", bufopt
 keymap("x", "[#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#/##/<CR>", bufopts)
 
 -- sniprun
-keymap('v', 's', '<Plug>SnipRun', {silent = true})
-keymap('n', '<leader>s', '<Plug>SnipRunOperator', {silent = true})
-keymap('n', '<leader>ss', '<Plug>SnipRun', {silent = true})
+keymap("v", "s", "<Plug>SnipRun", { silent = true })
+keymap("n", "<leader>s", "<Plug>SnipRunOperator", { silent = true })
+keymap("n", "<leader>ss", "<Plug>SnipRun", { silent = true })
 
 -- general
 keymap("n", "<leader>g", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader><leader>", ":Telescope find_files<CR>", opts)
--- keymap("n", "<leader>e", ":silent Lexplore<CR>")
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>")
 keymap("n", "<leader>E", ":NvimTreeFindFileToggle<CR>")
 keymap("n", "<leader>o", ":b#<CR>")
+
+-- copilot
+keymap("n", "<leader>c", function() require("copilot.suggestion").toggle_auto_trigger() end, opts)
+keymap("i", "<A-.>", function() require('copilot.suggestion').next() end, opts)
+keymap("i", "<A-,>", function() require('copilot.suggestion').prev() end, opts)
+keymap("i", "<C-y>", function() require('copilot.suggestion').accept() end, opts)
 
 -- resize windows
 keymap("n", "+", ":res +5<CR>")
 keymap("n", "-", ":res -5<CR>")
 
+
 -- center
 keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "<C-d>", "<C-d>zz")
 
--- -- xdg-open
-keymap("n", "gx",":!xdg-open <C-r><C-a><CR>", opts) -- because i disabled netrw
+-- xdg-open
+keymap("n", "gx", ":!xdg-open <C-r><C-a><CR>", opts) -- because i disabled netrw
 
 -- lsp
 keymap("n", "<leader>m", "<cmd>LspInfo<CR>", opts)
 keymap("n", "<leader>M", "<cmd>Mason<CR>", opts)
 
 -- clipboard
-keymap("n", "<leader>y", "\"+y")
-keymap("v", "<leader>y", "\"+y")
-keymap("n", "<leader>p", "\"+p")
-keymap("v", "<leader>p", "\"+p")
+keymap("n", "<leader>y", '"+y')
+keymap("v", "<leader>y", '"+y')
+keymap("n", "<leader>p", '"+p')
+keymap("v", "<leader>p", '"+p')
+keymap("n", "<leader>d", '"+d')
+keymap("v", "<leader>d", '"+d')
 
 -- ctrl backspace to delete word
 keymap("i", "<C-H>", "<C-W>", opts)
