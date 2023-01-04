@@ -19,6 +19,7 @@ keymap("n", "<leader><leader>", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>")
 keymap("n", "<leader>E", ":NvimTreeFindFileToggle<CR>")
 keymap("n", "<leader>o", ":b#<CR>")
+keymap("n", "<leader>u", ":UndotreeToggle<CR>")
 
 -- copilot
 keymap("n", "<leader>c", function() require("copilot.suggestion").toggle_auto_trigger() end, opts)
