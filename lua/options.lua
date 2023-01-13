@@ -15,7 +15,6 @@ g.loaded_netrwPlugin = 1
 -- options
 o.cmdheight = 0
 o.ignorecase = true
-o.termguicolors = true
 o.relativenumber = true
 o.numberwidth = 1
 o.showmode = false

@@ -1,88 +1,50 @@
 local fn = vim.fn
 
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	return
-end
-
--- Have packer use a popup window
-packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
-	},
-})
-
-return packer.startup(function(use)
-	-- Packer can manage itself
-	use("wbthomason/packer.nvim")
-
+require('lazy').setup({
 	-- simple setup
-	use("shaunsingh/nord.nvim")
-	use("907th/vim-auto-save")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("stevearc/dressing.nvim")
-	use("ThePrimeagen/harpoon")
-	use("mbbill/undotree")
-	use("lewis6991/impatient.nvim")
-	use({ "michaelb/sniprun", run = "bash ./install.sh" })
-	use("godlygeek/tabular")
+	"shaunsingh/nord.nvim",
+	"907th/vim-auto-save",
+	"lukas-reineke/indent-blankline.nvim",
+	"jose-elias-alvarez/null-ls.nvim",
+	"stevearc/dressing.nvim",
+	"ThePrimeagen/harpoon",
+	"mbbill/undotree",
+	"godlygeek/tabular",
 
-	-- Copilot
-	use({
-		"zbirenbaum/copilot.lua",
-		event = "VimEnter",
-		config = function()
-			vim.schedule(function()
-				require("core.copilot")
-			end)
-		end,
-	})
+	-- programming language extensions
+	"mfussenegger/nvim-jdtls",
+	"simrat39/rust-tools.nvim",
 
-	use({
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua" },
-		config = function()
-			require("copilot_cmp").setup()
-		end,
-	})
-
-	-- Setup
-	use({
+	{
 		"nvim-tree/nvim-tree.lua",
 		config = function()
 			require("core.tree")
 		end,
-	})
+	},
 
-	-- Commenting
-	use({
+	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()
 		end,
-	})
+	},
 
-	-- Mason
-	use({
+	{
 		"williamboman/mason.nvim",
-		requires = {
+		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -90,50 +52,43 @@ return packer.startup(function(use)
 		config = function()
 			require("mason").setup()
 		end,
-	})
-
-	-- Data Science
-	use({ "dccsillag/magma-nvim", run = ":UpdateRemotePlugins" })
-
-	-- Programming Language Extensions
-	use("mfussenegger/nvim-jdtls")
-	use("simrat39/rust-tools.nvim")
+	},
 
 	-- Surround
-	use({
+	{
 		"kylechui/nvim-surround",
 		config = function()
 			require("nvim-surround").setup({
 				-- Configuration here, or leave empty to use defaults
 			})
 		end,
-	})
+	},
 
 	-- Debugging
-	use({
+	{
 		"rcarriga/nvim-dap-ui",
-		requires = { "mfussenegger/nvim-dap" },
+		dependencies = { "mfussenegger/nvim-dap" },
 		config = function()
 			require("core.dap")
 		end,
-	})
+	},
 
 	-- Treesitter
-	use({
+	{
 		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
+		build = ":TSUpdate",
 		config = function()
 			require("core.treesitter")
 		end,
-	})
+	},
 
 	-- Completion
-	use({
+	{
 		"hrsh7th/nvim-cmp",
 		config = function()
 			require("core.nvim-cmp")
 		end,
-		requires = {
+		dependencies = {
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-nvim-lsp" },
@@ -141,19 +96,17 @@ return packer.startup(function(use)
 			{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 			{ "saadparwaiz1/cmp_luasnip" },
 		},
-	})
+	},
 
-	-- Snippets
-	use({
+	{
 		"L3MON4D3/LuaSnip",
-		requires = { "rafamadriz/friendly-snippets" },
+		dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()
 			require("core.snippets")
 		end,
-	})
+	},
 
-	-- Telescope
-	use({
+	{
 		"nvim-telescope/telescope.nvim",
 		config = function()
 			require("telescope").setup({
@@ -163,36 +116,32 @@ return packer.startup(function(use)
 				},
 			})
 		end,
-		requires = { { "nvim-lua/plenary.nvim" } },
-	})
+		dependencies = { { "nvim-lua/plenary.nvim" } },
+	},
 
-	-- Git
-	use({
+	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
 		end,
-	})
+	},
 
-	-- Colorizer
-	use({
+	{
 		"norcalli/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup()
 		end,
-	})
+	},
 
-	-- Statusline
-	use({
+	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
 			require("core.lualine")
 		end,
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
+		dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
+	},
 
-	-- Terminal
-	use({
+	{
 		"akinsho/toggleterm.nvim",
 		config = function()
 			require("toggleterm").setup({
@@ -200,19 +149,13 @@ return packer.startup(function(use)
 				direction = "float",
 			})
 		end,
-	})
+	},
 
-	-- Autopairs
-	use({
+	{
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup()
 		end,
-	})
+	},
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-		require("packer").sync()
-	end
-end)
+})

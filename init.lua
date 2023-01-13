@@ -1,4 +1,5 @@
 -- Space as leader
+vim.o.termguicolors = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -9,7 +10,6 @@ require("mappings")
 require("autocmd")
 require("lsp")
 require("core.terminal")
-require("core.sniprun")
 
 -- Set Colorsceme
 vim.cmd.colorscheme('nord')
