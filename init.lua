@@ -1,20 +1,34 @@
--- Space as leader
-vim.o.termguicolors = true
+-- space as leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- plugins
+vim.o.termguicolors = true
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require('lazy').setup('plugins')
+
 -- Configuration files
-require("plugins")
 require("options")
 require("mappings")
 require("autocmd")
 require("lsp")
-require("core.terminal")
-
--- Set Colorsceme
+--
+-- set colorsceme
 vim.cmd.colorscheme('nord')
 
--- Highlight on yank
+-- highlight on yank
 vim.api.nvim_exec(
 	[[
   augroup YankHighlight
@@ -24,4 +38,3 @@ vim.api.nvim_exec(
 ]],
 	false
 )
-

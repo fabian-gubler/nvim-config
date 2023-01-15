@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# List of Resources
+#	Configuration: https://sookocheff.com/post/vim/neovim-java-ide/
+#	Configuration: https://alpha2phi.medium.com/neovim-for-beginners-java-6a86cf1a91a5
+#	Debuggin: https://alpha2phi.medium.com/neovim-for-beginners-java-debugging-f141dc2bca96
+
 cd java-debug
 ./mvnw clean install
 
