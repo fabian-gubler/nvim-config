@@ -29,7 +29,7 @@ autocmd("RecordingLeave", {
 })
 
 -- writing text
-autocmd("FileType", { pattern = { "markdown" }, command = "set cc= ignorecase smartcase | set foldlevel=2" })
+-- autocmd("FileType", { pattern = { "markdown" }, command = "set cc= ignorecase smartcase | set foldlevel=2" })
 autocmd("FileType", { pattern = { "tex" }, command = "set cc=79" })
 autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap | setlocal linebreak" })
 
