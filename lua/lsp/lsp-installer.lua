@@ -7,6 +7,7 @@ require("mason-tool-installer").setup({
 		"pyright",
 		"rust-analyzer",
 		"texlab",
+		"rnix-lsp",
 
 		-- you can pin a tool to a particular version
 		{ "jdtls", version = "v1.18.0" },
@@ -15,7 +16,6 @@ require("mason-tool-installer").setup({
 		{ "bash-language-server", auto_update = true },
 
 		-- Formatters
-		"stylua",
 		"shellcheck",
 		"black",
 		"prettier",
@@ -33,6 +33,7 @@ local servers = {
 	"pyright",
 	"rust_analyzer",
 	"texlab",
+	"rnix",
 }
 
 -- Lsp Completion
