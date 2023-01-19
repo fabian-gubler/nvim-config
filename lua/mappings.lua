@@ -22,6 +22,10 @@ keymap("n", "<leader>o", ":b#<CR>")
 keymap("n", "<leader>u", ":UndotreeToggle<CR>")
 keymap("n", "<leader>l", ":Lazy<CR>")
 
+-- disable
+keymap("n", "+", "<Nop>", opts)
+keymap("n", "-", "<Nop>", opts)
+
 -- copilot
 keymap("n", "<leader>c", function() require("copilot.suggestion").toggle_auto_trigger() end, opts)
 keymap("i", "<A-.>", function() require('copilot.suggestion').next() end, opts)
