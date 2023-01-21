@@ -3,7 +3,7 @@ require("mason-tool-installer").setup({
 
 		-- LSP
 		"lua-language-server",
-		"clangd",
+		-- "clangd",
 		"pyright",
 		"rust-analyzer",
 		"texlab",
@@ -28,7 +28,7 @@ require("mason-tool-installer").setup({
 })
 
 local servers = {
-	"clangd",
+	-- "clangd",
 	"sumneko_lua",
 	"pyright",
 	"rust_analyzer",
