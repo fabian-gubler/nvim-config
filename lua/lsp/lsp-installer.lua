@@ -16,6 +16,7 @@ require("mason-tool-installer").setup({
 		{ "bash-language-server", auto_update = true },
 
 		-- Formatters
+		"stylua",
 		"shellcheck",
 		"black",
 		"prettier",
