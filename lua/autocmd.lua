@@ -2,7 +2,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_autogroup
 
 -- appearance
-autocmd("BufEnter", { command = "set laststatus=3 | set formatoptions-=o" })
+autocmd("BufEnter", { command = "set laststatus=3" })
 
 
 -- tab size
@@ -18,13 +18,13 @@ autocmd("FileType", {
 })
 
 -- remember folds
-vim.cmd [[
-	augroup remember_folds
-	  autocmd!
-	  autocmd BufWinLeave *.md mkview
-	  autocmd BufWinEnter *.md silent! loadview
-	augroup END
-]]
+-- vim.cmd [[
+-- 	augroup remember_folds
+-- 	  autocmd!
+-- 	  autocmd BufWinLeave *.md mkview
+-- 	  autocmd BufWinEnter *.md silent! loadview
+-- 	augroup END
+-- ]]
 
 -- cmdheight
 autocmd("RecordingEnter", {
@@ -38,7 +38,6 @@ autocmd("RecordingLeave", {
 })
 
 -- writing text
--- autocmd("FileType", { pattern = { "markdown" }, command = "set cc= ignorecase smartcase | set foldlevel=2" })
 autocmd("FileType", { pattern = { "tex" }, command = "set cc=79" })
 autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap | setlocal linebreak" })
 
