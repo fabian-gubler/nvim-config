@@ -17,7 +17,6 @@ require("mason-tool-installer").setup({
 
 		-- Formatters
 		"stylua",
-		"shellcheck",
 		"black",
 		"prettier",
 		"flake8",
@@ -35,6 +34,7 @@ local servers = {
 	"rust_analyzer",
 	"texlab",
 	"rnix",
+	"bashls",
 }
 
 -- Lsp Completion
