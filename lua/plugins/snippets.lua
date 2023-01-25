@@ -16,6 +16,12 @@ return {
 		local choice = ls.choice_node
 		local dynamicn = ls.dynamic_node
 
+		ls.add_snippets("sh", {
+			snip({ trig = "#!" }, {
+				text({ "#!/usr/bin/env bash"}),
+			}),
+		})
+
 		ls.add_snippets("markdown", {
 			snip({ trig = "figure" }, {
 				text({ "<figure markdown>", "  ![Image](" }),
