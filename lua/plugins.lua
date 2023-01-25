@@ -13,6 +13,12 @@ return {
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
+	
+  {
+    "kiyoon/jupynium.nvim",
+    -- build = "~/miniconda3/envs/jupynium/bin/pip install .",
+    -- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
+  },
 
 	{
 		"numToStr/Comment.nvim",
