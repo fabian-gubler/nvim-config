@@ -13,6 +13,13 @@ return {
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
+
+-- install without yarn or npm
+{
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+},
+
 	
   {
     "kiyoon/jupynium.nvim",
