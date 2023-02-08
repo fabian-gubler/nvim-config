@@ -7,9 +7,15 @@ git clone git@github.com:fabian-gubler/nvim-config.git ~/.config/nvim
 ## My Neovim Configuration
 ![config preview](https://raw.githubusercontent.com/fabian-gubler/nvim-config/main/doc/preview_full.jpg)
 
-## Possible: Move towards declarative nix configuration
-- Goal would be to declare everything that should be reproducible (lsp, formatters, plugins)
-- Use nixpkgs wherever possible (decouple from neovim)
+## Nix-based Configuration
+The philosophy behind this configuration is to allow for easily configurable and reproducible neovim environments. Enter a directory and have a ready to go neovim configuration that is the same on every machine.
+
+## Portability
+- rbw for exporting OPENAI_KEY
+
+## Todo: Move towards declarative nix configuration
+- Plugins that do not have LFS limitations should be managed by lazy (with lock file)
+- Declare everything else that should be reproducible (lsp, formatters)
 - Further configuration should be in lua
 
 [Nix Neovim Wiki](https://nixos.wiki/wiki/Neovim)

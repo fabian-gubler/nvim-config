@@ -1,9 +1,10 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_autogroup
 
+
+
 -- appearance
 autocmd("BufEnter", { command = "set laststatus=3" })
-
 
 -- tab size
 autocmd("FileType", {

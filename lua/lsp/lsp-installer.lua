@@ -2,7 +2,7 @@ require("mason-tool-installer").setup({
 	ensure_installed = {
 
 		-- LSP
-		"lua-language-server",
+		-- "lua-language-server",
 		-- "clangd",
 		"pyright",
 		"rust-analyzer",
@@ -16,7 +16,7 @@ require("mason-tool-installer").setup({
 		{ "bash-language-server", auto_update = true },
 
 		-- Formatters
-		"stylua",
+		-- "stylua",
 		"black",
 		"prettier",
 		"flake8",

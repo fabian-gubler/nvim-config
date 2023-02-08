@@ -28,7 +28,7 @@ iron.setup {
     send_motion = "<space>sc",
     visual_send = "<space>sc",
     send_file = "<space>sf",
-    send_line = "<space>sl",
+    send_line = "<space>ss",
     send_mark = "<space>sm",
     mark_motion = "<space>mc",
     mark_visual = "<space>mc",
@@ -36,7 +36,7 @@ iron.setup {
     cr = "<space>s<cr>",
     interrupt = "<space>s<space>",
     exit = "<space>sq",
-    clear = "<space>cl",
+    clear = "<space>sl",
   },
   -- If the highlight is on, you can change how it looks
   -- For the available options, check nvim_set_hl

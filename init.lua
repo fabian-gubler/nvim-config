@@ -24,7 +24,7 @@ require("options")
 require("mappings")
 require("autocmd")
 require("lsp")
-
+--
 -- set colorsceme
 vim.cmd.colorscheme('nord')
 
