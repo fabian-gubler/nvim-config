@@ -5,11 +5,9 @@
 #	Configuration: https://alpha2phi.medium.com/neovim-for-beginners-java-6a86cf1a91a5
 #	Debuggin: https://alpha2phi.medium.com/neovim-for-beginners-java-debugging-f141dc2bca96
 
-cd java-debug
+cd ~/.config/nvim/java/java-debug
 ./mvnw clean install
 
-cd ..
-
-cd vscode-java-test
+cd ~/.config/nvim/java/vscode-java-test
 npm install
 npm run build-plugin

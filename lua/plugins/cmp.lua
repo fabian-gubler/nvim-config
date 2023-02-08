@@ -54,6 +54,7 @@ return {
 				["<C-d>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-e>"] = cmp.mapping.abort(),
+				['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 				["<c-y>"] = cmp.mapping(
 					cmp.mapping.confirm({
 						behavior = cmp.ConfirmBehavior.Insert,
@@ -102,9 +103,9 @@ return {
 			},
 
 			sources = cmp.config.sources({
+				{ name = "copilot", group_index = 2 },
 				{ name = "path" },
 				{ name = "nvim_lsp_signature_help" },
-				-- { name = "copilot", group_index = 2 },
 				{ name = "luasnip", max_item_count = 5 },
 				{ name = "nvim_lsp", max_item_count = 8 },
 				{ name = "nvim_lua", max_item_count = 5 },

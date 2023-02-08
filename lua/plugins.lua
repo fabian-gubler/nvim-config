@@ -10,6 +10,7 @@ return {
 	"mbbill/undotree",
 	"godlygeek/tabular",
 
+
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",

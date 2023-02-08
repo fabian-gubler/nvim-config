@@ -47,7 +47,7 @@ autocmd("InsertLeave", { command = "setlocal nohlsearch" })
 -- Run current file
 vim.cmd([[
 	augroup run_file
-		autocmd BufEnter *.py let @g=":w\<CR>:terminal python3 %\<CR>"
+		autocmd BufEnter *.py let @g=":w\<CR>:20 sp | terminal python3 %\<CR>"
 		autocmd BufEnter *.java let @g=":w\<CR>:terminal java %\<CR>"
 		autocmd BufEnter *.cpp let @g=":w\<CR> :!g++ %\<CR> | :10 sp |terminal ./a.out\<CR>i" 
 		autocmd BufEnter *.c let @g=":w\<CR> :!gcc %\<CR> | :10 sp |terminal ./a.out\<CR>i" 
