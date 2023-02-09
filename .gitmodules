@@ -7,6 +7,3 @@
 [submodule "java/java-debug"]
 	path = java/java-debug
 	url = https://github.com/microsoft/java-debug
-[submodule "java/vscode-java-test"]
-	path = java/vscode-java-test
-	url = https://github.com/microsoft/vscode-java-test.git

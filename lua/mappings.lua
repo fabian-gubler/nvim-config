@@ -34,7 +34,7 @@ keymap("n", "-", "<Nop>", opts)
 keymap("n", "<leader>c", function() require("copilot.suggestion").toggle_auto_trigger() end, opts)
 keymap("i", "<A-.>", function() require('copilot.suggestion').next() end, opts)
 keymap("i", "<A-,>", function() require('copilot.suggestion').prev() end, opts)
-keymap("i", "<C-y>", function() require('copilot.suggestion').accept() end, opts)
+keymap("i", "<A-CR>", function() require('copilot.suggestion').accept() end, opts)
 
 -- resize windows
 keymap("n", "+", ":res +5<CR>")
