@@ -11,8 +11,7 @@ git clone git@github.com:fabian-gubler/nvim-config.git ~/.config/nvim
 The philosophy behind this configuration is to allow for easily configurable and reproducible neovim environments. Enter a directory and have a ready to go neovim configuration that is the same on every machine.
 
 ## Todo: Move towards declarative nix configuration
-- rbw for exporting OPENAI_KEY
-- install java modules
+- Installation of java modules
 - Plugins that do not have LFS limitations should be managed by lazy (with lock file)
 - Declare everything else that should be reproducible (lsp, formatters)
 - Further configuration should be in lua

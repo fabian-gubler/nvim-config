@@ -10,23 +10,9 @@ return {
 	"mbbill/undotree",
 	"godlygeek/tabular",
 
-
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
-
--- install without yarn or npm
-{
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-},
-
-	
-  {
-    "kiyoon/jupynium.nvim",
-    -- build = "~/miniconda3/envs/jupynium/bin/pip install .",
-    -- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
-  },
 
 	{
 		"numToStr/Comment.nvim",
