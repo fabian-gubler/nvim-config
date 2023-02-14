@@ -1,5 +1,8 @@
 local M = {}
 
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 -- TODO: backfill this to template
 M.setup = function()
 	local signs = {
@@ -50,20 +53,10 @@ M.setup = function()
 	})
 end
 
---- New
-local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_cmp_ok then
-	return
-end
-
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities.textDocument.completion.completionItem.snippetSupport = true
--- M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
-
-M.on_attach = function(client, bufnr)
-	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	local keymap = vim.keymap.set
+local function lsp_keymaps(bufnr)
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
+	local keymap = vim.keymap.set
+	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	keymap("n", "gD", vim.lsp.buf.declaration, bufopts)
 	keymap("n", "gd", vim.lsp.buf.definition, bufopts)
 	keymap("n", "gi", vim.lsp.buf.implementation, bufopts)
@@ -78,27 +71,24 @@ M.on_attach = function(client, bufnr)
 	keymap("n", "[d", vim.diagnostic.goto_prev, bufopts)
 	keymap("n", "]d", vim.diagnostic.goto_next, bufopts)
 	keymap("n", "<leader>q", vim.diagnostic.setloclist, bufopts)
+end
 
-	-- Nvim 0.8 Change: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
 
-	local util = require("vim.lsp.util")
-
-	local formatting_callback = function(client, bufnr)
-		vim.keymap.set("n", "<leader>f", function()
-			local params = util.make_formatting_params({})
-			client.request("textDocument/formatting", params, nil, bufnr)
-		end, { buffer = bufnr })
-	end
+M.on_attach = function(client, bufnr)
 
 	if client.name == "jdtls" then
+	-- reccomended according to nvim-jdtls
 		require("jdtls").setup_dap({ hotcodereplace = "auto" })
 		require("jdtls.dap").setup_dap_main_class_configs()
-		formatting_callback(client, bufnr)
 	end
 
-	if client.name == "sumneko_lua" then
-		-- formatting_callback(client, bufnr)
+	if client.name == "lua_ls" then
+	-- use stylua instead of builtin
+		client.server_capabilities.documentFormattingProvider = false
 	end
+
+	lsp_keymaps(bufnr)
+
 end
 
 return M

@@ -26,6 +26,9 @@ keymap("n", "<leader>o", ":b#<CR>")
 keymap("n", "<leader>u", ":UndotreeToggle<CR>")
 keymap("n", "<leader>l", ":Lazy<CR>")
 
+-- lsp
+keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
 -- disable
 keymap("n", "+", "<Nop>", opts)
 keymap("n", "-", "<Nop>", opts)

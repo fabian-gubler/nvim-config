@@ -8,7 +8,7 @@ autocmd("BufEnter", { command = "set laststatus=3" })
 
 -- tab size
 autocmd("FileType", {
-	pattern = { "typescript", "typescriptreact", "html", "javascript", "javascriptreact" },
+	pattern = { "typescript", "typescriptreact", "html", "javascript", "javascriptreact", "java" },
 	command = "setlocal ts=2 sts=2 sw=2",
 })
 

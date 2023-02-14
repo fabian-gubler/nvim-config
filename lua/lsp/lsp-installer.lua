@@ -1,25 +1,10 @@
+-- move everything to nix config
 require("mason-tool-installer").setup({
 	ensure_installed = {
 
-		-- LSP
-		-- "lua-language-server",
-		-- "clangd",
-		"pyright",
-		"rust-analyzer",
-		"texlab",
-		"rnix-lsp",
-
-		-- you can pin a tool to a particular version
+		-- not found in nix repos (but in NUR)
 		{ "jdtls", version = "v1.18.0" },
 
-		-- you can turn off/on auto_update per tool
-		{ "bash-language-server", auto_update = true },
-
-		-- Formatters
-		-- "stylua",
-		"black",
-		"prettier",
-		"flake8",
 	},
 
 	auto_update = false,
@@ -29,7 +14,7 @@ require("mason-tool-installer").setup({
 
 local servers = {
 	-- "clangd",
-	"sumneko_lua",
+	"lua_ls",
 	"pyright",
 	"rust_analyzer",
 	"texlab",
@@ -57,12 +42,10 @@ for _, server in pairs(servers) do
 		capabilities = capabilities,
 	}
 
-	if server == "sumneko_lua" then
-		local sumneko_opts = require("lsp.settings.sumneko_lua")
-		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+	if server == "lua_ls" then
+		local lua_opts = require("lsp.settings.lua_ls")
+		opts = vim.tbl_deep_extend("force", lua_opts, opts)
 	end
-
-	-- end
 
 	lspconfig[server].setup(opts)
 	::continue::
