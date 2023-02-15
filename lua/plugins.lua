@@ -6,9 +6,9 @@ return {
 	"lukas-reineke/indent-blankline.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
 	"stevearc/dressing.nvim",
-	"ThePrimeagen/harpoon",
 	"mbbill/undotree",
 	"godlygeek/tabular",
+	"neovim/nvim-lspconfig",
 
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
@@ -25,11 +25,11 @@ return {
 		"williamboman/mason.nvim",
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
-			"neovim/nvim-lspconfig",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 		},
 		config = function()
 			require("mason").setup()
+			vim.keymap.set("n", "<leader>M", "<cmd>Mason<CR>", opts)
 		end,
 	},
 

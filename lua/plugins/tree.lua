@@ -1,4 +1,4 @@
-return	{
+return {
 	"nvim-tree/nvim-tree.lua",
 	config = function()
 		require("nvim-tree").setup({
@@ -22,5 +22,8 @@ return	{
 				},
 			},
 		})
+
+		vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+		vim.keymap.set("n", "<leader>E", ":NvimTreeFindFileToggle<CR>")
 	end,
 }
