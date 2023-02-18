@@ -4,19 +4,20 @@ if not status then
 end
 
 -- change path
-local home = os.getenv "HOME"
-local install_path = home .. '/.local/share/nvim/mason/packages/jdtls/'
+local home = os.getenv("HOME")
+local install_path = home .. "/.local/share/nvim/mason/packages/jdtls/"
 
 -- Determine OS
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = home .. '/workspace/' .. project_name
+local workspace_dir = home .. "/workspace/" .. project_name
 
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
 local bundles = {
 	vim.fn.glob(
-		home .. "/.config/nvim/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+		home
+			.. "/.config/nvim/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
 	),
 }
 
@@ -72,6 +73,7 @@ local config = {
 	-- This is the default if not provided, you can remove it. Or adjust as needed.
 	-- One dedicated LSP server & client will be started per unique root_dir
 	root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew' }),
+	-- root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", "gradlew", ".git", "mvnw" }, { upward = true })[1]),
 
 	-- Here you can configure eclipse.jdt.ls specific settings
 	-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
@@ -156,13 +158,12 @@ local config = {
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
 
-
 require("jdtls").start_or_attach(config)
 
-vim.cmd "command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
-vim.cmd "command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)"
-vim.cmd "command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()"
-vim.cmd "command! -buffer JdtBytecode lua require('jdtls').javap()"
+vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)")
+vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)")
+vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()")
+vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()")
 
 local keymap = vim.keymap.set
 local opts = { silent = true }
@@ -177,4 +178,4 @@ keymap("v", "<leader>jv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)
 keymap("v", "<leader>jc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
 keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
 
-require("dapui").setup()
+-- require("dapui").setup()
