@@ -2,7 +2,6 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local bufopts = { noremap = true, silent = true, buffer = 0 }
 
-
 -- markdown
 keymap("n", "]#", ":keeppatterns s/^/#/e<CR>", bufopts)
 keymap("n", "[#", ":keeppatterns s/^#//e<CR>", bufopts)
@@ -13,7 +12,8 @@ keymap("x", "[#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#/##/<CR>", bufo
 vim.cmd([[
  tnoremap <Esc> <C-\><C-n>
 ]])
---
+
+
 -- general
 keymap("n", "<leader>o", ":b#<CR>")
 keymap("n", "<leader>u", ":UndotreeToggle<CR>")
@@ -39,14 +39,6 @@ keymap("n", "gx", ":!xdg-open <C-r><C-a><CR>", opts) -- because i disabled netrw
 
 -- lsp
 keymap("n", "<leader>m", "<cmd>LspInfo<CR>", opts)
-
--- clipboard
-keymap("n", "<leader>y", '"+y')
-keymap("v", "<leader>y", '"+y')
-keymap("n", "<leader>p", '"+p')
-keymap("v", "<leader>p", '"+p')
-keymap("n", "<leader>d", '"+d')
-keymap("v", "<leader>d", '"+d')
 
 -- ctrl backspace to delete word
 keymap("i", "<C-H>", "<C-W>", opts)

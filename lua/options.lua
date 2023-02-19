@@ -26,6 +26,7 @@ o.undofile = true
 o.undodir = os.getenv("HOME") .. "/.local/share/nvim/undodir"
 o.smartindent = true
 o.breakindent = true
+o.clipboard = "unnamedplus"
 o.signcolumn = "yes:1"
 o.colorcolumn = "100"
 o.shiftwidth = indent
