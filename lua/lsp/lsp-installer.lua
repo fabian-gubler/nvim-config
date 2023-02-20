@@ -2,7 +2,6 @@
 require("mason-tool-installer").setup({
 	ensure_installed = {
 
-		-- not found in nix repos (but in NUR)
 		{ "jdtls", version = "v1.18.0" },
 
 	},

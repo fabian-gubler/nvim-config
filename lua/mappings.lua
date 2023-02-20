@@ -8,6 +8,7 @@ keymap("n", "[#", ":keeppatterns s/^#//e<CR>", bufopts)
 keymap("x", "]#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#//<CR>", bufopts)
 keymap("x", "[#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#/##/<CR>", bufopts)
 
+
 -- easy terminal escape
 vim.cmd([[
  tnoremap <Esc> <C-\><C-n>
@@ -33,9 +34,6 @@ keymap("n", "-", ":res -5<CR>")
 -- center
 keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "<C-d>", "<C-d>zz")
-
--- xdg-open
-keymap("n", "gx", ":!xdg-open <C-r><C-a><CR>", opts) -- because i disabled netrw
 
 -- lsp
 keymap("n", "<leader>m", "<cmd>LspInfo<CR>", opts)

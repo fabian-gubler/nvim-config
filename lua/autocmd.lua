@@ -10,7 +10,6 @@ autocmd("FileType", {
 	command = "setlocal ts=2 sts=2 sw=2",
 })
 
-
 autocmd("FileType", {
 	pattern = { "lua", "r" },
 	command = "setlocal ts=3 sts=3 sw=3",
