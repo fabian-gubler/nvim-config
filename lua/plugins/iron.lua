@@ -8,6 +8,7 @@ return {
 		"GCBallesteros/vim-textobj-hydrogen",
 	},
 
+	-- event = "BufEnter *.py",
 	config = function()
 		local iron = require("iron.core")
 		local view = require("iron.view")
@@ -32,18 +33,21 @@ return {
 			-- Iron doesn't set keymaps by default anymore.
 			-- You can set them here or manually add keymaps to the functions in iron.core
 			keymaps = {
-				send_motion = "ct",
-				visual_send = "ct",
+				-- Send Cmds
+				send_motion = "cs",
+				visual_send = "cs",
 				send_file = "<space>sf",
 				send_line = "<space>ss",
+				-- Marks
 				send_mark = "<space>sm",
 				mark_motion = "<space>mc",
 				mark_visual = "<space>mc",
 				remove_mark = "<space>md",
-				cr = "<space>s<cr>",
-				interrupt = "<space>s<space>",
-				exit = "<space>sq",
-				clear = "<space>sl",
+				-- Iron UI
+				cr = "<space>r<cr>",
+				interrupt = "<space>r<space>",
+				exit = "<space>rq",
+				clear = "<space>rl",
 			},
 			-- If the highlight is on, you can change how it looks
 			-- For the available options, check nvim_set_hl
@@ -60,7 +64,10 @@ return {
 		vim.keymap.set("n", "<space>rh", "<cmd>IronHide<cr>")
 
 		vim.cmd([[
-			nmap ctr ctih:call search("# %%")<cr><cr>
+			nmap csn csih:call search("# %%")<cr><cr>
+			nmap csr csih
+			nmap ,n ]h
+			nmap ,p [h
 			]])
 	end,
 }
