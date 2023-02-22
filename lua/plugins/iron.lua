@@ -4,11 +4,13 @@ return {
 	dependencies = {
 		"kana/vim-textobj-user",
 		"kana/vim-textobj-line",
+		-- introduces "ah" and "ih", move with "[h" or "]h"
 		"GCBallesteros/vim-textobj-hydrogen",
 	},
 
 	config = function()
 		local iron = require("iron.core")
+		local view = require("iron.view")
 
 		iron.setup({
 			config = {
@@ -25,7 +27,7 @@ return {
 				-- How the repl window will be displayed
 				-- See below for more information
 				-- repl_open_cmd = require('iron.view').bottom(40),
-				repl_open_cmd = "vertical botright 80 split",
+				repl_open_cmd = view.split("40%"),
 			},
 			-- Iron doesn't set keymaps by default anymore.
 			-- You can set them here or manually add keymaps to the functions in iron.core

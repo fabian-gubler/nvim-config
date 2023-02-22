@@ -17,6 +17,7 @@ vim.cmd([[
 
 -- general
 keymap("n", "<leader>o", ":b#<CR>")
+keymap("n", "<leader>o", ":b#<CR>")
 keymap("n", "<leader>u", ":UndotreeToggle<CR>")
 keymap("n", "<leader>l", ":Lazy<CR>")
 
