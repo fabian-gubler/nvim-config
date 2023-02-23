@@ -9,7 +9,7 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>", opts)
-		vim.keymap.set("n", "<leader><leader>", ":Telescope find_files<CR>", opts)
+		vim.keymap.set("n", "<leader><leader>", ":Telescope find_files hidden=true no_ignore=true<CR>", opts)
 	end,
 	dependencies = { { "nvim-lua/plenary.nvim" } },
 }

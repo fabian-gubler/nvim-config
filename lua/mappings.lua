@@ -25,7 +25,9 @@ keymap("n", "<leader>l", ":Lazy<CR>")
 keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 
 -- disable
-keymap("n", "+", "<Nop>", opts)
+-- keymap("i", "<C-p>", "\"+p")
+-- vim.keymap.set("i", "<C-p>", "\"+p")
+
 keymap("n", "-", "<Nop>", opts)
 
 -- resize windows
