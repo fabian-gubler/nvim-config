@@ -57,7 +57,7 @@ return {
 				['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 				["<c-y>"] = cmp.mapping(
 					cmp.mapping.confirm({
-						behavior = cmp.ConfirmBehavior.Insert,
+						behavior = cmp.ConfirmBehavior.Replace,
 						select = true,
 					}),
 					{ "i", "c" }

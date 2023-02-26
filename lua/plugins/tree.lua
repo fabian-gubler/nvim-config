@@ -7,7 +7,7 @@ return {
 			view = {
 				adaptive_size = true,
 				side = "left",
-				width = 60,
+				width = 40,
 				relativenumber = true,
 			},
 			diagnostics = {
