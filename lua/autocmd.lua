@@ -10,10 +10,20 @@ autocmd("FileType", {
 	command = "setlocal ts=2 sts=2 sw=2",
 })
 
+
 autocmd("FileType", {
 	pattern = { "lua", "r" },
 	command = "setlocal ts=3 sts=3 sw=3",
 })
+
+-- remember folds
+vim.cmd [[
+	augroup remember_folds
+	  autocmd!
+	  autocmd BufWinLeave *.md mkview
+	  autocmd BufWinEnter *.md silent! loadview
+	augroup END
+]]
 
 -- cmdheight
 autocmd("RecordingEnter", {
