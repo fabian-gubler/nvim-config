@@ -1,31 +1,22 @@
 local autocmd = vim.api.nvim_create_autocmd
-local augroup = vim.api.nvim_create_autogroup
-
--- appearance
-autocmd("BufEnter", { command = "set laststatus=3" })
-
--- tab size
-autocmd("FileType", {
-	pattern = { "typescript", "typescriptreact", "html", "javascript", "javascriptreact", "java" },
-	command = "setlocal ts=2 sts=2 sw=2",
-})
-
-
-autocmd("FileType", {
-	pattern = { "lua", "r" },
-	command = "setlocal ts=3 sts=3 sw=3",
-})
+local augroup = vim.api.nvim_create_augroup
 
 -- remember folds
-vim.cmd [[
-	augroup remember_folds
-	  autocmd!
-	  autocmd BufWinLeave *.md mkview
-	  autocmd BufWinEnter *.md silent! loadview
-	augroup END
-]]
+augroup("remember_folds", { clear = true })
 
--- cmdheight
+autocmd("BufLeave", {
+	pattern = { "*.md" },
+	command = "mkview",
+	group = "remember_folds",
+})
+
+autocmd("BufEnter", {
+	pattern = { "*.md" },
+	command = "silent! loadview",
+	group = "remember_folds",
+})
+--
+-- introduce cmdheight when necessary
 autocmd("RecordingEnter", {
 	pattern = "*",
 	command = "set cmdheight=1",
@@ -44,21 +35,43 @@ autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap 
 autocmd("InsertLeave", { command = "setlocal nohlsearch" })
 
 -- Run current file
-vim.cmd([[
-	augroup run_file
-		autocmd BufEnter *.py let @g=":w\<CR>:20 sp | terminal python3 %\<CR>"
-		autocmd BufEnter *.java let @g=":w\<CR>:terminal java %\<CR>"
-		autocmd BufEnter *.cpp let @g=":w\<CR> :!g++ %\<CR> | :10 sp |terminal ./a.out\<CR>i" 
-		autocmd BufEnter *.c let @g=":w\<CR> :!gcc %\<CR> | :10 sp |terminal ./a.out\<CR>i" 
-		autocmd BufEnter *.go let @g=":w\<CR> :10 sp | terminal go run % \<CR>i" 
-		autocmd BufEnter *.js let @g=":w\<CR> :10 sp | terminal node % \<CR>i" 
-		autocmd BufEnter *.html let @g=":w\<CR> :silent !firefox % \<CR>"
-	augroup end
-]])
+augroup("run_file", { clear = true })
 
--- Open Current File
-vim.cmd([[
-	autocmd BufEnter *.md let @o=":!typora %&\<CR>"
-	autocmd BufEnter *.md let @p=":!pandoc -s % -o %:r.pdf &"
-	autocmd BufEnter *.tex let @p=":!pandoc -s % -o %:r.pdf &"
-]])
+autocmd("BufEnter", {
+	pattern = { "*.py" },
+	command = "let @g=':20 sp | terminal python3 %'",
+	group = "run_file",
+})
+
+autocmd("BufEnter", {
+	pattern = { "*.java" },
+	command = "let @g=':terminal java %'",
+	group = "run_file",
+})
+
+autocmd("BufEnter", {
+	pattern = { "*.cpp" },
+	command = "let @g=':!g++ % | :10 sp |terminal ./a.out'",
+	group = "run_file",
+})
+
+autocmd("BufEnter", {
+	pattern = { "*.c" },
+	command = "let @g=':!gcc % | :10 sp |terminal ./a.out'",
+	group = "run_file",
+})
+
+autocmd("BufEnter", {
+	pattern = { "*.js" },
+	command = "let @g=':10 sp | terminal node %'",
+	group = "run_file",
+})
+
+-- Open current file
+augroup("open_file", { clear = true })
+
+autocmd("BufEnter", {
+	pattern = { "*.md", "*.html" },
+	command = "let @o=':silent !xdg-open %&'",
+	group = "open_file",
+})
