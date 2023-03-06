@@ -1,6 +1,8 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
+vim.cmd[[ :command! MdView ! litemdview -t 2 %:p & disown ]]
+
 -- remember folds
 augroup("remember_folds", { clear = true })
 
