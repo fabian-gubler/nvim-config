@@ -34,20 +34,20 @@ return {
 			-- You can set them here or manually add keymaps to the functions in iron.core
 			keymaps = {
 				-- Send Cmds
-				send_motion = "cs",
-				visual_send = "cs",
-				send_file = "<space>sf",
-				send_line = "<space>ss",
+				send_motion = "<leader>c",
+				visual_send = "<leader>c",
+				send_file = "<leader>sf",
+				send_line = "<leader>ss",
 				-- Marks
-				send_mark = "<space>sm",
-				mark_motion = "<space>mc",
-				mark_visual = "<space>mc",
-				remove_mark = "<space>md",
+				send_mark = "<leader>sm",
+				mark_motion = "<leader>mc",
+				mark_visual = "<leader>mc",
+				remove_mark = "<leader>md",
 				-- Iron UI
-				cr = "<space>r<cr>",
-				interrupt = "<space>r<space>",
-				exit = "<space>rq",
-				clear = "<space>rl",
+				cr = "<leader>r<cr>",
+				interrupt = "<leader>r<leader>",
+				exit = "<leader>rq",
+				clear = "<leader>rl",
 			},
 			-- If the highlight is on, you can change how it looks
 			-- For the available options, check nvim_set_hl
@@ -58,14 +58,14 @@ return {
 		})
 
 		-- iron also has a list of commands, see :h iron-commands for all available commands
-		vim.keymap.set("n", "<space>rs", "<cmd>IronRepl<cr>")
-		vim.keymap.set("n", "<space>rr", "<cmd>IronRestart<cr>")
-		vim.keymap.set("n", "<space>rf", "<cmd>IronFocus<cr>")
-		vim.keymap.set("n", "<space>rh", "<cmd>IronHide<cr>")
+		vim.keymap.set("n", "<leader>rs", "<cmd>IronRepl<cr>")
+		vim.keymap.set("n", "<leader>rr", "<cmd>IronRestart<cr>")
+		vim.keymap.set("n", "<leader>rf", "<cmd>IronFocus<cr>")
+		vim.keymap.set("n", "<leader>rh", "<cmd>IronHide<cr>")
 
 		vim.cmd([[
-			nmap csn csih:call search("# %%")<cr><cr>
-			nmap csr csih
+			nmap <leader>cn csih:call search("# %%")<cr><cr>
+			nmap <leader>cr csih
 			nmap ,n ]h
 			nmap ,p [h
 			]])
