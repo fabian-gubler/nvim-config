@@ -9,6 +9,7 @@ return {
 	"mbbill/undotree",
 	"godlygeek/tabular",
 	"neovim/nvim-lspconfig",
+	"felipec/notmuch-vim",
 
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",

@@ -19,6 +19,7 @@ local servers = {
 	"texlab",
 	"rnix",
 	"bashls",
+	"tsserver",
 }
 
 -- Lsp Completion

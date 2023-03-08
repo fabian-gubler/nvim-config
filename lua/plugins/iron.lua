@@ -60,12 +60,13 @@ return {
 		-- iron also has a list of commands, see :h iron-commands for all available commands
 		vim.keymap.set("n", "<leader>rs", "<cmd>IronRepl<cr>")
 		vim.keymap.set("n", "<leader>rr", "<cmd>IronRestart<cr>")
-		vim.keymap.set("n", "<leader>rf", "<cmd>IronFocus<cr>")
+		vim.keymap.set("n", "<leader>ro", "<cmd>IronFocus<cr>")
 		vim.keymap.set("n", "<leader>rh", "<cmd>IronHide<cr>")
 
+		-- TODO: convert to lua and comment functionality
 		vim.cmd([[
-			nmap <leader>cn csih:call search("# %%")<cr><cr>
-			nmap <leader>cr csih
+			nmap <leader>cn <leader>cih:call search("# %%")<cr><cr>
+			nmap <leader>cr <leader>cih
 			nmap ,n ]h
 			nmap ,p [h
 			]])

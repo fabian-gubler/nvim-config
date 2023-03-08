@@ -48,7 +48,7 @@ return {
 		})
 
 		-- copilot
-		vim.keymap.set("n", "<leader>c", function()
+		vim.keymap.set("n", "<leader>h", function()
 			require("copilot.suggestion").toggle_auto_trigger()
 		end)
 
