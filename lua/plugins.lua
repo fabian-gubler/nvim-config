@@ -15,6 +15,20 @@ return {
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
 
+	-- {
+	-- 	"gw31415/deepl-commands.nvim",
+	-- 	dependencies = {
+	-- 		"gw31415/deepl.vim",
+	-- 		"gw31415/fzyselect.vim", -- Optional
+	-- 	},
+	-- 	config = function()
+	-- 		require("deepl-commmands").setup({
+	-- 			selector_func = require("fzyselect").start, -- Default value is `vim.ui.select`
+	-- 			default_target = "EN", -- Default value is 'EN'
+	-- 		})
+	-- 	end,
+	-- },
+
 	{
 		"numToStr/Comment.nvim",
 		config = function()

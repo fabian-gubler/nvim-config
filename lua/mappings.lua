@@ -17,16 +17,9 @@ vim.cmd([[
 
 -- general
 keymap("n", "<leader>u", ":UndotreeToggle<CR>")
-keymap("n", "<leader>l", ":Lazy<CR>")
 
 -- lsp
 keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
-
--- disable
--- keymap("i", "<C-p>", "\"+p")
--- vim.keymap.set("i", "<C-p>", "\"+p")
-
-keymap("n", "-", "<Nop>", opts)
 
 -- resize windows
 keymap("n", "+", ":res +5<CR>")
@@ -35,9 +28,6 @@ keymap("n", "-", ":res -5<CR>")
 -- center
 keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "<C-d>", "<C-d>zz")
-
--- lsp
-keymap("n", "<leader>m", "<cmd>LspInfo<CR>", opts)
 
 -- ctrl backspace to delete word
 keymap("i", "<C-H>", "<C-W>", opts)
