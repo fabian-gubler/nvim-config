@@ -20,6 +20,7 @@ local servers = {
 	"rnix",
 	"bashls",
 	"tsserver",
+	"ccls",
 }
 
 -- Lsp Completion

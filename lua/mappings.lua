@@ -16,7 +16,7 @@ vim.cmd([[
 
 
 -- general
-keymap("n", "<leader>u", ":UndotreeToggle<CR>")
+keymap("n", "<leader>z", ":UndotreeToggle<CR>")
 
 -- lsp
 keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)

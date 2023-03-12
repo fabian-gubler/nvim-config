@@ -53,7 +53,8 @@ autocmd("BufEnter", {
 
 autocmd("BufEnter", {
 	pattern = { "*.cpp" },
-	command = "let @g=':!g++ % | :10 sp |terminal ./a.out'",
+	-- command = "let @g=':20 sp | terminal g++ % | :10 sp | terminal ./a.out'",
+	command = "let @g=':20 sp | terminal g++ % && ./a.out'",
 	group = "run_file",
 })
 
