@@ -18,7 +18,7 @@ return {
 
 		ls.add_snippets("sh", {
 			snip({ trig = "#!" }, {
-				text({ "#!/usr/bin/env bash"}),
+				text({ "#!/usr/bin/env bash" }),
 			}),
 		})
 
@@ -29,6 +29,25 @@ return {
 				text({ ")", "  <figcaption>" }),
 				insert(2, ""),
 				text({ "</figcaption>", "</figure>" }),
+			}),
+			snip({ trig = "yaml" }, {
+				text({ "---",  "title: " }),
+				insert(1, "Title"),
+				text({ "", "author: " }),
+				insert(2, "Fabian Gubler"),
+				text({ "", "fontfamily: " }),
+				insert(3, "helvet"),
+				text({ "", "geometry: " }),
+				insert(4, "margin=2cm" ),
+				text({ "", "date: " }),
+				insert(5, "today"),
+				text({ "", "header-includes: " }),
+				text({ "", "  - \\renewcommand{\\familydefault}{\\sfdefault}" }),
+				text({ "", "---" }),
+
+		-- 		header-includes:
+  -- - 
+
 			}),
 		})
 
@@ -43,5 +62,8 @@ return {
 				text({ "Freundliche Grüsse,", "Fabian Gubler" }),
 			}),
 		})
+
+		ls.add_snippets("markdown", {})
 	end,
 }
+
