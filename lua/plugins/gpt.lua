@@ -10,7 +10,9 @@ return {
 
 	config = function()
 		require("chatgpt").setup({
-			-- optional configuration here
+			keymaps = {
+				submit = "<A-Enter>",
+			},
 		})
 		-- plugin-specific keymaps
 		vim.keymap.set("n", "<leader>W", ":ChatGPTActAs<cr>")
@@ -18,6 +20,5 @@ return {
 		vim.keymap.set("v", "<leader>w", function()
 			require("chatgpt").edit_with_instructions()
 		end)
-
 	end,
 }
