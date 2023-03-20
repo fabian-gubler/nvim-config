@@ -6,7 +6,7 @@ vim.cmd[[ :command! MdView ! litemdview -t 2 %:p & disown ]]
 -- remember folds
 augroup("remember_folds", { clear = true })
 
-autocmd("BufLeave", {
+autocmd("BufWrite", {
 	pattern = { "*.md" },
 	command = "mkview",
 	group = "remember_folds",
@@ -78,3 +78,19 @@ autocmd("BufEnter", {
 	command = "let @o=':silent !xdg-open %&'",
 	group = "open_file",
 })
+
+-- Set text wrapping limit
+augroup("myformatting", { clear = true })
+
+autocmd("BufEnter", {
+	pattern = { "*.md" },
+	command = "set textwidth=90",
+	group = "myformatting",
+})
+
+autocmd("Filetype", {
+	pattern = { "mail" },
+	command = "set textwidth=100",
+	group = "myformatting",
+})
+

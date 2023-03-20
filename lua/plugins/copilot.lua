@@ -50,6 +50,7 @@ return {
 		-- copilot
 		vim.keymap.set("n", "<leader>h", function()
 			require("copilot.suggestion").toggle_auto_trigger()
+			print("Copilot auto trigger: " .. tostring(require("copilot.suggestion").auto_trigger))
 		end)
 
 		vim.keymap.set("i", "<A-.>", function()
