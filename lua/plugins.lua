@@ -14,6 +14,7 @@ return {
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
+	"iamcco/markdown-preview.nvim",
 
 	-- {
 	-- 	"gw31415/deepl-commands.nvim",
