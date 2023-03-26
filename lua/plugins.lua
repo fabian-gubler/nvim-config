@@ -10,6 +10,7 @@ return {
 	"godlygeek/tabular",
 	"neovim/nvim-lspconfig",
 	"felipec/notmuch-vim",
+	"nanotee/sqls.nvim",
 
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",

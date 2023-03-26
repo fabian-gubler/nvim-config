@@ -3,7 +3,6 @@ require("mason-tool-installer").setup({
 	ensure_installed = {
 
 		{ "jdtls", version = "v1.18.0" },
-
 	},
 
 	auto_update = false,
@@ -21,6 +20,7 @@ local servers = {
 	"bashls",
 	"tsserver",
 	"ccls",
+	"sqls",
 }
 
 -- Lsp Completion
@@ -46,6 +46,14 @@ for _, server in pairs(servers) do
 	if server == "lua_ls" then
 		local lua_opts = require("lsp.settings.lua_ls")
 		opts = vim.tbl_deep_extend("force", lua_opts, opts)
+	end
+
+	if server == "sqls" then
+		require("lspconfig").sqls.setup({
+			on_attach = function(client, bufnr)
+				require("sqls").on_attach(client, bufnr)
+			end,
+		})
 	end
 
 	lspconfig[server].setup(opts)
