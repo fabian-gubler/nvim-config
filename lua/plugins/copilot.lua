@@ -21,7 +21,7 @@ return {
 			},
 			suggestion = {
 				enabled = true,
-				auto_trigger = false,
+				auto_trigger = true,
 				debounce = 75,
 				keymap = {
 					accept = "<M-l>",
@@ -41,7 +41,7 @@ return {
 				hgcommit = false,
 				svn = false,
 				cvs = false,
-				["."] = false,
+				-- ["."] = false,
 			},
 			copilot_node_command = "node", -- Node.js version must be > 16.x
 			server_opts_overrides = {},
