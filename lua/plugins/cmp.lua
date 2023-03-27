@@ -103,7 +103,7 @@ return {
 			},
 
 			sources = cmp.config.sources({
-				{ name = "copilot", group_index = 2 },
+				-- { name = "copilot", group_index = 2 },
 				{ name = "path" },
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "luasnip", max_item_count = 5 },
