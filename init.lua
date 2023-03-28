@@ -1,32 +1,5 @@
--- space as leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
--- plugins
-vim.o.termguicolors = true
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup("plugins")
-
--- Configuration files
-require("options")
-require("mappings")
-require("autocmd")
-require("lsp")
---
--- set colorsceme
-vim.cmd.colorscheme("nord")
 
 -- highlight on yank
 vim.api.nvim_exec(
@@ -38,3 +11,36 @@ vim.api.nvim_exec(
 ]],
 	false
 )
+
+-- Global files
+require("mappings")
+require("options")
+
+-- vscode and nvim only settings
+if vim.g.vscode then
+	require("vscode")
+else
+	-- plugins
+	vim.o.termguicolors = true
+	local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+	if not vim.loop.fs_stat(lazypath) then
+		vim.fn.system({
+			"git",
+			"clone",
+			"--filter=blob:none",
+			"https://github.com/folke/lazy.nvim.git",
+			"--branch=stable", -- latest stable release
+			lazypath,
+		})
+	end
+	vim.opt.rtp:prepend(lazypath)
+
+	require("lazy").setup("plugins")
+
+	-- Configuration files
+	require("lsp")
+	require("autocmd")
+	--
+	-- set colorsceme
+	vim.cmd.colorscheme("nord")
+end

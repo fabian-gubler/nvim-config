@@ -17,19 +17,12 @@ return {
 	"simrat39/rust-tools.nvim",
 	"iamcco/markdown-preview.nvim",
 
-	-- {
-	-- 	"gw31415/deepl-commands.nvim",
-	-- 	dependencies = {
-	-- 		"gw31415/deepl.vim",
-	-- 		"gw31415/fzyselect.vim", -- Optional
-	-- 	},
-	-- 	config = function()
-	-- 		require("deepl-commmands").setup({
-	-- 			selector_func = require("fzyselect").start, -- Default value is `vim.ui.select`
-	-- 			default_target = "EN", -- Default value is 'EN'
-	-- 		})
-	-- 	end,
-	-- },
+	{
+		"kiyoon/jupynium.nvim",
+		-- build = "pip3 install --user .",
+		-- build = "conda run --no-capture-output -n jupynium pip install .",
+		-- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
+	},
 
 	{
 		"numToStr/Comment.nvim",
