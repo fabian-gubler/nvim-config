@@ -8,6 +8,7 @@ local cmd = vim.cmd
 g.auto_save = 1
 g.auto_save_silent = 1
 g.nord_borders = true
+g.netrw_browsex_viewer = "xdg-open"
 
 -- folding
 g.markdown_folding = 0
