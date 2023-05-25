@@ -16,6 +16,7 @@ g.markdown_enable_folding = 1
 o.foldenable = false
 
 -- options
+o.background = "dark"
 o.cmdheight = 0
 o.ignorecase = true
 o.relativenumber = true
