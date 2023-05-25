@@ -20,7 +20,7 @@ null_ls.setup({
 
 		-- Python
 		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.isort,
+		-- formatting.isort,
 		-- diagnostics.flake8,
 	},
 })
