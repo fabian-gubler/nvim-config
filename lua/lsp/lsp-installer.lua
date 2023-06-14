@@ -20,7 +20,7 @@ local servers = {
 	"bashls",
 	"tsserver",
 	"ccls",
-	"sqls",
+	-- "sqls",
 }
 
 -- Lsp Completion
