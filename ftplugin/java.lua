@@ -14,12 +14,12 @@ local workspace_dir = home .. "/workspace/" .. project_name
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
-local bundles = {
-	vim.fn.glob(
-		home
-			.. "/.config/nvim/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
-	),
-}
+-- local bundles = {
+-- 	vim.fn.glob(
+-- 		home
+-- 			.. "/.config/nvim/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+-- 	),
+-- }
 
 vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/nvim/java/vscode-java-test/server/*.jar"), "\n"))
 
@@ -143,9 +143,9 @@ local config = {
 	-- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
 	--
 	-- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
-	init_options = {
-		bundles = bundles,
-	},
+	-- init_options = {
+	-- 	bundles = bundles,
+	-- },
 }
 
 -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
