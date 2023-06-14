@@ -14,12 +14,12 @@ local workspace_dir = home .. "/workspace/" .. project_name
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
--- local bundles = {
--- 	vim.fn.glob(
--- 		home
--- 			.. "/.config/nvim/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
--- 	),
--- }
+local bundles = {
+	vim.fn.glob(
+		home
+			.. "/.config/nvim/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+	),
+}
 
 vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/nvim/java/vscode-java-test/server/*.jar"), "\n"))
 
