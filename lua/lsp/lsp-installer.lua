@@ -1,9 +1,9 @@
 -- move everything to nix config
 require("mason-tool-installer").setup({
-	ensure_installed = {
-
-		{ "jdtls", version = "v1.18.0" },
-	},
+	-- ensure_installed = {
+	--
+	-- 	{ "jdtls", version = "v1.18.0" },
+	-- },
 
 	auto_update = false,
 	run_on_start = true,
