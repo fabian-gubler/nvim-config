@@ -15,7 +15,7 @@ export CONFIG_SHELL
 CXX='g++'
 export CXX
 HOSTTYPE='x86_64'
-HOST_PATH='/nix/store/slldn8aj64jkq695j6pxb94a3h6q56as-neovim-0.8.3/bin:/nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4/bin:/nix/store/6n83q6c27p4563hxsv4cn2i0fhsr8m50-lua-language-server-3.6.11/bin:/nix/store/vcr7a4wf65x4ddggnz0ibqbblkl93336-stylua-0.16.1/bin:/nix/store/7w1s50i8yplw2gkpf9hpha6n9vci8g98-coreutils-9.1/bin:/nix/store/l2rdsfp8v5p32fqahw5vfq50mik9j830-findutils-4.9.0/bin:/nix/store/v316awk24xxz2dj84b5qw2vflfpg7if4-diffutils-3.8/bin:/nix/store/wrrsz1yq3dsbwlv239zcsifn30qvlhpp-gnused-4.9/bin:/nix/store/kj1hi99d4w5489y7nbikadadsvvkr87b-gnugrep-3.7/bin:/nix/store/1f44s1ddm915dn3kdaycabhf3a8xnfnb-gawk-5.2.1/bin:/nix/store/dyyx4hjy9sx92nwwlj4mm334b7dkzj70-gnutar-1.34/bin:/nix/store/yqnrjbiwxa7gdfr2xlmyklw2acydny2g-gzip-1.12/bin:/nix/store/17pkxcz3js3549kn9dc3hhvp4adbwvs1-bzip2-1.0.8-bin/bin:/nix/store/q4pjdicsp4vwg2ic3xpj25w3x2pclnq5-gnumake-4.4/bin:/nix/store/561wgc73s0x1250hrgp7jm22hhv7yfln-bash-5.2-p15/bin:/nix/store/l86y6mg5asdz6531qp42ph9img0nsy9w-patch-2.7.6/bin:/nix/store/12wczkzi5db1ajbjp4hdyif3v9y5rbi5-xz-5.4.1-bin/bin:/nix/store/q6vn1ycak0dgavafwif8gs3v6q9d7i53-file-5.44/bin'
+HOST_PATH='/nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4/bin:/nix/store/6n83q6c27p4563hxsv4cn2i0fhsr8m50-lua-language-server-3.6.11/bin:/nix/store/vcr7a4wf65x4ddggnz0ibqbblkl93336-stylua-0.16.1/bin:/nix/store/7w1s50i8yplw2gkpf9hpha6n9vci8g98-coreutils-9.1/bin:/nix/store/l2rdsfp8v5p32fqahw5vfq50mik9j830-findutils-4.9.0/bin:/nix/store/v316awk24xxz2dj84b5qw2vflfpg7if4-diffutils-3.8/bin:/nix/store/wrrsz1yq3dsbwlv239zcsifn30qvlhpp-gnused-4.9/bin:/nix/store/kj1hi99d4w5489y7nbikadadsvvkr87b-gnugrep-3.7/bin:/nix/store/1f44s1ddm915dn3kdaycabhf3a8xnfnb-gawk-5.2.1/bin:/nix/store/dyyx4hjy9sx92nwwlj4mm334b7dkzj70-gnutar-1.34/bin:/nix/store/yqnrjbiwxa7gdfr2xlmyklw2acydny2g-gzip-1.12/bin:/nix/store/17pkxcz3js3549kn9dc3hhvp4adbwvs1-bzip2-1.0.8-bin/bin:/nix/store/q4pjdicsp4vwg2ic3xpj25w3x2pclnq5-gnumake-4.4/bin:/nix/store/561wgc73s0x1250hrgp7jm22hhv7yfln-bash-5.2-p15/bin:/nix/store/l86y6mg5asdz6531qp42ph9img0nsy9w-patch-2.7.6/bin:/nix/store/12wczkzi5db1ajbjp4hdyif3v9y5rbi5-xz-5.4.1-bin/bin:/nix/store/q6vn1ycak0dgavafwif8gs3v6q9d7i53-file-5.44/bin'
 export HOST_PATH
 IFS=' 	
 '
@@ -35,7 +35,7 @@ NIX_CC='/nix/store/l0fvy72hpfdpjjs3dk4112f57x7r3dlm-gcc-wrapper-12.2.0'
 export NIX_CC
 NIX_CC_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu='1'
 export NIX_CC_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu
-NIX_CFLAGS_COMPILE=' -frandom-seed=z1w24iqh85 -isystem /nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4/include -isystem /nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4/include'
+NIX_CFLAGS_COMPILE=' -frandom-seed=bhjhp3gxwp -isystem /nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4/include -isystem /nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4/include'
 export NIX_CFLAGS_COMPILE
 NIX_ENFORCE_NO_NATIVE='1'
 export NIX_ENFORCE_NO_NATIVE
@@ -57,15 +57,13 @@ OLDPWD='/nix/store/vcr7a4wf65x4ddggnz0ibqbblkl93336-stylua-0.16.1'
 export OLDPWD
 OPTERR='1'
 OSTYPE='linux-gnu'
-PATH='/nix/store/csv8xg88agimrm0dpn8vjraxmshxzrb6-patchelf-0.15.0/bin:/nix/store/l0fvy72hpfdpjjs3dk4112f57x7r3dlm-gcc-wrapper-12.2.0/bin:/nix/store/9pgq84sf921xh97gjj2wh7a7clrcrh4m-gcc-12.2.0/bin:/nix/store/p2x737hw7fkflrqb836vlfyi581brhg6-glibc-2.35-224-bin/bin:/nix/store/7w1s50i8yplw2gkpf9hpha6n9vci8g98-coreutils-9.1/bin:/nix/store/72nvsslmgq8mp6ywxnl9i0rr8x174sjw-binutils-wrapper-2.40/bin:/nix/store/qmmd097h4rwh2pwgz9l9i0byxb0x8q8l-binutils-2.40/bin:/nix/store/slldn8aj64jkq695j6pxb94a3h6q56as-neovim-0.8.3/bin:/nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4/bin:/nix/store/6n83q6c27p4563hxsv4cn2i0fhsr8m50-lua-language-server-3.6.11/bin:/nix/store/vcr7a4wf65x4ddggnz0ibqbblkl93336-stylua-0.16.1/bin:/nix/store/7w1s50i8yplw2gkpf9hpha6n9vci8g98-coreutils-9.1/bin:/nix/store/l2rdsfp8v5p32fqahw5vfq50mik9j830-findutils-4.9.0/bin:/nix/store/v316awk24xxz2dj84b5qw2vflfpg7if4-diffutils-3.8/bin:/nix/store/wrrsz1yq3dsbwlv239zcsifn30qvlhpp-gnused-4.9/bin:/nix/store/kj1hi99d4w5489y7nbikadadsvvkr87b-gnugrep-3.7/bin:/nix/store/1f44s1ddm915dn3kdaycabhf3a8xnfnb-gawk-5.2.1/bin:/nix/store/dyyx4hjy9sx92nwwlj4mm334b7dkzj70-gnutar-1.34/bin:/nix/store/yqnrjbiwxa7gdfr2xlmyklw2acydny2g-gzip-1.12/bin:/nix/store/17pkxcz3js3549kn9dc3hhvp4adbwvs1-bzip2-1.0.8-bin/bin:/nix/store/q4pjdicsp4vwg2ic3xpj25w3x2pclnq5-gnumake-4.4/bin:/nix/store/561wgc73s0x1250hrgp7jm22hhv7yfln-bash-5.2-p15/bin:/nix/store/l86y6mg5asdz6531qp42ph9img0nsy9w-patch-2.7.6/bin:/nix/store/12wczkzi5db1ajbjp4hdyif3v9y5rbi5-xz-5.4.1-bin/bin:/nix/store/q6vn1ycak0dgavafwif8gs3v6q9d7i53-file-5.44/bin'
+PATH='/nix/store/csv8xg88agimrm0dpn8vjraxmshxzrb6-patchelf-0.15.0/bin:/nix/store/l0fvy72hpfdpjjs3dk4112f57x7r3dlm-gcc-wrapper-12.2.0/bin:/nix/store/9pgq84sf921xh97gjj2wh7a7clrcrh4m-gcc-12.2.0/bin:/nix/store/p2x737hw7fkflrqb836vlfyi581brhg6-glibc-2.35-224-bin/bin:/nix/store/7w1s50i8yplw2gkpf9hpha6n9vci8g98-coreutils-9.1/bin:/nix/store/72nvsslmgq8mp6ywxnl9i0rr8x174sjw-binutils-wrapper-2.40/bin:/nix/store/qmmd097h4rwh2pwgz9l9i0byxb0x8q8l-binutils-2.40/bin:/nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4/bin:/nix/store/6n83q6c27p4563hxsv4cn2i0fhsr8m50-lua-language-server-3.6.11/bin:/nix/store/vcr7a4wf65x4ddggnz0ibqbblkl93336-stylua-0.16.1/bin:/nix/store/7w1s50i8yplw2gkpf9hpha6n9vci8g98-coreutils-9.1/bin:/nix/store/l2rdsfp8v5p32fqahw5vfq50mik9j830-findutils-4.9.0/bin:/nix/store/v316awk24xxz2dj84b5qw2vflfpg7if4-diffutils-3.8/bin:/nix/store/wrrsz1yq3dsbwlv239zcsifn30qvlhpp-gnused-4.9/bin:/nix/store/kj1hi99d4w5489y7nbikadadsvvkr87b-gnugrep-3.7/bin:/nix/store/1f44s1ddm915dn3kdaycabhf3a8xnfnb-gawk-5.2.1/bin:/nix/store/dyyx4hjy9sx92nwwlj4mm334b7dkzj70-gnutar-1.34/bin:/nix/store/yqnrjbiwxa7gdfr2xlmyklw2acydny2g-gzip-1.12/bin:/nix/store/17pkxcz3js3549kn9dc3hhvp4adbwvs1-bzip2-1.0.8-bin/bin:/nix/store/q4pjdicsp4vwg2ic3xpj25w3x2pclnq5-gnumake-4.4/bin:/nix/store/561wgc73s0x1250hrgp7jm22hhv7yfln-bash-5.2-p15/bin:/nix/store/l86y6mg5asdz6531qp42ph9img0nsy9w-patch-2.7.6/bin:/nix/store/12wczkzi5db1ajbjp4hdyif3v9y5rbi5-xz-5.4.1-bin/bin:/nix/store/q6vn1ycak0dgavafwif8gs3v6q9d7i53-file-5.44/bin'
 export PATH
 PS4='+ '
 RANLIB='ranlib'
 export RANLIB
 READELF='readelf'
 export READELF
-SHELL='/nix/store/561wgc73s0x1250hrgp7jm22hhv7yfln-bash-5.2-p15/bin/bash'
-export SHELL
 SIZE='size'
 export SIZE
 SOURCE_DATE_EPOCH='315532800'
@@ -78,7 +76,7 @@ XDG_DATA_DIRS='/nix/store/csv8xg88agimrm0dpn8vjraxmshxzrb6-patchelf-0.15.0/share
 export XDG_DATA_DIRS
 __structuredAttrs=''
 export __structuredAttrs
-buildInputs='/nix/store/slldn8aj64jkq695j6pxb94a3h6q56as-neovim-0.8.3 /nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4 /nix/store/6n83q6c27p4563hxsv4cn2i0fhsr8m50-lua-language-server-3.6.11 /nix/store/vcr7a4wf65x4ddggnz0ibqbblkl93336-stylua-0.16.1'
+buildInputs='/nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4 /nix/store/6n83q6c27p4563hxsv4cn2i0fhsr8m50-lua-language-server-3.6.11 /nix/store/vcr7a4wf65x4ddggnz0ibqbblkl93336-stylua-0.16.1'
 export buildInputs
 buildPhase='{ echo "------------------------------------------------------------";
   echo " WARNING: the existence of this path is not guaranteed.";
@@ -127,10 +125,11 @@ declare -a envHostHostHooks=('ccWrapper_addCVars' 'bintoolsWrapper_addLDVars' 'a
 declare -a envHostTargetHooks=('ccWrapper_addCVars' 'bintoolsWrapper_addLDVars' 'addToLuaPath' )
 declare -a envTargetTargetHooks=()
 declare -a fixupOutputHooks=('if [ -z "${dontPatchELF-}" ]; then patchELF "$prefix"; fi' 'if [[ -z "${noAuditTmpdir-}" && -e "$prefix" ]]; then auditTmpdir "$prefix"; fi' 'if [ -z "${dontGzipMan-}" ]; then compressManPages "$prefix"; fi' '_moveLib64' '_moveSbin' '_moveSystemdUserUnits' 'patchShebangsAuto' '_pruneLibtoolFiles' '_doStrip' )
+guess='8'
 initialPath='/nix/store/7w1s50i8yplw2gkpf9hpha6n9vci8g98-coreutils-9.1 /nix/store/l2rdsfp8v5p32fqahw5vfq50mik9j830-findutils-4.9.0 /nix/store/v316awk24xxz2dj84b5qw2vflfpg7if4-diffutils-3.8 /nix/store/wrrsz1yq3dsbwlv239zcsifn30qvlhpp-gnused-4.9 /nix/store/kj1hi99d4w5489y7nbikadadsvvkr87b-gnugrep-3.7 /nix/store/1f44s1ddm915dn3kdaycabhf3a8xnfnb-gawk-5.2.1 /nix/store/dyyx4hjy9sx92nwwlj4mm334b7dkzj70-gnutar-1.34 /nix/store/yqnrjbiwxa7gdfr2xlmyklw2acydny2g-gzip-1.12 /nix/store/17pkxcz3js3549kn9dc3hhvp4adbwvs1-bzip2-1.0.8-bin /nix/store/q4pjdicsp4vwg2ic3xpj25w3x2pclnq5-gnumake-4.4 /nix/store/561wgc73s0x1250hrgp7jm22hhv7yfln-bash-5.2-p15 /nix/store/l86y6mg5asdz6531qp42ph9img0nsy9w-patch-2.7.6 /nix/store/12wczkzi5db1ajbjp4hdyif3v9y5rbi5-xz-5.4.1-bin /nix/store/q6vn1ycak0dgavafwif8gs3v6q9d7i53-file-5.44'
 mesonFlags=''
 export mesonFlags
-name='lua-lsp'
+name='lua-lsp-env'
 export name
 nativeBuildInputs=''
 export nativeBuildInputs
@@ -157,7 +156,7 @@ declare -a pkgsBuildBuild=()
 declare -a pkgsBuildHost=('/nix/store/csv8xg88agimrm0dpn8vjraxmshxzrb6-patchelf-0.15.0' '/nix/store/h9lc1dpi14z7is86ffhl3ld569138595-audit-tmpdir.sh' '/nix/store/m54bmrhj6fqz8nds5zcj97w9s9bckc9v-compress-man-pages.sh' '/nix/store/wgrbkkaldkrlrni33ccvm3b6vbxzb656-make-symlinks-relative.sh' '/nix/store/5yzw0vhkyszf2d179m0qfkgxmp5wjjx4-move-docs.sh' '/nix/store/fyaryjvghbkpfnsyw97hb3lyb37s1pd6-move-lib64.sh' '/nix/store/kd4xwxjpjxi71jkm6ka0np72if9rm3y0-move-sbin.sh' '/nix/store/pag6l61paj1dc9sv15l7bm5c17xn5kyk-move-systemd-user-units.sh' '/nix/store/f8l4vcjn7iqqk9jpmc2c33i93rkdlx7k-multiple-outputs.sh' '/nix/store/d0vsy7cjz9d5vzrndl8962pqq0mv02s3-patch-shebangs.sh' '/nix/store/cickvswrvann041nqxb0rxilc46svw1n-prune-libtool-files.sh' '/nix/store/wlwcf1nw2b21m4gghj70hbg1v7x53ld8-reproducible-builds.sh' '/nix/store/ngg1cv31c8c7bcm2n8ww4g06nq7s4zhm-set-source-date-epoch-to-latest.sh' '/nix/store/d275wzmimzi3xp4j3vbkvxscmc79q088-strip.sh' '/nix/store/l0fvy72hpfdpjjs3dk4112f57x7r3dlm-gcc-wrapper-12.2.0' '/nix/store/72nvsslmgq8mp6ywxnl9i0rr8x174sjw-binutils-wrapper-2.40' )
 declare -a pkgsBuildTarget=()
 declare -a pkgsHostHost=()
-declare -a pkgsHostTarget=('/nix/store/slldn8aj64jkq695j6pxb94a3h6q56as-neovim-0.8.3' '/nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4' '/nix/store/6n83q6c27p4563hxsv4cn2i0fhsr8m50-lua-language-server-3.6.11' '/nix/store/vcr7a4wf65x4ddggnz0ibqbblkl93336-stylua-0.16.1' )
+declare -a pkgsHostTarget=('/nix/store/v88wcd66wks89nhbcqc3x4ra1sfnspsn-lua-5.2.4' '/nix/store/6n83q6c27p4563hxsv4cn2i0fhsr8m50-lua-language-server-3.6.11' '/nix/store/vcr7a4wf65x4ddggnz0ibqbblkl93336-stylua-0.16.1' )
 declare -a pkgsTargetTarget=()
 declare -a postFixupHooks=('_makeSymlinksRelativeInAllOutputs' '_multioutPropagateDev' )
 declare -a postUnpackHooks=('_updateSourceDateEpochFromSourceRoot' )

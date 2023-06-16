@@ -14,7 +14,6 @@
           name = "lua-lsp";
 
           buildInputs = with pkgs; [
-            neovim
             lua
             sumneko-lua-language-server
             stylua

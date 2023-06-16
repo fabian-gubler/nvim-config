@@ -74,11 +74,11 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	if client.name == "jdtls" then
+	-- if client.name == "jdtls" then
 		-- reccomended according to nvim-jdtls
-		require("jdtls").setup_dap({ hotcodereplace = "auto" })
-		require("jdtls.dap").setup_dap_main_class_configs()
-	end
+		-- require("jdtls").setup_dap({ hotcodereplace = "auto" })
+		-- require("jdtls.dap").setup_dap_main_class_configs()
+	-- end
 
 	if client.name == "lua_ls" then
 		-- use stylua instead of builtin
