@@ -11,12 +11,12 @@ g.nord_borders = true
 g.netrw_browsex_viewer = "xdg-open"
 
 -- folding
-g.markdown_folding = 0
+g.markdown_folding = 1
 g.markdown_enable_folding = 1
-o.foldenable = false
 
 -- options
 o.background = "dark"
+o.foldenable = false
 o.cmdheight = 0
 o.ignorecase = true
 o.relativenumber = true

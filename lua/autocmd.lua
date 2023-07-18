@@ -1,23 +1,25 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
-vim.cmd[[ :command! MdView ! litemdview -t 2 %:p & disown ]]
+-- vim.cmd[[
+-- autocmd BufWrite * mkview
+-- autocmd BufRead * loadview
+-- ]]
 
--- remember folds
-augroup("remember_folds", { clear = true })
-
-autocmd("BufWrite", {
-	pattern = { "*.md" },
-	command = "mkview",
-	group = "remember_folds",
-})
-
-autocmd("BufEnter", {
-	pattern = { "*.md" },
-	command = "silent! loadview",
-	group = "remember_folds",
-})
+-- augroup("remember_folds", { clear = true })
 --
+-- autocmd("BufWrite", {
+-- 	pattern = { "*.md" },
+-- 	command = "mkview",
+-- 	group = "remember_folds",
+-- })
+--
+-- autocmd("BufEnter", {
+-- 	pattern = { "*.md" },
+-- 	command = "silent! loadview",
+-- 	group = "remember_folds",
+-- })
+
 -- introduce cmdheight when necessary
 autocmd("RecordingEnter", {
 	pattern = "*",
