@@ -19,6 +19,12 @@ local augroup = vim.api.nvim_create_augroup
 -- 	command = "silent! loadview",
 -- 	group = "remember_folds",
 -- })
+--
+
+-- vs code
+vim.cmd([[
+	autocmd BufEnter *.ipynb#* if mode() == 'n' | call feedkeys("a\<C-c>")
+]])
 
 -- introduce cmdheight when necessary
 autocmd("RecordingEnter", {
@@ -95,4 +101,3 @@ autocmd("Filetype", {
 	command = "set textwidth=100",
 	group = "myformatting",
 })
-
