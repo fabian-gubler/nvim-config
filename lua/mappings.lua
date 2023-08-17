@@ -14,7 +14,6 @@ vim.cmd([[
  tnoremap <Esc> <C-\><C-n>
 ]])
 
-
 -- general
 keymap("n", "<leader>z", ":UndotreeToggle<CR>")
 
