@@ -21,6 +21,8 @@ return {
 		"luk400/vim-jukit",
 		ft = { "python", "jupyter", "ipynb", "json" },
 	},
+
+	{ "scalameta/nvim-metals", dependencies = { "nvim-lua/plenary.nvim" } },
 	{
 		"kiyoon/jupynium.nvim",
 		-- build = "pip3 install --user .",
