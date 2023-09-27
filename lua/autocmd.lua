@@ -21,6 +21,15 @@ local augroup = vim.api.nvim_create_augroup
 -- })
 --
 
+local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "scala", "sbt" },
+	callback = function()
+		require("metals").initialize_or_attach({})
+	end,
+	group = nvim_metals_group,
+})
+
 -- vs code
 vim.cmd([[
 	autocmd BufEnter *.ipynb#* if mode() == 'n' | call feedkeys("a\<C-c>")
