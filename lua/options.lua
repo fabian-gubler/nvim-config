@@ -11,8 +11,8 @@ g.nord_borders = true
 g.netrw_browsex_viewer = "xdg-open"
 
 -- vim-jukit
-g.jukit_convert_overwrite_default = 1
-g.jukit_convert_open_default = 0
+-- g.jukit_convert_overwrite_default = 1
+-- g.jukit_convert_open_default = 0
 
 -- folding
 g.markdown_folding = 1

@@ -11,16 +11,16 @@ return {
 	"neovim/nvim-lspconfig",
 	"felipec/notmuch-vim",
 	"ThePrimeagen/harpoon",
-	"luk400/vim-jukit",
+	-- "luk400/vim-jukit",
 
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
 	"iamcco/markdown-preview.nvim",
-	{
-		"luk400/vim-jukit",
-		ft = { "python", "jupyter", "ipynb", "json" },
-	},
+	-- {
+	-- 	"luk400/vim-jukit",
+	-- 	ft = { "python", "jupyter", "ipynb", "json" },
+	-- },
 
 	{ "scalameta/nvim-metals", dependencies = { "nvim-lua/plenary.nvim" } },
 	{
