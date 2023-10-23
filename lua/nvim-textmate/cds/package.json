@@ -1,0 +1,15 @@
+{
+  "contributes": {
+    "languages": [{
+      "id": "cds",
+      "aliases": ["CDS", "cds"],
+      "extensions": [".cds"],
+      "configuration": "cds.configuration.json"
+    }],
+    "grammars": [{
+      "language": "cds",
+      "scopeName": "source.cds",
+      "path": "cds.tmLanguage.json"
+    }]
+  }
+}

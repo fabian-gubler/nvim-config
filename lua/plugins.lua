@@ -16,6 +16,17 @@ return {
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
 	"iamcco/markdown-preview.nvim",
+	
+	-- {
+	-- 	"icedman/nvim-textmate",
+	-- 	config = function()
+	-- 		require("nvim-textmate").setup({
+	-- 			quick_load = true,
+	-- 			theme_name = "cds",
+	-- 			override_colorscheme = true,
+	-- 		})
+	-- 	end,
+	-- },
 
 	{
 		"kiyoon/jupynium.nvim",
