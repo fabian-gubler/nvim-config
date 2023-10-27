@@ -1,25 +1,19 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
--- vim.cmd[[
--- autocmd BufWrite * mkview
--- autocmd BufRead * loadview
--- ]]
+augroup("remember_folds", { clear = true })
 
--- augroup("remember_folds", { clear = true })
---
--- autocmd("BufWrite", {
--- 	pattern = { "*.md" },
--- 	command = "mkview",
--- 	group = "remember_folds",
--- })
---
--- autocmd("BufEnter", {
--- 	pattern = { "*.md" },
--- 	command = "silent! loadview",
--- 	group = "remember_folds",
--- })
---
+autocmd("BufWinLeave", {
+	pattern = { "*.md" },
+	command = "mkview",
+	group = "remember_folds",
+})
+
+autocmd("BufWinEnter", {
+	pattern = { "*.md" },
+	command = "silent! loadview",
+	group = "remember_folds",
+})
 
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
