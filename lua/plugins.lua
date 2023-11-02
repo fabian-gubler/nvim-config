@@ -11,23 +11,14 @@ return {
 	"neovim/nvim-lspconfig",
 	"felipec/notmuch-vim",
 	"ThePrimeagen/harpoon",
+	-- "luk400/vim-jukit",
 
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
 	"iamcco/markdown-preview.nvim",
-	
-	-- {
-	-- 	"icedman/nvim-textmate",
-	-- 	config = function()
-	-- 		require("nvim-textmate").setup({
-	-- 			quick_load = true,
-	-- 			theme_name = "cds",
-	-- 			override_colorscheme = true,
-	-- 		})
-	-- 	end,
-	-- },
 
+	{ "scalameta/nvim-metals", dependencies = { "nvim-lua/plenary.nvim" } },
 	{
 		"kiyoon/jupynium.nvim",
 		-- build = "pip3 install --user .",

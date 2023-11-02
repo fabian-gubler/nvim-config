@@ -1,24 +1,33 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
--- vim.cmd[[
--- autocmd BufWrite * mkview
--- autocmd BufRead * loadview
--- ]]
+augroup("remember_folds", { clear = true })
 
--- augroup("remember_folds", { clear = true })
---
--- autocmd("BufWrite", {
--- 	pattern = { "*.md" },
--- 	command = "mkview",
--- 	group = "remember_folds",
--- })
---
--- autocmd("BufEnter", {
--- 	pattern = { "*.md" },
--- 	command = "silent! loadview",
--- 	group = "remember_folds",
--- })
+autocmd("BufWinLeave", {
+	pattern = { "*.md" },
+	command = "mkview",
+	group = "remember_folds",
+})
+
+autocmd("BufWinEnter", {
+	pattern = { "*.md" },
+	command = "silent! loadview",
+	group = "remember_folds",
+})
+
+local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "scala", "sbt" },
+	callback = function()
+		require("metals").initialize_or_attach({})
+	end,
+	group = nvim_metals_group,
+})
+
+-- vs code
+vim.cmd([[
+	autocmd BufEnter *.ipynb#* if mode() == 'n' | call feedkeys("a\<C-c>")
+]])
 
 -- introduce cmdheight when necessary
 autocmd("RecordingEnter", {
@@ -95,4 +104,3 @@ autocmd("Filetype", {
 	command = "set textwidth=100",
 	group = "myformatting",
 })
-
