@@ -17,10 +17,6 @@ return {
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
 	"iamcco/markdown-preview.nvim",
-	-- {
-	-- 	"luk400/vim-jukit",
-	-- 	ft = { "python", "jupyter", "ipynb", "json" },
-	-- },
 
 	{ "scalameta/nvim-metals", dependencies = { "nvim-lua/plenary.nvim" } },
 	{
