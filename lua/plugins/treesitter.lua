@@ -13,6 +13,7 @@ return {
 		}
 
 		require("nvim-treesitter.configs").setup({
+			ensure_installed = "all",
 			-- Automatically install missing parsers when entering buffer
 			auto_install = true,
 			highlight = {
