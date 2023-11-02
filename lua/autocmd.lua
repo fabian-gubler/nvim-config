@@ -9,6 +9,20 @@ autocmd("BufWinLeave", {
 	group = "remember_folds",
 })
 
+-- vim.cmd 'autocmd FileChangedShell * let v:fcs_choice = "reload"'
+-- vim.cmd 'autocmd FileChangedShell * echo "File changed on disk. Buffer reloaded."'
+
+vim.cmd ' autocmd FocusGained * checktime'
+
+-- vim.cmd [[
+--  " trigger `autoread` when files changes on disk
+--       set autoread
+--       autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+--     " notification after file change
+--       autocmd FileChangedShellPost *
+--         \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+-- ]]
+
 autocmd("BufWinEnter", {
 	pattern = { "*.md" },
 	command = "silent! loadview",
