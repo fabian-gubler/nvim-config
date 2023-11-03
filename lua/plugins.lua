@@ -11,7 +11,7 @@ return {
 	"neovim/nvim-lspconfig",
 	"felipec/notmuch-vim",
 	"ThePrimeagen/harpoon",
-	-- "luk400/vim-jukit",
+	"tpope/vim-obsession",
 
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
