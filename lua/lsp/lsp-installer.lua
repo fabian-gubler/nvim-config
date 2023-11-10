@@ -16,7 +16,7 @@ local servers = {
 	"pyright",
 	"rust_analyzer",
 	"texlab",
-	"rnix",
+	"nil_ls",
 	"bashls",
 	"tsserver",
 	"ccls",
