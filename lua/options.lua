@@ -10,9 +10,11 @@ g.auto_save_silent = 1
 g.nord_borders = true
 g.netrw_browsex_viewer = "xdg-open"
 
--- folding
+-- markdown
 g.markdown_folding = 1
 g.markdown_enable_folding = 1
+g.vim_markdown_conceal = 0
+o.conceallevel = 2
 
 -- options
 o.background = "dark"

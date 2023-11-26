@@ -15,6 +15,9 @@ return {
 	config = function(_, opts)
 		require("obsidian").setup(opts)
 
+		-- Optional, set to true if you don't want obsidian.nvim to manage frontmatter.
+		disable_frontmatter = true
+
 		-- Optional, override the 'gf' keymap to utilize Obsidian's search functionality.
 		-- see also: 'follow_url_func' config option below.
 		vim.keymap.set("n", "gf", function()

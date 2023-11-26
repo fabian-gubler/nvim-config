@@ -6,7 +6,7 @@ return {
 			-- hijack_netrw = false,
 			view = {
 				adaptive_size = true,
-				side = "right",
+				side = "left",
 				width = 55,
 				relativenumber = true,
 			},

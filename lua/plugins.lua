@@ -12,6 +12,7 @@ return {
 	"felipec/notmuch-vim",
 	"ThePrimeagen/harpoon",
 	"tpope/vim-obsession",
+	"preservim/vim-markdown",
 
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
