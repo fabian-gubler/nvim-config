@@ -9,8 +9,6 @@ return {
 	},
 	opts = {
 		dir = "/data/nextcloud/obsidian", -- no need to call 'vim.fn.expand' here
-
-		-- see below for full list of options 👇
 	},
 	config = function(_, opts)
 		require("obsidian").setup(opts)
@@ -27,5 +25,11 @@ return {
 				return "gf"
 			end
 		end, { noremap = false, expr = true })
+
+		-- Open Obsidian
+		vim.keymap.set("n", "<leader>co", function()
+			return "<cmd>ObsidianOpen<CR>"
+		end, { noremap = false, expr = true })
+
 	end,
 }
