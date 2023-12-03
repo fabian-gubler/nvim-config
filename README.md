@@ -10,11 +10,8 @@ git clone git@github.com:fabian-gubler/nvim-config.git ~/.config/nvim
 ## Nix-based Configuration
 The philosophy behind this configuration is to allow for easily configurable and reproducible neovim environments. Enter a directory and have a ready to go neovim configuration that is the same on every machine.
 
-## Todo: Move towards declarative nix configuration
-- Installation of java modules
-- Plugins that do not have LFS limitations should be managed by lazy (with lock file)
-- Declare everything else that should be reproducible (lsp, formatters)
-- Further configuration should be in lua
+## Refactoring Ideas
+- Replace null-ls with [conform.nvim](https://github.com/stevearc/conform.nvim) for formatting and [nvim-lint](https://github.com/mfussenegger/nvim-lint) for linting
 
 [Nix Neovim Wiki](https://nixos.wiki/wiki/Neovim)
 [YouTube Tutorial](https://www.youtube.com/watch?v=rUvjkBuKua4)
