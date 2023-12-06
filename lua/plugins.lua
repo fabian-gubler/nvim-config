@@ -13,6 +13,7 @@ return {
 	"ThePrimeagen/harpoon",
 	"tpope/vim-obsession",
 	"preservim/vim-markdown",
+	"ThePrimeagen/vim-be-good",
 
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
