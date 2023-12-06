@@ -1,46 +1,21 @@
 return {
 
+	-- need to change
+	"jose-elias-alvarez/null-ls.nvim",
+
 	-- simple setup
 	"shaunsingh/nord.nvim",
 	"907th/vim-auto-save",
-	"lukas-reineke/indent-blankline.nvim",
-	"jose-elias-alvarez/null-ls.nvim",
 	"stevearc/dressing.nvim",
-	"mbbill/undotree",
-	"godlygeek/tabular",
 	"neovim/nvim-lspconfig",
-	"felipec/notmuch-vim",
 	"ThePrimeagen/harpoon",
-	"tpope/vim-obsession",
 	"preservim/vim-markdown",
-	"ThePrimeagen/vim-be-good",
 
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
 	"iamcco/markdown-preview.nvim",
 
-	{ "scalameta/nvim-metals", dependencies = { "nvim-lua/plenary.nvim" } },
-
-	-- {
-	-- 	"oflisback/obsidian-bridge.nvim",
-	-- 	dependencies = { "nvim-telescope/telescope.nvim" },
-	-- 	config = function()
-	-- 		require("obsidian-bridge").setup({})
-	-- 	end,
-	-- 	event = {
-	-- 		"BufReadPre *.md",
-	-- 		"BufNewFile *.md",
-	-- 	},
-	-- 	lazy = true,
-	-- },
-
-	{
-		"kiyoon/jupynium.nvim",
-		-- build = "pip3 install --user .",
-		-- build = "conda run --no-capture-output -n jupynium pip install .",
-		-- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
-	},
 
 	{
 		"numToStr/Comment.nvim",
@@ -78,14 +53,6 @@ return {
 			require("gitsigns").setup()
 		end,
 	},
-
-	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup()
-		end,
-	},
-
 	{
 		"windwp/nvim-autopairs",
 		config = function()
