@@ -10,8 +10,6 @@ git clone git@github.com:fabian-gubler/nvim-config.git ~/.config/nvim
 ## Nix-based Configuration
 The philosophy behind this configuration is to allow for easily configurable and reproducible neovim environments. Enter a directory and have a ready to go neovim configuration that is the same on every machine.
 
-## Refactoring Ideas
-- Replace null-ls with [conform.nvim](https://github.com/stevearc/conform.nvim) for formatting and [nvim-lint](https://github.com/mfussenegger/nvim-lint) for linting
 
 [Nix Neovim Wiki](https://nixos.wiki/wiki/Neovim)
 [YouTube Tutorial](https://www.youtube.com/watch?v=rUvjkBuKua4)
@@ -25,3 +23,12 @@ The philosophy behind this configuration is to allow for easily configurable and
 - [Gako](https://github.com/Gako358/neovim)
 - [nixed](https://github.com/water-sucks/nixed/tree/main/home/profiles/base/nvim)
 - [wil](https://github.com/wiltaylor/neovim-flake)
+
+### Refactoring Ideas
+
+When I have the time I want to do the following things...
+
+- Setup debugging and neotest [Python Example](https://www.youtube.com/watch?v=onu_upaLKo4)
+- Replace null-ls with [conform.nvim](https://github.com/stevearc/conform.nvim) for formatting and [nvim-lint](https://github.com/mfussenegger/nvim-lint) for linting
+- Move away from auto save
+- Automatic Formatting on save
