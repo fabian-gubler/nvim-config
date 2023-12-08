@@ -11,10 +11,11 @@ g.nord_borders = true
 g.netrw_browsex_viewer = "xdg-open"
 g.markdown_folding = 1
 g.markdown_enable_folding = 1
-g.vim_markdown_conceal = 0
+g.vim_markdown_conceal = 2
 
 -- options
 o.background = "dark"
+o.conceallevel = 2
 o.foldenable = false
 o.cmdheight = 0
 o.ignorecase = true
