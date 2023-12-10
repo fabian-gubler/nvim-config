@@ -1,7 +1,8 @@
 return {
 
 	-- need to change
-	"jose-elias-alvarez/null-ls.nvim",
+	"jose-elias-alvarez/null-ls.nvim", -- replace with conform.nvim & nvim-lint
+	"djoshea/vim-autoread", -- simpler solution with builtins
 
 	-- simple setup
 	"shaunsingh/nord.nvim",
@@ -14,7 +15,6 @@ return {
 	-- programming language extensions
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
-	"iamcco/markdown-preview.nvim",
 
 
 	{
