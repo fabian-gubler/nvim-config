@@ -1,6 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
+-- remember folds
 augroup("remember_folds", { clear = true })
 
 autocmd("BufWinLeave", {
