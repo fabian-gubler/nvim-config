@@ -16,6 +16,10 @@ return {
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
 
+	-- debugging
+	"mfussenegger/nvim-dap-python",
+	"nvim-neotest/neotest",
+	"nvim-neotest/neotest-python",
 
 	{
 		"numToStr/Comment.nvim",

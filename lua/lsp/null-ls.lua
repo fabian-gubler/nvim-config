@@ -1,4 +1,4 @@
-local  null_ls_status_ok, null_ls = pcall(require, "null-ls")
+local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
 	return
 end
@@ -13,14 +13,16 @@ null_ls.setup({
 		formatting.google_java_format,
 
 		-- Javascript
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote", "--trailingComma none" } }),
+		formatting.prettier.with({
+			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote", "--trailingComma none" },
+		}),
 
 		-- Lua
 		formatting.stylua,
 
 		-- Python
 		formatting.black.with({ extra_args = { "--fast" } }),
-		-- formatting.isort,
-		-- diagnostics.flake8,
+		formatting.isort,
+		diagnostics.flake8.with({ extra_args = { "--max-line-length=100" } }),
 	},
 })

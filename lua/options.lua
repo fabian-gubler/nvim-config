@@ -11,6 +11,7 @@ g.nord_borders = true
 g.markdown_folding = 1
 g.markdown_enable_folding = 1
 g.vim_markdown_conceal = 2
+g.vim_markdown_follow_anchor = 1
 
 -- options
 o.background = "dark"
