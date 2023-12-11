@@ -28,7 +28,10 @@ The philosophy behind this configuration is to allow for easily configurable and
 
 When I have the time I want to do the following things...
 
-- Setup debugging and neotest [Python Example](https://www.youtube.com/watch?v=onu_upaLKo4)
 - Replace null-ls with [conform.nvim](https://github.com/stevearc/conform.nvim) for formatting and [nvim-lint](https://github.com/mfussenegger/nvim-lint) for linting
-- Move away from auto save
-- Automatic Formatting on save
+- Easier lsp management (also take into account nix packages)
+
+I could consider...
+
+- Moving away from auto save
+- Having automatic Formatting on save
