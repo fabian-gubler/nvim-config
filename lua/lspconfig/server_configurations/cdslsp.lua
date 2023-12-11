@@ -10,7 +10,7 @@ return {
   default_config = {
     cmd = { 'cds-lsp', '--stdio' },
     filetypes = { 'cds' },
-    root_dir = util.root_pattern(unpack(root_files)),
+    root_dir = util.root_pattern(root_files),
   },
   docs = {
     description = [[
