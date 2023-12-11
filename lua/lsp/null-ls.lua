@@ -18,7 +18,7 @@ null_ls.setup({
 		-- }),
 
 		-- Lua
-		-- formatting.stylua,
+		formatting.stylua,
 
 		-- Python
 		formatting.black.with({ extra_args = { "--fast" } }),
