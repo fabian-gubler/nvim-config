@@ -18,8 +18,6 @@ return {
 
 	-- debugging
 	"mfussenegger/nvim-dap-python",
-	"nvim-neotest/neotest",
-	"nvim-neotest/neotest-python",
 
 	{
 		"numToStr/Comment.nvim",

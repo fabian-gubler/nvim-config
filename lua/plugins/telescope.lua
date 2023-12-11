@@ -1,5 +1,13 @@
 return {
 	"nvim-telescope/telescope.nvim",
+	keys = {
+		{ "<leader>g", ":Telescope live_grep<CR>", desc = "telescope grep" },
+		{
+			"<leader><leader>",
+			":Telescope find_files hidden=true no_ignore=true<CR>",
+			desc = "telescope find files",
+		},
+	},
 	config = function()
 		require("telescope").setup({
 			defaults = {
@@ -8,8 +16,10 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>", opts)
-		vim.keymap.set("n", "<leader><leader>", ":Telescope find_files hidden=true no_ignore=true<CR>", opts)
+		require("telescope").load_extension("dap")
 	end,
-	dependencies = { { "nvim-lua/plenary.nvim" } },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope-dap.nvim",
+	},
 }
