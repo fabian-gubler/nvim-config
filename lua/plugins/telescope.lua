@@ -12,7 +12,15 @@ return {
 		require("telescope").setup({
 			defaults = {
 				layout_strategy = "vertical",
-				file_ignore_patterns = { "node_modules", "venv" },
+				file_ignore_patterns = {
+					"node_modules",
+					"venv",
+					-- python
+					".pytest_cache",
+					"__pycache__",
+					".git",
+					"__init__.py",
+				},
 			},
 		})
 
