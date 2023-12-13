@@ -9,7 +9,6 @@ return {
 	"907th/vim-auto-save",
 	"stevearc/dressing.nvim",
 	"neovim/nvim-lspconfig",
-	"ThePrimeagen/harpoon",
 	"preservim/vim-markdown",
 
 	-- programming language extensions
