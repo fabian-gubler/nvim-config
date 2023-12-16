@@ -2,13 +2,6 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local bufopts = { noremap = true, silent = true, buffer = 0 }
 
--- markdown
-keymap("n", "]#", ":keeppatterns s/^/#/e<CR>", bufopts)
-keymap("n", "[#", ":keeppatterns s/^#//e<CR>", bufopts)
-keymap("x", "]#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#//<CR>", bufopts)
-keymap("x", "[#", ":<c-u>keeppatterns '<,'>g/^#/keeppatterns s/^#/##/<CR>", bufopts)
-
-
 -- easy terminal escape
 vim.cmd([[
  tnoremap <Esc> <C-\><C-n>
