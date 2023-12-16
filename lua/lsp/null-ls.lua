@@ -23,6 +23,6 @@ null_ls.setup({
 		-- Python
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.isort,
-		diagnostics.flake8.with({ extra_args = { "--max-line-length=100" } }),
+		-- diagnostics.flake8.with({ extra_args = { "--max-line-length=100" } }),
 	},
 })
