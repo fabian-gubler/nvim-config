@@ -15,9 +15,6 @@ return {
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
 
-	-- debugging
-	"mfussenegger/nvim-dap-python",
-
 	{
 		"numToStr/Comment.nvim",
 		config = function()
