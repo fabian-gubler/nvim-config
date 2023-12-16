@@ -33,10 +33,10 @@ The philosophy behind this configuration is to allow for easily configurable and
 
 ## Refactoring Ideas
 
-When I have the time I want to do the following things...
+Using quarto with quarto-nvim for data science notebooks...
 
-- Replace null-ls with [conform.nvim](https://github.com/stevearc/conform.nvim) for formatting and [nvim-lint](https://github.com/mfussenegger/nvim-lint) for linting
-- Easier lsp management (instead of mason consider nix packages for lsp installation)
+- [Neovim Repository](https://github.com/quarto-dev/quarto-nvim)
+- [Tutorial Series](https://www.youtube.com/watch?v=3sj7clNowlA&list=PLabWm-zCaD1axcMGvf7wFxJz8FZmyHSJ7&index=1)
 
 I am still deciding...
 
