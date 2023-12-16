@@ -40,7 +40,7 @@ else
 	-- Configuration files
 	require("lsp")
 	require("autocmd")
-	--
+
 	-- set colorsceme
 	vim.cmd.colorscheme("nord")
 end
