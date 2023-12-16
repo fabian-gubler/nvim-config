@@ -1,7 +1,20 @@
 # Neovim Configuration
-## Installation 
+
+## Getting Started
+
+Clone the repository:
+
 ```bash
 git clone git@github.com:fabian-gubler/nvim-config.git ~/.config/nvim
+```
+Enter nix development environment:
+
+```bash
+# if direnv installed
+direnv allow
+
+# without direnv installed
+nix develop
 ```
 
 ## My Neovim Configuration
@@ -12,10 +25,10 @@ The philosophy behind this configuration is to allow for easily configurable and
 
 **Reproducibility**
 ```
-| nvim-config
-    | lazy-lock.json    // Lock and restore neovim plugins
-    | flake.nix         // Lock neovim devtools & language servers
-    | .envrc            // Automatically enter nix environment and install packages
+~/.config/nvim
+├── lazy-lock.json    // Lock and restore neovim plugins
+├── flake.nix         // Lock neovim devtools & lua language servers
+└── .envrc            // Automatically enter nix environment and install pkgs
 ```
 
 ## Refactoring Ideas
