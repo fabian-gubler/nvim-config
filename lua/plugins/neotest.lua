@@ -41,8 +41,5 @@ return {
 			desc = "test class dap",
 		},
 
-		-- don't know if needed
-		{ "<leader>dt", ":lua require'neotest'.run.stop()<cr>", desc = "stop test" },
-		-- { "<leader>dta", ":lua require'neotest'.run.attach()<cr>", desc = "attach test" },
 	},
 }

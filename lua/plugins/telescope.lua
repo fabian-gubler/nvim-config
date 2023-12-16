@@ -1,12 +1,14 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	keys = {
-		{ "<leader>g", ":Telescope live_grep<CR>", desc = "telescope grep" },
-		{ "<leader><leader>", ":Telescope find_files hidden=true no_ignore=true<CR>",
-		desc = "telescope find files", },
-		{ "<leader>th", ":Telescope help_tags<cr>"},
-		{ "<leader>tk", ":Telescope keymaps<cr>"},
-		-- { "<leader>td", ":Telescope diagnostics<cr>"},
+		{ "<leader>g", ":Telescope live_grep<CR>" },
+		{ "<leader><leader>", ":Telescope find_files hidden=true no_ignore=true<CR>" },
+		{ "<leader>th", ":Telescope help_tags<cr>" },
+		{ "<leader>tk", ":Telescope keymaps<cr>" },
+
+		-- dap extension
+		{ "<leader>dl", function() require("telescope").extensions.dap.list_breakpoints() end },
+		{ "<leader>dd", function() require("telescope").extensions.dap.commands() end },
 	},
 	config = function()
 		require("telescope").setup({

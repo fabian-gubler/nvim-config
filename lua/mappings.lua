@@ -2,17 +2,6 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local bufopts = { noremap = true, silent = true, buffer = 0 }
 
--- easy terminal escape
-vim.cmd([[
- tnoremap <Esc> <C-\><C-n>
-]])
-
--- general
-keymap("n", "<leader>z", ":UndotreeToggle<CR>")
-
--- lsp
-keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
-
 -- resize windows
 keymap("n", "+", ":res +5<CR>")
 keymap("n", "-", ":res -5<CR>")
@@ -28,3 +17,5 @@ keymap("i", "<C-K>", "<C-O>D", opts)
 -- useful
 keymap("v", ">", ">gv")
 keymap("v", "<", "<gv")
+
+-- learn terminal escape: <Esc> <C-\><C-n>
