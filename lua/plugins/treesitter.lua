@@ -20,6 +20,8 @@ return {
 				disable = { "markdown" }, -- to have colored headings
 				additional_vim_regex_highlighting = { "org" },
 			},
+			-- A list of parser names, or "all"
+			ensure_installed = { "comment", "lua" },
 		})
 	end,
 }
