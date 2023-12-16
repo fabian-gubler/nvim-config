@@ -1,7 +1,6 @@
 return {
 
 	-- need to change
-	"jose-elias-alvarez/null-ls.nvim", -- replace with conform.nvim & nvim-lint
 	"djoshea/vim-autoread", -- simpler solution with builtins
 
 	-- simple setup
@@ -11,26 +10,10 @@ return {
 	"neovim/nvim-lspconfig",
 	"preservim/vim-markdown",
 
-	-- programming language extensions
-	"mfussenegger/nvim-jdtls",
-	"simrat39/rust-tools.nvim",
-
 	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()
-		end,
-	},
-
-	{
-		"williamboman/mason.nvim",
-		dependencies = {
-			"williamboman/mason-lspconfig.nvim",
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
-		},
-		config = function()
-			require("mason").setup()
-			vim.keymap.set("n", "<leader>M", "<cmd>Mason<CR>", opts)
 		end,
 	},
 

@@ -1,17 +1,4 @@
--- move everything to nix config
-require("mason-tool-installer").setup({
-	-- ensure_installed = {
-	--
-	-- 	{ "jdtls", version = "v1.18.0" },
-	-- },
-
-	auto_update = false,
-	run_on_start = true,
-	start_delay = 3000, -- 3 second delay
-})
-
 local servers = {
-	-- "clangd",
 	"lua_ls",
 	"pyright",
 	"rust_analyzer",
