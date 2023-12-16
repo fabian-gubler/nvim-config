@@ -5,7 +5,7 @@ end
 
 -- change path
 local home = os.getenv("HOME")
-local install_path = home .. "/.local/share/nvim/mason/packages/jdtls/"
+local install_path = home .. "/.local/share/nvim/ason/packages/jdtls/"
 
 -- Determine OS
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")

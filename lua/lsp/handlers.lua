@@ -66,7 +66,7 @@ local function lsp_keymaps(bufnr)
 	keymap("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
 	keymap("n", "<leader>r", vim.lsp.buf.rename, bufopts)
 	keymap("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
-	keymap("n", "<leader>f", vim.lsp.buf.format, bufopts)
+	-- keymap("n", "<leader>f", vim.lsp.buf.format, bufopts)
 	keymap("n", "<leader>u", vim.diagnostic.open_float, bufopts)
 	keymap("n", "[d", vim.diagnostic.goto_prev, bufopts)
 	keymap("n", "]d", vim.diagnostic.goto_next, bufopts)
@@ -75,9 +75,9 @@ end
 
 M.on_attach = function(client, bufnr)
 	-- if client.name == "jdtls" then
-		-- reccomended according to nvim-jdtls
-		-- require("jdtls").setup_dap({ hotcodereplace = "auto" })
-		-- require("jdtls.dap").setup_dap_main_class_configs()
+	-- reccomended according to nvim-jdtls
+	-- require("jdtls").setup_dap({ hotcodereplace = "auto" })
+	-- require("jdtls.dap").setup_dap_main_class_configs()
 	-- end
 
 	if client.name == "lua_ls" then

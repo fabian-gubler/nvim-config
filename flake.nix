@@ -17,6 +17,7 @@
             lua
             sumneko-lua-language-server
             stylua
+			luajitPackages.luacheck
           ];
         };
       }

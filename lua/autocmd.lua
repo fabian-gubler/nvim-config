@@ -21,6 +21,14 @@ vim.cmd([[
 	autocmd BufEnter *.ipynb#* if mode() == 'n' | call feedkeys("a\<C-c>")
 ]])
 
+
+-- linting
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  callback = function()
+    require("lint").try_lint()
+  end,
+})
+
 -- introduce cmdheight when necessary
 autocmd("RecordingEnter", {
 	pattern = "*",
