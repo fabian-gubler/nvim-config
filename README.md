@@ -5,7 +5,7 @@ git clone git@github.com:fabian-gubler/nvim-config.git ~/.config/nvim
 ```
 
 ## My Neovim Configuration
-![config preview](https://raw.githubusercontent.com/fabian-gubler/nvim-config/main/doc/preview_full.jpg)
+![config preview](https://raw.githubusercontent.com/fabian-gubler/nvim-config/main/doc/preview.png)
 
 ## Nix-based Configuration
 The philosophy behind this configuration is to allow for easily configurable and reproducible neovim environments. Enter a directory and have a ready to go neovim configuration that is the same on every machine.
