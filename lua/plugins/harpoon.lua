@@ -2,13 +2,13 @@ return {
 	"ThePrimeagen/harpoon",
 
 	keys = {
-		{ "<A-m>", "<cmd>lua require'harpoon.mark'.add_file()<CR>" },
-		{ "<C-h>", "<cmd>lua require'harpoon.ui'.toggle_quick_menu()<CR>" },
-		{ "<A-n>", "<cmd>lua require'harpoon.ui'.nav_file(1)<CR>" },
-		{ "<A-e>", "<cmd>lua require'harpoon.ui'.nav_file(2)<CR>" },
-		{ "<A-i>", "<cmd>lua require'harpoon.ui'.nav_file(3)<CR>" },
-		{ "<A-o>", "<cmd>lua require'harpoon.ui'.nav_file(4)<CR>" },
-		{ "<A-h>", "<cmd>lua require'harpoon.ui'.nav_file(5)<CR>" },
+		{ "<A-m>", function() require'harpoon.mark'.add_file() end },
+		{ "<C-h>", function() require'harpoon.ui'.toggle_quick_menu() end },
+		{ "<A-n>", function() require'harpoon.ui'.nav_file(1) end },
+		{ "<A-e>", function() require'harpoon.ui'.nav_file(2) end },
+		{ "<A-i>", function() require'harpoon.ui'.nav_file(3) end },
+		{ "<A-o>", function() require'harpoon.ui'.nav_file(4) end },
+		{ "<A-h>", function() require'harpoon.ui'.nav_file(5) end },
 	},
 
 }

@@ -1,8 +1,5 @@
 return {
 
-	-- need to change
-	-- "djoshea/vim-autoread", -- simpler solution with builtins
-
 	-- simple setup
 	"shaunsingh/nord.nvim",
 	"907th/vim-auto-save",

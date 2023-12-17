@@ -1,8 +1,6 @@
 local o = vim.opt
 local g = vim.g
-local b = vim.b
 local indent = 4
-local cmd = vim.cmd
 
 -- global
 g.auto_save = 1

@@ -3,11 +3,7 @@ return {
 	config = function()
 		-- Setup nvim-cmp.
 		local cmp = require("cmp")
-
-		local snip_status_ok, luasnip = pcall(require, "luasnip")
-		if not snip_status_ok then
-			return
-		end
+		local luasnip = require("luasnip")
 
 		local kind_icons = {
 			Text = "",
