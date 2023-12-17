@@ -4,14 +4,20 @@ return {
 		{
 			"rcarriga/nvim-dap-ui",
 			config = function()
-				vim.fn.sign_define(
-					"DapBreakpoint",
-					{ text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" }
-				)
+				local icons = require("icons")
+
+				vim.fn.sign_define("DapBreakpoint", {
+					text = icons.debugging.Breakpoint,
+					texthl = "DiagnosticSignError",
+				})
 
 				-- Configure dapui layout
 				require("dapui").setup({
-					icons = { expanded = "", collapsed = "", circular = "" },
+					icons = {
+						expanded = icons.debugging.Expanded,
+						collapsed = icons.debugging.Collapsed,
+						circular = icons.debugging.Circular,
+					},
 				})
 
 				-- Automatically load / close dapui

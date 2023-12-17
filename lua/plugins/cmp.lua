@@ -4,35 +4,7 @@ return {
 		-- Setup nvim-cmp.
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
-
-		local kind_icons = {
-			Text = "",
-			Method = "",
-			Function = "",
-			Constructor = "",
-			Field = "",
-			Variable = "",
-			Class = "",
-			Interface = "",
-			Module = "",
-			Property = "",
-			Unit = "",
-			Value = "",
-			Enum = "",
-			Keyword = "",
-			Snippet = "",
-			Color = "",
-			File = "",
-			Reference = "",
-			Folder = "",
-			Copilot = "",
-			EnumMember = "",
-			Constant = "",
-			Struct = "",
-			Event = "",
-			Operator = "",
-			TypeParameter = "",
-		}
+		local icons = require("icons")
 
 		cmp.setup({
 			snippet = {
@@ -85,7 +57,7 @@ return {
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
 				format = function(entry, vim_item)
-					vim_item.kind = kind_icons[vim_item.kind]
+					vim_item.kind = icons[vim_item.kind]
 					vim_item.menu = ({
 						nvim_lsp = "",
 						nvim_lua = "",
