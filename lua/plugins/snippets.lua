@@ -9,12 +9,12 @@ return {
 
 		-- Custom Snippets
 		local snip = ls.snippet
-		local node = ls.snippet_node
 		local text = ls.text_node
 		local insert = ls.insert_node
-		local func = ls.function_node
-		local choice = ls.choice_node
-		local dynamicn = ls.dynamic_node
+		-- local node = ls.snippet_node
+		-- local func = ls.function_node
+		-- local choice = ls.choice_node
+		-- local dynamic = ls.dynamic_node
 
 		ls.add_snippets("sh", {
 			snip({ trig = "#!" }, {
@@ -44,9 +44,6 @@ return {
 				text({ "", "header-includes: " }),
 				text({ "", "  - \\renewcommand{\\familydefault}{\\sfdefault}" }),
 				text({ "", "---" }),
-
-		-- 		header-includes:
-  -- - 
 
 			}),
 		})
