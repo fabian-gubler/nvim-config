@@ -1,7 +1,6 @@
 local servers = {
 	"lua_ls",
 	"pyright",
-	"rust_analyzer",
 	"texlab",
 	"rnix",
 	"bashls",
