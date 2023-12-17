@@ -10,6 +10,9 @@ autocmd("BufWinLeave", {
 	group = "remember_folds",
 })
 
+-- auto reload files
+autocmd("FocusGained", { pattern = ( "*" ), command = "checktime", })
+
 autocmd("BufWinEnter", {
 	pattern = { "*.md" },
 	command = "silent! loadview",
@@ -22,13 +25,6 @@ vim.cmd([[
 ]])
 
 
--- linting
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  callback = function()
-    require("lint").try_lint()
-  end,
-})
-
 -- introduce cmdheight when necessary
 autocmd("RecordingEnter", {
 	pattern = "*",
@@ -40,24 +36,5 @@ autocmd("RecordingLeave", {
 	command = "set cmdheight=0",
 })
 
--- writing text
-autocmd("FileType", { pattern = { "tex" }, command = "set cc=79" })
-autocmd("FileType", { pattern = { "markdown", "tex" }, command = "setlocal wrap | setlocal linebreak" })
-
 -- no highlight
 autocmd("InsertLeave", { command = "setlocal nohlsearch" })
-
--- Set text wrapping limit
-augroup("myformatting", { clear = true })
-
-autocmd("BufEnter", {
-	pattern = { "*.md" },
-	command = "set textwidth=90",
-	group = "myformatting",
-})
-
-autocmd("Filetype", {
-	pattern = { "mail" },
-	command = "set textwidth=100",
-	group = "myformatting",
-})
