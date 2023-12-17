@@ -8,9 +8,7 @@ return {
 
 		cmp.setup({
 			snippet = {
-				expand = function(args)
-					require("luasnip").lsp_expand(args.body)
-				end,
+				expand = function(args) require("luasnip").lsp_expand(args.body) end,
 			},
 			window = {
 				completion = cmp.config.window.bordered(),
@@ -22,7 +20,7 @@ return {
 				["<C-d>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-e>"] = cmp.mapping.abort(),
-				['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+				["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 				["<c-y>"] = cmp.mapping(
 					cmp.mapping.confirm({
 						behavior = cmp.ConfirmBehavior.Replace,
@@ -57,7 +55,7 @@ return {
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
 				format = function(entry, vim_item)
-					vim_item.kind = icons[vim_item.kind]
+					vim_item.kind = icons.kind[vim_item.kind]
 					vim_item.menu = ({
 						nvim_lsp = "",
 						nvim_lua = "",
@@ -69,7 +67,6 @@ return {
 					return vim_item
 				end,
 			},
-
 			sources = cmp.config.sources({
 				-- { name = "copilot", group_index = 2 },
 				{ name = "path" },
