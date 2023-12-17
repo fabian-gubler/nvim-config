@@ -1,6 +1,7 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	config = function()
+		local icons = require("icons")
 		require("nvim-tree").setup({
 			-- disable_netrw = true,
 			-- hijack_netrw = false,
@@ -15,10 +16,10 @@ return {
 				show_on_dirs = true,
 				debounce_delay = 50,
 				icons = {
-					hint = "",
-					info = "",
-					warning = "",
-					error = "",
+					hint = "icons.diagnostics.Hint",
+					info = "icons.diagnostics.Information",
+					warning = "icons.diagnostics.Warning",
+					error = "icons.diagnostics.Error",
 				},
 			},
 		})
