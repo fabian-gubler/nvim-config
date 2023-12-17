@@ -16,10 +16,10 @@ return {
 				show_on_dirs = true,
 				debounce_delay = 50,
 				icons = {
-					hint = "icons.diagnostics.Hint",
-					info = "icons.diagnostics.Information",
-					warning = "icons.diagnostics.Warning",
-					error = "icons.diagnostics.Error",
+					hint = icons.diagnostics.Hint,
+					info = icons.diagnostics.Information,
+					warning = icons.diagnostics.Warning,
+					error = icons.diagnostics.Error,
 				},
 			},
 		})
