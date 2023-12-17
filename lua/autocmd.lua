@@ -1,7 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
--- remember folds
+-- remember & load folds
 augroup("remember_folds", { clear = true })
 
 autocmd("BufWinLeave", {
@@ -10,14 +10,15 @@ autocmd("BufWinLeave", {
 	group = "remember_folds",
 })
 
--- auto reload files
-autocmd("FocusGained", { pattern = ( "*" ), command = "checktime", })
-
 autocmd("BufWinEnter", {
 	pattern = { "*.md" },
 	command = "silent! loadview",
 	group = "remember_folds",
 })
+
+
+-- auto reload files
+autocmd("FocusGained", { pattern = ( "*" ), command = "checktime", })
 
 -- vs code
 vim.cmd([[
@@ -36,5 +37,5 @@ autocmd("RecordingLeave", {
 	command = "set cmdheight=0",
 })
 
--- no highlight
+-- disable highlight
 autocmd("InsertLeave", { command = "setlocal nohlsearch" })
