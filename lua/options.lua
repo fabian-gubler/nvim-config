@@ -11,6 +11,7 @@ g.nord_borders = true
 g.markdown_folding = 1
 g.vim_markdown_conceal = 2
 g.vim_markdown_follow_anchor = 1
+g.vim_markdown_conceal_code_blocks = 0
 
 -- options
 o.conceallevel = 2

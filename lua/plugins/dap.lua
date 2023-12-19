@@ -46,7 +46,6 @@ return {
 		{ "<leader>do", function() require("dap").step_over() end },
 		{ "<leader>du", function() require("dap").step_out() end },
 		{ "<leader>dp", function() require("dap").pause() end },
-		{ "<leader>dp", function() require("dap").pause() end },
 		{ "<leader>dr", function() require("dap").repl_open() end },
 		{ "<leader>dU", function() require("dapui").toggle({ reset = true }) end },
 		{ "<leader>dl", function() require("dap").clear_breakpoints() end },
