@@ -1,3 +1,5 @@
+-- see :help nvim-defaults for list of defaults
+
 local o = vim.opt
 local g = vim.g
 local indent = 4
@@ -11,7 +13,6 @@ g.vim_markdown_conceal = 2
 g.vim_markdown_follow_anchor = 1
 
 -- options
-o.background = "dark"
 o.conceallevel = 2
 o.cmdheight = 0
 o.laststatus = 3
@@ -35,4 +36,4 @@ o.signcolumn = "yes:1"
 o.shiftwidth = indent
 o.tabstop = indent
 o.softtabstop = indent
-o.expandtab = false
+o.expandtab = true
