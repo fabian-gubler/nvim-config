@@ -43,7 +43,7 @@ I am still deciding...
 - Moving away from auto save
 - Having automatic Formatting on save
 
-**Using column more often**: e.g., replace tabularize with this unix magic command (memorize before replacing)
+**Using column more often**: e.g., replace tabularize with this builtin gnu program (memorize before replacing)
 
 Write the table comma separated, like
 
