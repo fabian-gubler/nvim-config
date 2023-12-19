@@ -42,3 +42,22 @@ I am still deciding...
 
 - Moving away from auto save
 - Having automatic Formatting on save
+
+**Using column more often**: e.g., replace tabularize with this unix magic command (memorize before replacing)
+
+Write the table comma separated, like
+
+```
+name,birthday,present
+John Doe,1990-01-12,Coffee Mug
+Jane Doe,1982-02-01,Headphones
+```
+
+For simple format select visually with `!column -s, -t`. Where -s is the
+separator and -t tells column that you want a table. 
+
+To get github-markdown tables;
+
+1. copy the first line downwards (yyp)
+2. run `s/[^,]/-/g` on the copy
+3. Select it visually, and run this command `! column -s, -t -o' |`
