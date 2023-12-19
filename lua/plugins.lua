@@ -10,6 +10,7 @@ return {
 	"stevearc/dressing.nvim",
 	"neovim/nvim-lspconfig",
 	"preservim/vim-markdown",
+	"godlygeek/tabular",
 
 	-- simple setup
 	{ "numToStr/Comment.nvim", config = setup("Comment") },
