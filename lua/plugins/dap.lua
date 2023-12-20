@@ -49,5 +49,9 @@ return {
 		{ "<leader>dr", function() require("dap").repl_open() end },
 		{ "<leader>du", function() require("dapui").toggle({ reset = true }) end },
 		{ "<leader>dl", function() require("dap").clear_breakpoints() end },
+		{
+			"<leader>B",
+			function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
+		},
 	},
 }
