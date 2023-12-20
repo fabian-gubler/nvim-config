@@ -11,35 +11,13 @@ return {
 		})
 	end,
 	keys = {
+		{ "<F6>", function() require("neotest").run.run() end },
+		{ "<F7>", function() require("neotest").run.run({ strategy = "dap" }) end },
+		{ "<F8>", function() require("neotest").summary.toggle() end },
+		{ "<F9>", function() require("neotest").run.run(vim.fn.expand("%")) end },
 		{
-			"<leader>dm",
-			"<cmd>lua require('neotest').run.run()<cr>",
-			desc = "test method",
+			"<F10>",
+			function() require("neotest").run.run({ vim.fn.expand("%"), strategy = "dap" }) end,
 		},
-
-		{
-			"<leader>dM",
-			":lua require'neotest'.run.run({strategy = 'dap'})<cr>",
-			desc = "test method dap",
-		},
-
-		{
-			"<leader>ds",
-			":lua require'neotest'.summary.toggle()<cr>",
-			desc = "test summary",
-		},
-
-		{
-			"<leader>df",
-			":lua require'neotest'.run.run(vim.fn.expand('%'))<cr>",
-			desc = "test file",
-		},
-
-		{
-			"<leader>dF",
-			"<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>",
-			desc = "test class dap",
-		},
-
 	},
 }
