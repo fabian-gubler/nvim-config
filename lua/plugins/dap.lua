@@ -10,7 +10,10 @@ return {
 					text = icons.debugging.Breakpoint,
 					texthl = "DiagnosticSignError",
 				})
-
+				vim.fn.sign_define(
+					"DapBreakpointCondition",
+					{ text = icons.debugging.Breakpoint, texthl = "DiagnosticHint" }
+				)
 				-- Configure dapui layout
 				require("dapui").setup({
 					icons = {
