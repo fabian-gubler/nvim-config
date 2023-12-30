@@ -10,7 +10,15 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "pyright", "lua_ls", "rnix", "texlab", "bashls", "ccls" }
+local servers = {
+	"pyright",
+	"lua_ls",
+	"nil_ls",
+	"texlab",
+	"bashls",
+	"ccls",
+}
+
 for _, lsp in ipairs(servers) do
 	local opts = {
 		-- on_attach = require("lsp.handlers").on_attach,
@@ -24,7 +32,6 @@ for _, lsp in ipairs(servers) do
 	-- Setup language server
 	lspconfig[lsp].setup(opts)
 end
-
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
