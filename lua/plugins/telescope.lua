@@ -5,6 +5,8 @@ return {
 		{ "<leader><leader>", function() require("telescope.builtin").find_files() end },
 		{ "<leader>th", function() require("telescope.builtin").help_tags() end },
 		{ "<leader>tk", function() require("telescope.builtin").keymaps() end },
+		{ "<leader>q", function() require("telescope.builtin").diagnostics({ bufnr = 0 }) end },
+		{ "<leader>Q", function() require("telescope.builtin").diagnostics() end },
 
 		-- dap extension
 		{ "<leader>dl", function() require("telescope").extensions.dap.list_breakpoints() end },
