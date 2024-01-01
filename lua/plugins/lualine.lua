@@ -8,6 +8,8 @@ return {
 			grey = "#2e3440",
 		}
 
+		local icons = require("icons")
+
 		local bubbles_theme = {
 			normal = {
 				a = { fg = colors.white, bg = colors.nord },
@@ -33,10 +35,19 @@ return {
 				section_separators = { left = "", right = "" },
 			},
 			sections = {
-				lualine_a = {
-					{ "filename" },
+				lualine_a = { { "filename" } },
+				lualine_b = {
+					"branch",
+					{
+						"diagnostics",
+						symbols = {
+							error = icons.diagnostics.Error .. " ",
+							warn = icons.diagnostics.Warning .. " ",
+							info = icons.diagnostics.Information .. " ",
+							hint = icons.diagnostics.Hint .. " ",
+						},
+					},
 				},
-				lualine_b = { "branch" },
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = { "filetype", "progress", "location" },
