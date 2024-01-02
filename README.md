@@ -28,8 +28,8 @@ direnv allow
 nix develop
 ```
 
-Now you have a pinned version of neovim declared in the lock file with
-batteries included lua lsp, formatter, luajit etc.)
+Now you have a dev environment for Neovim with
+Batteries included (e.g. lua lsp, formatter, luajit)
 
 ## Reproducible Configuration
 The philosophy behind this configuration is to allow for easily configurable and reproducible neovim environments using `lazy` plugin manager and `nix flakes`. Enter a directory using `direnv` and have a ready to go neovim configuration that is the same on every machine.
