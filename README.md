@@ -7,6 +7,14 @@ Clone the repository:
 ```bash
 git clone git@github.com:fabian-gubler/nvim-config.git ~/.config/nvim
 ```
+
+## Nix Environment
+
+> [!IMPORTANT]
+> **Optional Step: Installing additional Nix Devtools**:
+> - **What it does**: Downloads additional lsp, formatter, and my pinned neovim version
+> - **Requires**: Must have nix installed and experimental features enabled for this to work
+
 Enter nix development environment:
 
 ```bash
@@ -15,12 +23,6 @@ direnv allow
 
 # without direnv installed
 nix develop
-```
-
-Run Neovim:
-
-```bash
-nvim
 ```
 
 ## My Neovim Configuration
