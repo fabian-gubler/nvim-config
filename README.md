@@ -13,9 +13,9 @@ git clone git@github.com:fabian-gubler/nvim-config.git ~/.config/nvim
 
 ## Nix Environment
 
-> [!IMPORTANT]
-> **Optional: Installing additional devtools**:
-> 1. **Install nix:** Instructions for installation can be found [here](https://nixos.org/download.html).
+> [!NOTE]
+> **Prequisites:** 
+> 1. **Install Nix:** Instructions for installation can be found [here](https://nixos.org/download.html).
 > 2. **Enable experimental features**: Flake still considered experimental, more infos [here](https://nixos.wiki/wiki/Flakes).
 
 Enter nix development environment:
@@ -27,6 +27,9 @@ direnv allow
 # without direnv installed
 nix develop
 ```
+
+Now you have a pinned version of neovim declared in the lock file with
+batteries included lua lsp, formatter, luajit etc.)
 
 ## Reproducible Configuration
 The philosophy behind this configuration is to allow for easily configurable and reproducible neovim environments using `lazy` plugin manager and `nix flakes`. Enter a directory using `direnv` and have a ready to go neovim configuration that is the same on every machine.
