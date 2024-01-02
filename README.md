@@ -17,6 +17,12 @@ direnv allow
 nix develop
 ```
 
+Run Neovim:
+
+```bash
+nvim
+```
+
 ## My Neovim Configuration
 ![config preview](https://raw.githubusercontent.com/fabian-gubler/nvim-config/main/doc/preview_full.png)
 
