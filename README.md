@@ -38,7 +38,7 @@ The philosophy behind this configuration is to allow for easily configurable and
 ```
 ~/.config/nvim
 ├── lazy-lock.json    // Lock and restore neovim plugins
-├── flake.nix         // Lock neovim devtools & lua language servers
+├── flake.lock        // Lock neovim devtools declared in flake
 └── .envrc            // Automatically enter nix environment and install pkgs
 ```
 
