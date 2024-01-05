@@ -17,6 +17,7 @@ local servers = {
 	"texlab",
 	"bashls",
 	"ccls",
+   "tsserver"
 }
 
 for _, lsp in ipairs(servers) do
