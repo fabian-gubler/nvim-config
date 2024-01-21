@@ -16,15 +16,13 @@ autocmd("BufWinEnter", {
 	group = "remember_folds",
 })
 
-
 -- auto reload files
-autocmd("FocusGained", { pattern = ( "*" ), command = "checktime", })
+autocmd("FocusGained", { pattern = "*", command = "checktime" })
 
 -- vs code
 vim.cmd([[
 	autocmd BufEnter *.ipynb#* if mode() == 'n' | call feedkeys("a\<C-c>")
 ]])
-
 
 -- introduce cmdheight when necessary
 autocmd("RecordingEnter", {
