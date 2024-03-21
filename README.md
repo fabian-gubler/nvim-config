@@ -1,4 +1,23 @@
-# Neovim Configuration
+<pre align="center">
+      ,l;             c,      
+   .:ooool'           loo:.   
+ .,oooooooo:.         looooc, 
+ll:,loooooool,        looooool
+llll,;ooooooooc.      looooooo
+lllllc,coooooooo;     looooooo
+lllllll;,loooooool'   looooooo
+lllllllc .:oooooooo:. looooooo
+lllllllc   'loooooool,:ooooooo
+lllllllc     ;ooooooooc,cooooo
+lllllllc      .coooooooo;;looo
+lllllllc        ,loooooool,:ol
+ 'cllllc         .:oooooooo;. 
+   .;llc           .loooo:.   
+      ,;             ;l;      
+
+Fabian's NeoVim Config
+</pre>
+
 
 ## Getting Started
 
@@ -8,7 +27,7 @@ Clone the repository:
 git clone git@github.com:fabian-gubler/nvim-config.git ~/.config/nvim
 ```
 
-## My Neovim Configuration
+## Screenshot
 ![config preview](https://raw.githubusercontent.com/fabian-gubler/nvim-config/main/doc/preview_full.png)
 
 ## Nix Environment
