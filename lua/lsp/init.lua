@@ -14,12 +14,13 @@ local servers = {
 	"pyright",
 	"lua_ls",
 	"nil_ls",
-   -- "nixd",
+	-- "nixd",
 	"texlab",
 	"bashls",
+	"gopls",
 	"ccls",
-   "tsserver",
-   "marksman",
+	"tsserver",
+	"marksman",
 }
 
 for _, lsp in ipairs(servers) do
