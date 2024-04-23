@@ -7,6 +7,7 @@ return {
 			sh = { "shellcheck" },
 			bash = { "shellcheck" },
 			nix = { "statix" },
+			go = { "golangcilint" },
 		}
 
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
