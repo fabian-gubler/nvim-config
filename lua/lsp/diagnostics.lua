@@ -3,7 +3,8 @@
 local icons = require("icons")
 local signs = {
 	{ name = "DiagnosticSignError", text = icons.diagnostics.Error },
-	{ name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
+	-- { name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
+	{ name = "DiagnosticSignWarn", text = "" },
 	{ name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
 	{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
 }
@@ -29,6 +30,12 @@ local default_diagnostic_config = {
 }
 
 vim.diagnostic.config(default_diagnostic_config)
+
+-- Disable virtual text for diagnostics
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+		virtual_text = false,
+	})
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>u", vim.diagnostic.open_float)
