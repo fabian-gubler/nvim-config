@@ -50,7 +50,7 @@ return {
 				},
 				lualine_c = {},
 				lualine_x = {},
-				lualine_y = { "filetype", "progress", "location" },
+				lualine_y = { "copilot", "filetype", "progress", "location" },
 				lualine_z = {
 					{},
 				},
