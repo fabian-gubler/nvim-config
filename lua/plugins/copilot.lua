@@ -1,5 +1,8 @@
 return {
 	"zbirenbaum/copilot.lua",
+	dependencies = {
+		"AndreM222/copilot-lualine",
+	},
 	cmd = "Copilot",
 	event = "InsertEnter",
 	config = function()
