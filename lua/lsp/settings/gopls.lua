@@ -8,7 +8,7 @@ return {
 			analyses = {
             -- Warning for unused params
             -- Ref: https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
-				unusedparams = true,
+				unusedparams = false,
             single_file_support = true,
 			},
 		},

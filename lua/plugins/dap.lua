@@ -37,6 +37,10 @@ return {
 			"nvim-neotest/nvim-nio",
 		},
 		{
+			"leoluz/nvim-dap-go",
+			config = function() require("dap-go").setup() end,
+		},
+		{
 			"mfussenegger/nvim-dap-python",
 			config = function() require("dap-python").setup(".venv/bin/python") end,
 		},
