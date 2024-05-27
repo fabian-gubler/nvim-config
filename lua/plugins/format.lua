@@ -15,6 +15,7 @@ return {
 				-- Conform will run multiple formatters sequentially
 				python = { "isort", "black" },
 				go = { "goimports", "gofmt" },
+            sql = { "pg_format" },
 			},
 		})
 	end,

@@ -10,12 +10,10 @@ return {
 			suggestion = {
 				enabled = true,
 				auto_trigger = true,
-				keymap = {
-					dismiss = "<A-e>",
-				},
 			},
 			filetypes = {
 				mail = false,
+            yaml = true,
 			},
 		})
 

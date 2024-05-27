@@ -21,6 +21,9 @@ local servers = {
 	"ccls",
 	"tsserver",
 	"marksman",
+   "postgres_lsp",
+   -- TODO: Add specific schema for k8s
+   "yamlls"
 }
 
 for _, lsp in ipairs(servers) do
