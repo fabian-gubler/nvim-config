@@ -9,6 +9,11 @@ return {
 		{ "<A-i>", function() require'harpoon.ui'.nav_file(3) end },
 		{ "<A-o>", function() require'harpoon.ui'.nav_file(4) end },
 		{ "<A-h>", function() require'harpoon.ui'.nav_file(5) end },
+		{ "<A-1>", function() require'harpoon.ui'.nav_file(1) end },
+		{ "<A-2>", function() require'harpoon.ui'.nav_file(2) end },
+		{ "<A-3>", function() require'harpoon.ui'.nav_file(3) end },
+		{ "<A-4>", function() require'harpoon.ui'.nav_file(4) end },
+		{ "<A-5>", function() require'harpoon.ui'.nav_file(5) end },
 	},
 
 }
