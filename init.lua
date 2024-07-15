@@ -35,7 +35,15 @@ else
 	end
 	vim.opt.rtp:prepend(lazypath)
 
-	require("lazy").setup("plugins")
+	-- require("lazy").setup("plugins")
+	require("lazy").setup({
+		spec = {
+			{ import = "plugins" },
+		},
+		checker = {
+			notify = false, -- get a notification when new updates are found
+		},
+	})
 
 	-- Configuration files
 	require("lsp")

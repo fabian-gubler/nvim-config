@@ -3,6 +3,7 @@ return {
 	lazy = true,
 	event = { "BufReadPre /home/fabian/nextcloud/obsidian/**.md" },
 	keys = {
+      -- FIX: Opening does not work
 		{ "<leader>co", function() return "<cmd>ObsidianOpen<CR>" end },
 		-- Optional, override the 'gf' keymap to utilize Obsidian's search functionality.
 		-- see also: 'follow_url_func' config option below.
