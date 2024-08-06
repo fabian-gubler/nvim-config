@@ -67,5 +67,5 @@ return {
 			extensions = {},
 		})
 	end,
-	dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
+	dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
 }
