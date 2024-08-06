@@ -17,6 +17,7 @@ g.vim_markdown_conceal_code_blocks = 0
 o.conceallevel = 2
 o.cmdheight = 0
 o.laststatus = 3
+o.foldlevel = 99
 o.cursorline = true
 o.colorcolumn = "100"
 o.showmode = false
