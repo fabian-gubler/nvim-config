@@ -12,6 +12,7 @@ return {
 	"preservim/vim-markdown",
 	"dhruvasagar/vim-table-mode",
    "godlygeek/tabular",
+   "OXY2DEV/markview.nvim",
 
 	-- simple setup
 	{ "numToStr/Comment.nvim", config = setup("Comment") },
