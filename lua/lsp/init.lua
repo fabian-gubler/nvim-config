@@ -14,6 +14,7 @@ local servers = {
 	"pyright",
 	"lua_ls",
 	"nil_ls",
+   "bicep",
 	-- "nixd",
 	"texlab",
 	"bashls",
