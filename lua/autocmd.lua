@@ -12,7 +12,11 @@ autocmd("BufWinLeave", {
 
 autocmd("BufWinEnter", {
 	pattern = { "*.md" },
-	command = "silent! loadview",
+   callback = function()
+      vim.opt.wrap = true
+      vim.opt.linebreak = true
+      vim.cmd("silent! loadview")
+   end,
 	group = "remember_folds",
 })
 
