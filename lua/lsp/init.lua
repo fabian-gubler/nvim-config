@@ -20,7 +20,7 @@ local servers = {
 	"bashls",
 	"gopls",
 	"ccls",
-	"tsserver",
+	"ts_ls",
 	"marksman",
    "postgres_lsp",
    -- TODO: Add specific schema for k8s
