@@ -19,6 +19,7 @@ require("options")
 -- vscode and nvim only settings
 if vim.g.vscode then
 	require("vscode")
+   vim.o.cmdheight = 1
 else
 	-- plugins
 	vim.o.termguicolors = true
