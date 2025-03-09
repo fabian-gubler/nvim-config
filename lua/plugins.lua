@@ -5,7 +5,6 @@ end
 
 return {
 	-- one liners
-	"shaunsingh/nord.nvim",
 	"907th/vim-auto-save",
 	"stevearc/dressing.nvim",
 	"neovim/nvim-lspconfig",
@@ -15,6 +14,7 @@ return {
 
 	-- simple setup
 	{ "numToStr/Comment.nvim", config = setup("Comment") },
+   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{ "lewis6991/gitsigns.nvim", config = setup("gitsigns") },
 	{ "windwp/nvim-autopairs", config = setup("nvim-autopairs") },
 }

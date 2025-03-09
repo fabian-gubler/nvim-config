@@ -52,5 +52,5 @@ else
 	require("autocmd")
 
 	-- set colorsceme
-	vim.cmd.colorscheme("nord")
+	vim.cmd.colorscheme("catppuccin-macchiato")
 end
