@@ -2,10 +2,10 @@ return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
 		local colors = {
-			nord = "#434C5E",
-			black = "#2E3440",
+			nord = "#24273a",
+			black = "#24273a",
 			white = "#c6c6c6",
-			grey = "#2e3440",
+			grey = "#24273a",
 		}
 
 		local icons = require("icons")
