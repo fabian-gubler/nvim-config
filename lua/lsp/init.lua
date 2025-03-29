@@ -21,7 +21,6 @@ local servers = {
 	"gopls",
 	"ccls",
 	"ts_ls",
-	"marksman",
    "postgres_lsp",
    -- TODO: Add specific schema for k8s
    "yamlls"
